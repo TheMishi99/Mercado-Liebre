@@ -1,0 +1,356 @@
+/*
+Paleta de Colores
+
+Amarillo: #EAC926;
+Azul: #03264C;
+Celeste: #1259c3;
+Gris oscuro: #666;
+Gris claro: #ebebeb;
+Verde: #39b54a;
+*/
+
+* {
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-size: 12px;
+}
+
+/*Header*/
+.fondo-amarillo {
+    background-color: #EAC926;
+}
+
+header {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+header .mercado-liebre_logo {
+    align-self: flex-start;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0px 10px 0px;
+    width: 50%;
+}
+
+header .mercado-liebre_logo img {
+    width: 80%;
+}
+
+header .search {
+    margin: 20px 0px 10px 0px;
+    width: 50%;
+}
+
+header .search-bar {
+    width: 70%;
+}
+
+header .search-button {
+    width: 20%;
+}
+
+header .search-button i {
+    font-size: 1rem;
+}
+
+header .text {
+    width: 100%;
+    text-align: center;
+    font-size: 4vw;
+}
+
+header nav {
+    align-self: flex-start;
+    margin: 10px 0px 0px 20px;
+}
+
+header nav ul {
+    display: none;
+    list-style: none;
+    margin: 0px 0px 10px 0px;
+}
+
+header>a,
+header nav ul li a:link,
+header nav ul li a:visited {
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+}
+
+header .burger-menu {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #1259C3;
+    border-radius: 8px;
+    margin: 10px 0px 10px 0px;
+}
+
+header .burger-menu i {
+    color: white;
+    font-size: 30px;
+}
+
+body .banner img {
+    width: 100%;
+}
+
+/*Home*/
+main {
+    background-color: #ebebeb;
+    margin: 0px 0px 50px 0px;
+    width: 90vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+main section {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+main section h3 {
+    font-size: 24px;
+    align-self: flex-start;
+    margin: 10px 0px 10px 0px;
+    color: #666;
+}
+
+main section article {
+    width: 100%;
+    background-color: white;
+    margin: 0px 0px 10px 0px;
+    padding: 15px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center
+}
+
+main section article .imagen {
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+main section article .imagen img {
+    width: 100%;
+}
+
+main section article .icon {
+    margin: 0px 0px 5px 0px;
+    border: 1px solid #39b54a;
+    border-radius: 15px;
+    aspect-ratio: 1 / 1;
+    width: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    align-self: flex-end;
+}
+
+main section article .icon i {
+    color: #39b54a;
+    font-size: 3.5vw;
+    max-width: 100%;
+}
+
+main section article .precio-box {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 35%;
+}
+
+main section article .precio-box .precio {
+    font-size: 18px;
+}
+
+main section article .descuento-box {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 65%;
+}
+
+main section article .nombre-box h4,
+main section article .descuento-box .descuento {
+    font-size: 16px;
+}
+
+main section article .descuento-box .descuento {
+    color: #39b54a;
+}
+
+main section article .nombre-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+main section article .nombre-box h4 {
+    color: #666;
+}
+
+/*Footer*/
+footer ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    margin: 10px 0px 10px 0px;
+}
+
+footer ul li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0px 60px 40px 60px;
+}
+
+footer ul li i {
+    font-size: 30px;
+    color: #1259C3;
+    margin: 0px 0px 5px 0px;
+}
+
+footer ul li h4 strong {
+    font-size: 18px;
+    color: #666;
+}
+
+footer ul li p {
+    font-size: 12px;
+    text-align: center;
+}
+
+footer>h4 {
+    margin: 0px 0px 20px 20px;
+}
+
+footer>h4 strong {
+    color: #666;
+    font-size: 15px;
+}
+
+/*Tablet*/
+@media (min-width: 361px) {
+    /*Header*/
+    header .mercado-liebre_logo {
+        width: 32%;
+    }
+
+    header .search {
+        width: 32%
+    }
+
+    header .search .search-bar,
+    header .search .search-button {
+        font-size: 2vw;
+    }
+
+    header .text {
+        width: 32%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2.25vw;
+    }
+
+    header nav {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        margin: 10px;
+    }
+
+    header nav ul {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: center;
+        justify-content: space-evenly;
+        width: 100%;
+    }
+
+    header nav ul li a{
+        font-size: 2vw;
+    }
+
+    header .burger-menu {
+        display: none;
+    }
+
+    /*Home*/
+    main {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+
+    main section {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    main section h3 {
+        width: 100%;
+    }
+
+    main section article {
+        width: 47%;
+        box-shadow: 0px 0px 10px rgb(100, 100, 100);
+    }
+
+    main section article .icon i {
+        font-size: 1.75vw;
+    }
+
+}
+
+/*Desktop*/
+@media (min-width: 769px) {
+    /*Header*/
+    header .search .search-bar,
+    header .search .search-button {
+        font-size: 1vw;
+    }
+
+    header .text {
+        font-size: 1vw;
+    }
+
+    header nav ul li a {
+        font-size: 1vw;
+    }
+
+    /*Home*/
+    main section article {
+        width: 22%;
+    }
+}
