@@ -49,8 +49,8 @@
   </section>
   <main>
     <div class="register-container">
-      <h3>Datos de Usuario</h3>
-      <form action="#" method="post">
+      <h3>Registro</h3>
+      <form action="/home">
         <input type="text" name="userFullName" id="userFullName" placeholder="Nombre y Apellido" autocomplete="off"
           required />
         <input type="text" name="userName" id="userName" placeholder="Nombre de Usuario" autocomplete="off" required />
@@ -93,10 +93,14 @@
           </label>
         </div>
         <input type="file" name="userAvatar" id="userAvatar" />
-        <input type="password" name="userPassword" id="userPassword" placeholder="Contraseña" autocomplete="off" required />
-        <input type="password" name="userPasswordConfirm" id="userPasswordConfirm" placeholder="Confirmar Contraseña" autocomplete="off" required />
-        <button type="reset">Borrar</button>
-        <button type="submit">Enviar</button>
+        <input type="password" name="userPassword" id="userPassword" placeholder="Contraseña" autocomplete="off"
+          required />
+        <input type="password" name="userPasswordConfirm" id="userPasswordConfirm" placeholder="Confirmar Contraseña"
+          autocomplete="off" required />
+        <div class="form-buttons">
+          <button type="reset">Borrar</button>
+          <button type="submit">Enviar</button>
+        </div>
       </form>
     </div>
   </main>

@@ -49,7 +49,16 @@
   </section>
   <main>
     <div class="login-container">
-      <form action="#" method="post">
+      <h3>Login</h3>
+      <form action="/home">
+        <input type="text" name="userName" id="userName" placeholder="Nombre de Usuario" autocomplete="off" required />
+        <input type="password" name="userPassword" id="userPassword" placeholder="Contraseña" autocomplete="off"
+          required />
+        <div class="form-buttons">
+          <button type="reset">Borrar</button>
+          <button type="submit">Enviar</button>
+        </div>
+
       </form>
     </div>
   </main>

@@ -116,7 +116,7 @@ main {
 
 main .register-container {
     width: 80%;
-    height: 700px;
+    height: 750px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -129,19 +129,21 @@ main .register-container h3 {
 }
 
 main .register-container form {
-    width: 100%;
+    width: 70%;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     justify-content: center;
 }
 
 main .register-container form input {
-    margin: 10px 0px;
+    margin: 10px 0px 5px;
+    border: 1px solid white;
+    padding: 5px;
 }
 
 main .register-container form label {
-    margin: 5px 0px 0px 0px;
+    margin: 15px 0px 0px 0px;
     font-size: 15px;
     font-weight: bold;
 }
@@ -179,12 +181,21 @@ main .register-container form .userInterest-container label {
     font-weight: normal;
 }
 
-main .register-container form button {
-    background-color: #85b6ff;
+main .register-container form .form-buttons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: 5px 0px;
+}
+
+main .register-container form .form-buttons button {
+    border-radius: 5px;
+    background-color: #06a4ff;
     color: white;
-    margin: 5px 5px 0px 0px;
+    margin: 0px 5px 0px 0px;
     border: none;
-    padding: 5px;
+    padding: 10px;
 }
 
 /*Footer*/
