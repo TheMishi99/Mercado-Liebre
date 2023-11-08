@@ -17,17 +17,26 @@ Verde: #39b54a;
     font-size: 12px;
 }
 
-/*Header*/
-.fondo-amarillo {
-    background-color: #EAC926;
+body {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
 }
 
+header,
+.banner,
+footer {
+    width: 100%;
+}
+
+/*Header*/
 header {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    background-color: #EAC926;
 }
 
 header .mercado-liebre_logo {
@@ -63,7 +72,6 @@ header .search .search-button {
 header .search-bar {
     width: 85%;
     padding: 4px;
-    font-size: 2vw;
 }
 
 header .search-button {
@@ -84,7 +92,7 @@ header .search-button i {
 header .text {
     width: 100%;
     text-align: center;
-    font-size: 2.75vw;
+    font-size: 1rem;
 }
 
 header nav {
@@ -122,21 +130,26 @@ header .burger-menu i {
     font-size: 6vw;
 }
 
-body .banner img {
+.banner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.banner img {
     width: 100%;
 }
 
 /*Home*/
 main {
     background-color: #ebebeb;
-    margin: 0px 0px 50px 0px;
-    width: 90vw;
+    margin: 0px 0px 15px 0px;
+    width: 90%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     align-self: center;
-    justify-self: center;
 }
 
 main section {
@@ -144,11 +157,11 @@ main section {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: center;
 }
 
 main section h3 {
-    font-size: 2.7vw;
+    font-size: 2rem;
     align-self: flex-start;
     margin: 10px 0px 10px 0px;
     color: #666;
@@ -204,7 +217,7 @@ main section article .precio-box {
 }
 
 main section article .precio-box .precio {
-    font-size: 2.3vw;
+    font-size: 1.5rem;
 }
 
 main section article .descuento-box {
@@ -216,7 +229,7 @@ main section article .descuento-box {
 
 main section article .nombre-box h4,
 main section article .descuento-box .descuento {
-    font-size: 2.5vw;
+    font-size: 1.33rem;
 }
 
 main section article .descuento-box .descuento {
@@ -237,6 +250,9 @@ main section article .nombre-box h4 {
 }
 
 /*Footer*/
+footer {
+    margin: 15px 0px 0px;
+}
 footer ul {
     list-style: none;
     display: flex;
@@ -252,18 +268,18 @@ footer ul li {
 }
 
 footer ul li i {
-    font-size: 6vw;
+    font-size: 2em;
     color: #1259C3;
-    margin: 0px 0px 5px 0px;
+    margin: 0px 0px 10px 0px;
 }
 
 footer ul li h4 strong {
-    font-size: 3vw;
+    font-size: 0.8rem;
     color: #666;
 }
 
 footer ul li p {
-    font-size: 2vw;
+    font-size: 0.6rem;
     text-align: center;
 }
 
@@ -273,7 +289,7 @@ footer>h4 {
 
 footer>h4 strong {
     color: #666;
-    font-size: 2.7vw;
+    font-size: 0.6rem;
 }
 
 /*Tablet*/

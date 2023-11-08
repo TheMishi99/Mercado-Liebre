@@ -18,16 +18,13 @@ Verde: #39b54a;
 }
 
 /*Header*/
-.fondo-amarillo {
-    background-color: #EAC926;
-}
-
 header {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    background-color: #EAC926;
 }
 
 header .mercado-liebre_logo {
