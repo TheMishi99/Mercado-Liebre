@@ -46,24 +46,44 @@ header .mercado-liebre_logo img {
 header .search {
     margin: 20px 0px 10px 0px;
     width: 50%;
+    height: 2vw;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+header .search .search-bar,
+header .search .search-button {
+    height: 5vw;
+    border-radius: 8px;
+    border: none;
 }
 
 header .search-bar {
-    width: 70%;
+    width: 85%;
+    padding: 4px;
+    font-size: 2vw;
 }
 
 header .search-button {
-    width: 20%;
+    width: 10%;
+    background-color: #1259C3;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    color: white;
 }
 
 header .search-button i {
-    font-size: 1rem;
+    font-size: 2.5vw;
 }
 
 header .text {
     width: 100%;
     text-align: center;
-    font-size: 4vw;
+    font-size: 2.75vw;
 }
 
 header nav {
@@ -86,8 +106,8 @@ header nav ul li a:visited {
 }
 
 header .burger-menu {
-    width: 40px;
-    height: 40px;
+    width: 8vw;
+    height: 8vw;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -98,7 +118,7 @@ header .burger-menu {
 
 header .burger-menu i {
     color: white;
-    font-size: 30px;
+    font-size: 6vw;
 }
 
 body .banner img {
@@ -210,22 +230,22 @@ footer ul li {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 0px 60px 40px 60px;
+    margin: 0px 90px 40px 90px;
 }
 
 footer ul li i {
-    font-size: 30px;
+    font-size: 6vw;
     color: #1259C3;
     margin: 0px 0px 5px 0px;
 }
 
 footer ul li h4 strong {
-    font-size: 18px;
+    font-size: 2.75vw;
     color: #666;
 }
 
 footer ul li p {
-    font-size: 12px;
+    font-size: 2vw;
     text-align: center;
 }
 
@@ -235,22 +255,52 @@ footer>h4 {
 
 footer>h4 strong {
     color: #666;
-    font-size: 15px;
+    font-size: 3vw;
 }
 
 /*Tablet*/
 @media (min-width: 361px) {
+
+    /*Header*/
     header .mercado-liebre_logo {
-        width: 32%;
+        width: 33%;
     }
 
     header .search {
-        width: 32%
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 32%;
+        height: 3vw;
     }
+
 
     header .search .search-bar,
     header .search .search-button {
-        font-size: 2vw;
+        height: 100%;
+        border-radius: 8px;
+    }
+
+    header .search .search-bar {
+        width: 90%;
+    }
+
+    header .search .search-button {
+        width: 10%;
+        border: none;
+        background-color: #1259C3;
+        color: white;
+    }
+
+    header .search .search-button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    header .search .search-bar,
+    header .search .search-button i {
+        font-size: 1.4vw;
     }
 
     header .text {
@@ -258,7 +308,7 @@ footer>h4 strong {
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 2.25vw;
+        font-size: 1.4vw;
     }
 
     header nav {
@@ -281,17 +331,53 @@ footer>h4 strong {
     }
 
     header nav ul li a {
-        font-size: 2vw;
+        font-size: 1.5vw;
+    }
+
+    header nav ul li a i {
+        font-size: 1.5vw;
     }
 
     header .burger-menu {
         display: none;
     }
+
+    /*Home*/
+    main {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+
+    main section {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    main section h3 {
+        width: 100%;
+    }
+
+    main section article {
+        width: 47%;
+        box-shadow: 0px 0px 10px rgb(100, 100, 100);
+    }
+
+    main section article .icon i {
+        font-size: 1.75vw;
+    }
+
 }
 
 /*Desktop*/
 @media (min-width: 769px) {
 
+    /*Header*/
     header .search .search-bar,
     header .search .search-button {
         font-size: 1vw;
@@ -303,5 +389,10 @@ footer>h4 strong {
 
     header nav ul li a {
         font-size: 1vw;
+    }
+
+    /*Home*/
+    main section article {
+        width: 22%;
     }
 }
