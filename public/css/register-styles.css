@@ -179,6 +179,14 @@ main .register-container form .userInterest-container label {
     font-weight: normal;
 }
 
+main .register-container form button {
+    background-color: #85b6ff;
+    color: white;
+    margin: 5px 5px 0px 0px;
+    border: none;
+    padding: 5px;
+}
+
 /*Footer*/
 footer ul {
     list-style: none;

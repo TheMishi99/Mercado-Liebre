@@ -13,7 +13,7 @@ app.listen(
 )
 
 app.get(
-    "/home", (req, res) => {
+    "/", (req, res) => {
         res.sendFile(path.join(__dirname, "views", "home.html"));
     }
 )
