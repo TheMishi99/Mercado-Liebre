@@ -74,6 +74,7 @@ header .search-button {
     align-items: center;
     justify-content: center;
     color: white;
+    cursor: pointer;
 }
 
 header .search-button i {

@@ -74,6 +74,7 @@ header .search-button {
     align-items: center;
     justify-content: center;
     color: white;
+    cursor: pointer;
 }
 
 header .search-button i {
@@ -136,7 +137,7 @@ main {
 
 main .register-container {
     width: 80%;
-    height: 800px;
+    height: 250vw;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -345,6 +346,8 @@ footer>h4 strong {
         display: none;
     }
 
+    /*Register*/
+
     /*Footer*/
     footer ul li i {
         font-size: 6vw;
@@ -369,8 +372,23 @@ footer>h4 strong {
 
     /*Header*/
 
-    /*Home*/
-    main section article {
-        width: 22%;
+    /*Register*/
+
+    /*Footer*/
+    footer ul li i {
+        font-size: 3vw;
+    }
+
+    footer ul li h4 strong {
+        font-size: 1.5vw;
+    }
+
+    footer ul li p {
+        font-size: 1vw;
+    }
+
+    footer>h4 strong {
+        color: #666;
+        font-size: 1.2vw;
     }
 }
