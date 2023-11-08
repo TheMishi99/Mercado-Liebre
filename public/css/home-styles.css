@@ -133,7 +133,9 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: center;
+    align-self: center;
+    justify-self: center;
 }
 
 main section {
@@ -197,6 +199,7 @@ main section article .precio-box {
     align-items: center;
     justify-content: flex-start;
     width: 35%;
+    margin: 5px 0px;
 }
 
 main section article .precio-box .precio {
@@ -212,7 +215,7 @@ main section article .descuento-box {
 
 main section article .nombre-box h4,
 main section article .descuento-box .descuento {
-    font-size: 2.1vw;
+    font-size: 2.5vw;
 }
 
 main section article .descuento-box .descuento {
@@ -227,7 +230,9 @@ main section article .nombre-box {
 }
 
 main section article .nombre-box h4 {
+    width: 90%;
     color: #666;
+    text-align: center;
 }
 
 /*Footer*/
@@ -252,7 +257,7 @@ footer ul li i {
 }
 
 footer ul li h4 strong {
-    font-size: 2.75vw;
+    font-size: 3vw;
     color: #666;
 }
 
@@ -267,7 +272,7 @@ footer>h4 {
 
 footer>h4 strong {
     color: #666;
-    font-size: 3vw;
+    font-size: 2.7vw;
 }
 
 /*Tablet*/
@@ -304,7 +309,7 @@ footer>h4 strong {
         color: white;
     }
 
-    header .search .search-button {
+    header .search .search-button button {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -338,16 +343,13 @@ footer>h4 strong {
         flex-direction: row;
         flex-wrap: nowrap;
         align-items: center;
-        justify-content: space-evenly;
-        width: 100%;
+        justify-content: space-between;
+        width: 45%;
     }
 
-    header nav ul li a {
-        font-size: 1.5vw;
-    }
-
+    header nav ul li a,
     header nav ul li a i {
-        font-size: 1.5vw;
+        font-size: 1.75vw;
     }
 
     header .burger-menu {
@@ -378,33 +380,78 @@ footer>h4 strong {
     main section article {
         width: 47%;
         box-shadow: 0px 0px 10px rgb(100, 100, 100);
+        height: 50vw;
     }
 
     main section article .icon i {
-        font-size: 1.75vw;
+        font-size: 1.7vw;
     }
 
+    /*Footer*/
+    footer ul li i {
+        font-size: 6vw;
+    }
+
+    footer ul li h4 strong {
+        font-size: 3vw;
+    }
+
+    footer ul li p {
+        font-size: 2vw;
+    }
+
+    footer>h4 strong {
+        color: #666;
+        font-size: 2.7vw;
+    }
 }
 
 /*Desktop*/
 @media (min-width: 769px) {
-
     /*Header*/
-    header .search .search-bar,
-    header .search .search-button {
-        font-size: 1vw;
-    }
-
-    header .text {
-        font-size: 1vw;
-    }
-
-    header nav ul li a {
-        font-size: 1vw;
-    }
 
     /*Home*/
     main section article {
-        width: 22%;
+        width: 23%;
+        height: 30vw;
+    }
+
+    main section article .imagen img {
+        height: 15vw;
+    }
+
+    main section article .icon {
+        width: 10%;
+    }
+
+    main section article .icon i {
+        font-size: 0.9vw;
+    }
+
+    main section article .precio-box .precio,
+    main section article .descuento-box .descuento {
+        font-size: 1.2vw;
+    }
+
+    main section article .nombre-box h4 {
+        font-size: 1.2vw;
+    }
+
+    /*Footer*/
+    footer ul li i {
+        font-size: 3vw;
+    }
+
+    footer ul li h4 strong {
+        font-size: 1.5vw;
+    }
+
+    footer ul li p {
+        font-size: 1vw;
+    }
+
+    footer>h4 strong {
+        color: #666;
+        font-size: 1.2vw;
     }
 }

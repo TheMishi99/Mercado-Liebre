@@ -145,7 +145,7 @@ main .login-container {
 
 main .login-container h3 {
     align-self: center;
-    font-size: 20px;
+    font-size: 5vw;
 }
 
 main .login-container form {
@@ -154,6 +154,11 @@ main .login-container form {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+
+main .login-container form input[type="text"],
+main .login-container form input[type="password"] {
+    width: 60vw;
 }
 
 main .login-container form input {
@@ -201,7 +206,7 @@ footer ul li i {
 }
 
 footer ul li h4 strong {
-    font-size: 2.75vw;
+    font-size: 3vw;
     color: #666;
 }
 
@@ -216,7 +221,7 @@ footer>h4 {
 
 footer>h4 strong {
     color: #666;
-    font-size: 3vw;
+    font-size: 2.7vw;
 }
 
 /*Tablet*/
@@ -253,7 +258,7 @@ footer>h4 strong {
         color: white;
     }
 
-    header .search .search-button {
+    header .search .search-button button {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -287,70 +292,42 @@ footer>h4 strong {
         flex-direction: row;
         flex-wrap: nowrap;
         align-items: center;
-        justify-content: space-evenly;
-        width: 100%;
+        justify-content: space-between;
+        width: 45%;
     }
 
-    header nav ul li a {
-        font-size: 1.5vw;
-    }
-
+    header nav ul li a,
     header nav ul li a i {
-        font-size: 1.5vw;
+        font-size: 1.75vw;
     }
 
     header .burger-menu {
         display: none;
     }
 
-    /*Home*/
-    main {
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-evenly;
+    /*Footer*/
+    footer ul li i {
+        font-size: 6vw;
     }
 
-    main section {
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
+    footer ul li h4 strong {
+        font-size: 3vw;
     }
 
-    main section h3 {
-        width: 100%;
+    footer ul li p {
+        font-size: 2vw;
     }
 
-    main section article {
-        width: 47%;
-        box-shadow: 0px 0px 10px rgb(100, 100, 100);
+    footer>h4 strong {
+        color: #666;
+        font-size: 2.7vw;
     }
-
-    main section article .icon i {
-        font-size: 1.75vw;
-    }
-
 }
 
 /*Desktop*/
 @media (min-width: 769px) {
 
     /*Header*/
-    header .search .search-bar,
-    header .search .search-button {
-        font-size: 1vw;
-    }
-
-    header .text {
-        font-size: 1vw;
-    }
-
-    header nav ul li a {
-        font-size: 1vw;
-    }
 
     /*Home*/
     main section article {
