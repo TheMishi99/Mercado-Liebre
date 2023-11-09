@@ -29,6 +29,14 @@ footer {
     width: 100%;
 }
 
+body .go-up-button {
+    position: fixed;
+    width: 10px;
+    z-index: 10;
+    bottom: 10px;
+    right: 10px;
+}
+
 /*Header*/
 header {
     display: flex;
