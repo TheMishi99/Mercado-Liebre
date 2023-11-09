@@ -46,10 +46,11 @@ body .go-up-button {
     justify-content: center;
 }
 
-body .go-up-button:link, 
+body .go-up-button:link,
 body .go-up-button:visited {
     text-decoration: none;
 }
+
 body .go-up-button i {
     color: white;
     font-size: 1.5rem;
@@ -423,13 +424,17 @@ footer>h4 strong {
     }
 
     main section article {
-        width: 47%;
-        box-shadow: 0px 0px 10px rgb(100, 100, 100);
+        width: 45%;
         height: 50vw;
     }
 
     main section article .icon i {
         font-size: 1.7vw;
+        transition: rotate 1000ms;
+    }
+
+    main section article .icon i:hover {
+        rotate: -90deg;
     }
 
     main section article .precio-box .precio {
@@ -466,8 +471,13 @@ footer>h4 strong {
 
     /*Home*/
     main section article {
-        width: 23%;
+        width: 22%;
         height: 30vw;
+        transition: box-shadow 500ms;
+    }
+
+    main section article:hover {
+        box-shadow: 0px 0px 10px rgb(100, 100, 100);
     }
 
     main section article .imagen img {
@@ -492,8 +502,24 @@ footer>h4 strong {
     }
 
     /*Footer*/
+    footer ul {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+
+    footer ul li {
+        margin: 30px 40px;
+    }
+
     footer ul li i {
         font-size: 3vw;
+        transition: color 200ms;
+    }
+
+    footer ul li i:hover {
+        color: #39b54a;
     }
 
     footer ul li h4 strong {
