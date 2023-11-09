@@ -29,6 +29,33 @@ footer {
     width: 100%;
 }
 
+body .go-up-button {
+    position: fixed;
+    border: 1px solid black;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    aspect-ratio: 1 / 1;
+    z-index: 10;
+    bottom: 10px;
+    right: 10px;
+    text-align: center;
+    background-color: #EAC926;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+body .go-up-button:link,
+body .go-up-button:visited {
+    text-decoration: none;
+}
+
+body .go-up-button i {
+    color: white;
+    font-size: 1.5rem;
+}
+
 /*Header*/
 header {
     display: flex;
@@ -358,7 +385,6 @@ footer>h4 strong {
 
 /*Desktop*/
 @media (min-width: 769px) {
-
     /*Header*/
 
     /*Login*/
@@ -367,8 +393,24 @@ footer>h4 strong {
     }
 
     /*Footer*/
+    footer ul {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+
+    footer ul li {
+        margin: 30px 40px;
+    }
+
     footer ul li i {
         font-size: 3vw;
+        transition: color 200ms;
+    }
+
+    footer ul li i:hover {
+        color: #39b54a;
     }
 
     footer ul li h4 strong {
