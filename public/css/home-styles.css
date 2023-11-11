@@ -62,7 +62,7 @@ header {
     flex-wrap: wrap;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     background-color: #EAC926;
 }
 
@@ -71,18 +71,18 @@ header .mercado-liebre_logo {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 20px 0px 10px 0px;
+    padding: 10px;
     width: 50%;
 }
 
 header .mercado-liebre_logo img {
-    width: 80%;
+    width: 100%;
 }
 
 header .search {
-    margin: 20px 0px 10px 0px;
+    margin: 10px 0px 10px 0px;
     width: 50%;
-    height: 2vw;
+    height: 25px;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -91,18 +91,18 @@ header .search {
 
 header .search .search-bar,
 header .search .search-button {
-    height: 5vw;
+    height: 100%;
     border-radius: 8px;
     border: none;
 }
 
 header .search-bar {
-    width: 85%;
+    width: 75%;
     padding: 4px;
 }
 
 header .search-button {
-    width: 10%;
+    width: 15%;
     background-color: #1259C3;
     display: flex;
     flex-direction: row;
@@ -110,10 +110,11 @@ header .search-button {
     justify-content: center;
     color: white;
     cursor: pointer;
+    border: none;
 }
 
 header .search-button i {
-    font-size: 2.5vw;
+    font-size: 0.8rem;
 }
 
 header .text {
@@ -123,17 +124,20 @@ header .text {
 }
 
 header nav {
-    align-self: flex-start;
-    margin: 10px 0px 0px 20px;
+    width: 100%;
+    padding: 10px;
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-evenly;
 }
 
 header nav ul {
-    display: none;
     list-style: none;
     margin: 0px 0px 10px 0px;
 }
 
-header>a,
+header .burger-menu a,
 header nav ul li a:link,
 header nav ul li a:visited {
     text-decoration: none;
@@ -142,19 +146,22 @@ header nav ul li a:visited {
 }
 
 header .burger-menu {
-    width: 8vw;
-    height: 8vw;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #1259C3;
     border-radius: 8px;
     margin: 10px 0px 10px 0px;
+    justify-self: center;
 }
 
 header .burger-menu i {
+    padding: 4px;
     color: white;
-    font-size: 6vw;
+    font-size: 20px;
+    border: 1px solid #1259C3;
+    background-color: #1259C3;
+    border-radius: 5px;
 }
 
 .banner {
@@ -277,7 +284,12 @@ main section article .nombre-box h4 {
 }
 
 /*Footer*/
+/*Footer*/
 footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
     margin: 15px 0px 0px;
 }
 
@@ -301,6 +313,10 @@ footer ul li i {
     margin: 0px 0px 10px 0px;
 }
 
+footer ul li h4 {
+    text-align: center;
+}
+
 footer ul li h4 strong {
     font-size: 0.8rem;
     color: #666;
@@ -313,6 +329,7 @@ footer ul li p {
 
 footer>h4 {
     margin: 0px 0px 20px 20px;
+    align-self: flex-start;
 }
 
 footer>h4 strong {
@@ -329,48 +346,21 @@ footer>h4 strong {
     }
 
     header .search {
-        display: flex;
-        align-items: center;
-        justify-content: center;
         width: 32%;
-        height: 3vw;
-    }
-
-
-    header .search .search-bar,
-    header .search .search-button {
-        height: 100%;
-        border-radius: 8px;
+        height: 20px;
     }
 
     header .search .search-bar {
-        width: 90%;
+        font-size: 0.6rem;
     }
 
-    header .search .search-button {
-        width: 10%;
-        border: none;
-        background-color: #1259C3;
-        color: white;
-    }
-
-    header .search .search-button button {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    header .search .search-bar,
     header .search .search-button i {
-        font-size: 1.4vw;
+        font-size: 0.8rem;
     }
 
     header .text {
         width: 32%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 1.4vw;
+        font-size: 0.7rem;
     }
 
     header nav {
@@ -379,23 +369,39 @@ footer>h4 strong {
         flex-wrap: nowrap;
         align-items: center;
         justify-content: space-between;
-        width: 100%;
-        margin: 10px;
     }
 
     header nav ul {
+        margin: 0;
         display: flex;
         flex-direction: row;
         flex-wrap: nowrap;
         align-items: center;
-        justify-content: space-between;
-        width: 44%;
+        justify-content: space-evenly;
+        width: 50%;
     }
 
-    header nav ul li a,
-    header nav ul li a i {
-        font-size: 1.50vw;
+    header nav ul li {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid #1259C3;
+        border-radius: 5px;
+        background-color: #1259C3;
+        padding: 2px;
     }
+
+    header nav ul li:hover {
+        background-color: #06a4ff;
+    }
+
+    header nav ul li a:link,
+    header nav ul li a:visited,
+    header nav ul li a i {
+        font-size: 0.62rem;
+        color: white;
+    }
+
 
     header .burger-menu {
         display: none;
@@ -433,7 +439,7 @@ footer>h4 strong {
         transition: rotate 1000ms;
     }
 
-    main section article .icon i:hover {
+    main section article:hover .icon i {
         rotate: -90deg;
     }
 
@@ -446,28 +452,59 @@ footer>h4 strong {
         font-size: 0.6rem;
     }
 
+    main section article .nombre-box {
+        display: none;
+    }
+
+    main section article:hover .nombre-box {
+        display: block;
+    }
+
     /*Footer*/
     footer ul li i {
-        font-size: 6vw;
+        font-size: 2.5em;
     }
 
     footer ul li h4 strong {
-        font-size: 3vw;
+        font-size: 1rem;
     }
 
     footer ul li p {
-        font-size: 2vw;
+        font-size: 0.8rem;
     }
 
     footer>h4 strong {
         color: #666;
-        font-size: 2.7vw;
+        font-size: 0.8rem;
     }
 }
 
 /*Desktop*/
 @media (min-width: 769px) {
+
     /*Header*/
+    header .search {
+        height: 30px;
+    }
+
+    header .search .search-bar {
+        font-size: 1.2rem;
+    }
+
+    header .search .search-button i {
+        font-size: 1.6rem;
+    }
+
+    header .text {
+        font-size: 1.3rem;
+    }
+
+    header nav ul li a:link,
+    header nav ul li a:visited,
+    header nav ul li a i {
+        font-size: 1.4rem;
+        color: white;
+    }
 
     /*Home*/
     main section article {
@@ -514,7 +551,7 @@ footer>h4 strong {
     }
 
     footer ul li i {
-        font-size: 3vw;
+        font-size: 3em;
         transition: color 200ms;
     }
 
@@ -523,15 +560,15 @@ footer>h4 strong {
     }
 
     footer ul li h4 strong {
-        font-size: 1.5vw;
+        font-size: 1.2rem;
     }
 
     footer ul li p {
-        font-size: 1vw;
+        font-size: 1rem;
     }
 
     footer>h4 strong {
         color: #666;
-        font-size: 1.2vw;
+        font-size: 1rem;
     }
 }

@@ -29,40 +29,13 @@ footer {
     width: 100%;
 }
 
-body .go-up-button {
-    position: fixed;
-    border: 1px solid black;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    aspect-ratio: 1 / 1;
-    z-index: 10;
-    bottom: 10px;
-    right: 10px;
-    text-align: center;
-    background-color: #EAC926;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-body .go-up-button:link,
-body .go-up-button:visited {
-    text-decoration: none;
-}
-
-body .go-up-button i {
-    color: white;
-    font-size: 1.5rem;
-}
-
 /*Header*/
 header {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     background-color: #EAC926;
 }
 
@@ -71,18 +44,18 @@ header .mercado-liebre_logo {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 20px 0px 10px 0px;
+    padding: 10px;
     width: 50%;
 }
 
 header .mercado-liebre_logo img {
-    width: 80%;
+    width: 100%;
 }
 
 header .search {
-    margin: 20px 0px 10px 0px;
+    margin: 10px 0px 10px 0px;
     width: 50%;
-    height: 2vw;
+    height: 25px;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -91,18 +64,18 @@ header .search {
 
 header .search .search-bar,
 header .search .search-button {
-    height: 5vw;
+    height: 100%;
     border-radius: 8px;
     border: none;
 }
 
 header .search-bar {
-    width: 85%;
+    width: 75%;
     padding: 4px;
 }
 
 header .search-button {
-    width: 10%;
+    width: 15%;
     background-color: #1259C3;
     display: flex;
     flex-direction: row;
@@ -110,10 +83,11 @@ header .search-button {
     justify-content: center;
     color: white;
     cursor: pointer;
+    border: none;
 }
 
 header .search-button i {
-    font-size: 2.5vw;
+    font-size: 0.8rem;
 }
 
 header .text {
@@ -123,17 +97,20 @@ header .text {
 }
 
 header nav {
-    align-self: flex-start;
-    margin: 10px 0px 0px 20px;
+    width: 100%;
+    padding: 10px;
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-evenly;
 }
 
 header nav ul {
-    display: none;
     list-style: none;
     margin: 0px 0px 10px 0px;
 }
 
-header>a,
+header .burger-menu a,
 header nav ul li a:link,
 header nav ul li a:visited {
     text-decoration: none;
@@ -142,19 +119,22 @@ header nav ul li a:visited {
 }
 
 header .burger-menu {
-    width: 8vw;
-    height: 8vw;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #1259C3;
     border-radius: 8px;
     margin: 10px 0px 10px 0px;
+    justify-self: center;
 }
 
 header .burger-menu i {
+    padding: 4px;
     color: white;
-    font-size: 6vw;
+    font-size: 20px;
+    border: 1px solid #1259C3;
+    background-color: #1259C3;
+    border-radius: 5px;
 }
 
 .banner {
@@ -178,21 +158,26 @@ main {
 }
 
 main .register-container {
-    width: 80%;
-    height: 250vw;
+    margin: 20px 0px;
+    width: 275px;
+    height: 650px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    border: 1px solid #EAC926;
+    border-radius: 10px;
 }
 
 main .register-container h3 {
+    width: 100%;
+    text-align: center;
     align-self: center;
-    font-size: 1.25rem;
+    font-size: 1.4rem;
 }
 
 main .register-container form {
-    width: 70%;
+    width: 90%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -201,7 +186,13 @@ main .register-container form {
 
 main .register-container form input[type="text"],
 main .register-container form input[type="email"],
-main .register-container form input[type="password"] {
+main .register-container form input[type="password"],
+main .register-container form input[type="date"] {
+    width: 100%;
+    font-size: 0.8rem;
+}
+
+main .register-container form input[type="file"] {
     width: 100%;
     font-size: 0.75rem;
 }
@@ -214,40 +205,57 @@ main .register-container form input {
 
 main .register-container form label {
     margin: 15px 0px 0px 0px;
-    font-size: 4vw;
+    font-size: 1rem;
     font-weight: bold;
+    align-self: flex-start;
 }
 
 main .register-container form .userProfile-container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+main .register-container form .userProfile-container .option {
+    width: 30%;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-evenly;
 }
 
-main .register-container form .userProfile-container input {
+main .register-container form .userProfile-container .option input {
     margin: 10px 2px 10px 0px;
 }
 
-main .register-container form .userProfile-container label {
+main .register-container form .userProfile-container .option label {
     margin: 10px 10px 10px 0px;
-    font-size: 3.5vw;
-    font-weight: normal;
+    font-size: 0.7rem;
 }
 
 main .register-container form .userInterest-container {
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
 
-main .register-container form .userInterest-container input {
+main .register-container form .userInterest-container .option {
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+main .register-container form .userInterest-container .option input {
     margin: 5px 2px 5px 0px;
 }
 
-main .register-container form .userInterest-container label {
+main .register-container form .userInterest-container .option label {
     margin: 5px 10px 5px 0px;
-    font-size: 3.5vw;
+    font-size: 0.7rem;
     font-weight: normal;
 }
 
@@ -256,7 +264,7 @@ main .register-container form .form-buttons {
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    margin: 5px 0px;
+    margin: 10px 0px;
 }
 
 main .register-container form .form-buttons button {
@@ -265,11 +273,16 @@ main .register-container form .form-buttons button {
     color: white;
     margin: 0px 5px 0px 0px;
     border: none;
-    padding: 10px;
+    padding: 8px;
+    transition: background-color 200ms;
 }
 
 /*Footer*/
 footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
     margin: 15px 0px 0px;
 }
 
@@ -293,6 +306,10 @@ footer ul li i {
     margin: 0px 0px 10px 0px;
 }
 
+footer ul li h4 {
+    text-align: center;
+}
+
 footer ul li h4 strong {
     font-size: 0.8rem;
     color: #666;
@@ -305,6 +322,7 @@ footer ul li p {
 
 footer>h4 {
     margin: 0px 0px 20px 20px;
+    align-self: flex-start;
 }
 
 footer>h4 strong {
@@ -321,48 +339,21 @@ footer>h4 strong {
     }
 
     header .search {
-        display: flex;
-        align-items: center;
-        justify-content: center;
         width: 32%;
-        height: 3vw;
-    }
-
-
-    header .search .search-bar,
-    header .search .search-button {
-        height: 100%;
-        border-radius: 8px;
+        height: 20px;
     }
 
     header .search .search-bar {
-        width: 90%;
+        font-size: 0.6rem;
     }
 
-    header .search .search-button {
-        width: 10%;
-        border: none;
-        background-color: #1259C3;
-        color: white;
-    }
-
-    header .search .search-button button {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    header .search .search-bar,
     header .search .search-button i {
-        font-size: 1.4vw;
+        font-size: 0.8rem;
     }
 
     header .text {
         width: 32%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 1.4vw;
+        font-size: 0.7rem;
     }
 
     header nav {
@@ -371,23 +362,39 @@ footer>h4 strong {
         flex-wrap: nowrap;
         align-items: center;
         justify-content: space-between;
-        width: 100%;
-        margin: 10px;
     }
 
     header nav ul {
+        margin: 0;
         display: flex;
         flex-direction: row;
         flex-wrap: nowrap;
         align-items: center;
-        justify-content: space-between;
-        width: 44%;
+        justify-content: space-evenly;
+        width: 50%;
     }
 
-    header nav ul li a,
-    header nav ul li a i {
-        font-size: 1.50vw;
+    header nav ul li {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid #1259C3;
+        border-radius: 5px;
+        background-color: #1259C3;
+        padding: 2px;
     }
+
+    header nav ul li:hover {
+        background-color: #06a4ff;
+    }
+
+    header nav ul li a:link,
+    header nav ul li a:visited,
+    header nav ul li a i {
+        font-size: 0.62rem;
+        color: white;
+    }
+
 
     header .burger-menu {
         display: none;
@@ -395,36 +402,130 @@ footer>h4 strong {
 
     /*Register*/
     main .register-container {
-        height: 230vw;
+        width: 295px;
+        height: 670px;
+    }
+
+    main .register-container h3 {
+        font-size: 1.5rem;
+    }
+
+    main .register-container form input[type="text"],
+    main .register-container form input[type="email"],
+    main .register-container form input[type="password"],
+    main .register-container form input[type="date"] {
+        font-size: 0.9rem;
+    }
+
+    main .register-container form input[type="file"] {
+        font-size: 0.79rem;
+    }
+
+    main .register-container form label {
+        font-size: 1.1rem;
+    }
+
+    main .register-container form .userProfile-container .option label {
+        font-size: 0.8rem;
+    }
+
+    main .register-container form .userInterest-container .option label {
+        font-size: 0.8rem;
+    }
+
+    main .register-container form .form-buttons button {
+        font-size: 0.8rem;
+    }
+
+    main .register-container form .form-buttons button:hover {
+        background-color: #0022AA;
     }
 
     /*Footer*/
     footer ul li i {
-        font-size: 6vw;
+        font-size: 2.5em;
     }
 
     footer ul li h4 strong {
-        font-size: 3vw;
+        font-size: 1rem;
     }
 
     footer ul li p {
-        font-size: 2vw;
+        font-size: 0.8rem;
     }
 
     footer>h4 strong {
         color: #666;
-        font-size: 2.7vw;
+        font-size: 0.8rem;
     }
 }
 
 /*Desktop*/
 @media (min-width: 769px) {
-    /*Header*/
 
+    /*Header*/
+    header .search {
+        height: 30px;
+    }
+
+    header .search .search-bar {
+        font-size: 1.2rem;
+    }
+
+    header .search .search-button i {
+        font-size: 1.6rem;
+    }
+
+    header .text {
+        font-size: 1.3rem;
+    }
+
+    header nav ul li a:link,
+    header nav ul li a:visited,
+    header nav ul li a i {
+        font-size: 1.4rem;
+        color: white;
+    }
 
     /*Register*/
     main .register-container {
-        height: 130vw;
+        width: 350px;
+        height: 730px;
+    }
+
+    main .register-container h3 {
+        font-size: 2rem;
+    }
+
+    main .register-container form input[type="text"],
+    main .register-container form input[type="email"],
+    main .register-container form input[type="password"],
+    main .register-container form input[type="date"] {
+        font-size: 1.4rem;
+    }
+
+    main .register-container form input[type="file"] {
+        font-size: 0.95rem;
+    }
+
+    main .register-container form label {
+        font-size: 1.3rem;
+    }
+
+    main .register-container form .userProfile-container .option label {
+        font-size: 1rem;
+    }
+
+    main .register-container form .userInterest-container .option label {
+        font-size: 1rem;
+    }
+
+    main .register-container form .form-buttons button {
+        font-size: 1rem;
+    }
+
+    main .register-container form .userInterest-container .option {
+        width: 33%;
     }
 
     /*Footer*/
@@ -440,7 +541,7 @@ footer>h4 strong {
     }
 
     footer ul li i {
-        font-size: 3vw;
+        font-size: 3em;
         transition: color 200ms;
     }
 
@@ -449,15 +550,15 @@ footer>h4 strong {
     }
 
     footer ul li h4 strong {
-        font-size: 1.5vw;
+        font-size: 1.2rem;
     }
 
     footer ul li p {
-        font-size: 1vw;
+        font-size: 1rem;
     }
 
     footer>h4 strong {
         color: #666;
-        font-size: 1.2vw;
+        font-size: 1rem;
     }
 }

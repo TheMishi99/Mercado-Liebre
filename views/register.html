@@ -27,6 +27,11 @@
       <i class="fa-solid fa-hand-holding-dollar"></i>
       Comprá en cuotas y sin tarjeta de crédito
     </p>
+    <div class="burger-menu">
+      <a href="#">
+        <i class="fas fa-bars"></i>
+      </a>
+    </div>
     <nav>
       <ul>
         <li><a href="#ofertas">Ofertas</a></li>
@@ -40,9 +45,6 @@
         <li><a href="#">Mis compras <i class="fa-solid fa-cart-shopping"></i></a></li>
       </ul>
     </nav>
-    <a href="#" class="burger-menu">
-      <i class="fas fa-bars"></i>
-    </a>
   </header>
   <section class="banner">
     <img src="images/img-home-banner.jpg" width="360" alt="Banner de ofertas">
@@ -50,7 +52,7 @@
   <main>
     <div class="register-container">
       <h3>Registro</h3>
-      <form action="/home">
+      <form action="/">
         <input type="text" name="userFullName" id="userFullName" placeholder="Nombre y Apellido" autocomplete="off"
           required />
         <input type="text" name="userName" id="userName" placeholder="Nombre de Usuario" autocomplete="off" required />
@@ -60,39 +62,39 @@
         <input type="text" name="userAdress" id="userAdress" placeholder="Domicilio" autocomplete="off" required />
         <label>Perfil de Usuario</label>
         <div class="userProfile-container">
-          <label for="buyer">
+          <div class="option">
             <input type="radio" name="userProfile" id="buyer" value="vendor" />
-            Comprador
-          </label>
-          <label for="vendor">
+            <label for="buyer">Comprador</label>
+          </div>
+          <div class="option">
             <input type="radio" name="userProfile" id="vendor" value="vendor" />
-            Vendedor
-          </label>
+            <label for="vendor">Vendedor</label>
+          </div>
         </div>
         <label>Intereses</label>
         <div class="userInterest-container">
-          <label>
+          <div class="option">
             <input type="checkbox" name="userInterest" id="electro" value="electro">
-            Electro
-          </label>
-          <label>
+            <label for="electro">Electro</label>
+          </div>
+          <div class="option">
             <input type="checkbox" name="userInterest" id="moda" value="moda">
-            Moda
-          </label>
-          <label>
+            <label for="moda">Moda</label>
+          </div>
+          <div class="option">
             <input type="checkbox" name="userInterest" id="hogar" value="hogar">
-            Hogar
-          </label>
-          <label>
+            <label for="hogar">Hogar</label>
+          </div>
+          <div class="option">
             <input type="checkbox" name="userInterest" id="jugueteria" value="jugueteria">
-            Jugueteria
-          </label>
-          <label>
+            <label for="jugueteria">Jugueteria</label>
+          </div>
+          <div class="option">
             <input type="checkbox" name="userInterest" id="vidaSana" value="vidaSana">
-            Vida Sana
-          </label>
+            <label for="vidaSana">Vida Sana</label>
+          </div>
         </div>
-        <label>Avatar</label>
+        <label>Foto de Perfil</label>
         <input type="file" name="userAvatar" id="userAvatar" />
         <input type="password" name="userPassword" id="userPassword" placeholder="Contraseña" autocomplete="off"
           required />
