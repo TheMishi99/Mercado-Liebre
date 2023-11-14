@@ -205,17 +205,17 @@ main section h3 {
 main section article {
     width: 100%;
     background-color: white;
-    margin: 0px 0px 10px 0px;
+    margin: 10px;
     padding: 15px;
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    flex-direction: column;
+    flex-wrap: nowrap;
     align-items: center;
     justify-content: center
 }
 
 main section article .imagen {
-    width: 85%;
+    width: 95%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -225,66 +225,67 @@ main section article .imagen img {
     width: 100%;
 }
 
-main section article .icon {
+main section article .article-info {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: center;
+    position: relative;
+    background-color: #EAC926;
+}
+
+main section article .article-info i {
     margin: 0px 0px 5px 0px;
     border: 1px solid #39b54a;
     border-radius: 15px;
+    color: #39b54a;
+    width: 10%;
     aspect-ratio: 1 / 1;
-    width: 15%;
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
-    align-self: flex-end;
+    justify-content: center;
+    font-size: 1.1rem;
+    position: absolute;
+    right: 0px;
+    top: -25px;
+    z-index: 10;
 }
 
-main section article .icon i {
-    color: #39b54a;
-    font-size: 3.25vw;
-    max-width: 100%;
-}
-
-main section article .precio-box {
+main section article .article-info .precio {
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    width: 35%;
+    width: 40%;
     margin: 5px 0px;
-}
-
-main section article .precio-box .precio {
     font-size: 1.5rem;
 }
 
-main section article .descuento-box {
+main section article .article-info .descuento {
+    margin: 6px 0px;
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    width: 65%;
-}
-
-main section article .nombre-box h4,
-main section article .descuento-box .descuento {
-    font-size: 1.33rem;
-}
-
-main section article .descuento-box .descuento {
+    width: 60%;
     color: #39b54a;
 }
 
-main section article .nombre-box {
+main section article .article-info h4,
+main section article .article-info .descuento {
+    font-size: 1.33rem;
+}
+
+main section article .article-info h4 {
+    margin: 2px 0px 5px;
     display: flex;
     align-items: center;
     justify-content: center;
     width: 100%;
-}
-
-main section article .nombre-box h4 {
-    width: 90%;
     color: #666;
     text-align: center;
 }
 
-/*Footer*/
 /*Footer*/
 footer {
     display: flex;
@@ -421,37 +422,47 @@ footer>h4 strong {
     }
 
     main section h3 {
-        font-size: 1.5rem;
+        font-size: 1.4rem;
     }
 
     main section article {
-        width: 47%;
-        height: 50vw;
+        width: 43%;
+        height: 150px;
     }
 
-    main section article .icon i {
+    main section article .imagen {
+        height: 80%;
+    }
+
+    main section article .article-info {
+        height: 20%;
+    }
+
+    main section article .article-info i {
         font-size: 1.7vw;
         transition: rotate 1000ms;
+        right: 0px;
+        top: -15px;
     }
 
-    main section article:hover .icon i {
+    main section article:hover .article-info i {
         rotate: -90deg;
     }
 
-    main section article .precio-box .precio {
+    main section article .article-info .precio {
         font-size: 0.7rem;
     }
 
-    main section article .nombre-box h4,
-    main section article .descuento-box .descuento {
+    main section article .article-info h4,
+    main section article .article-info .descuento {
         font-size: 0.6rem;
     }
 
-    main section article .nombre-box {
+    main section article .article-info h4 {
         display: none;
     }
 
-    main section article:hover .nombre-box {
+    main section article:hover .article-info h4 {
         display: block;
     }
 
