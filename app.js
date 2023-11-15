@@ -17,7 +17,7 @@ app.listen(
 )
 
 app.use(
-    "/home", main
+    "/", main
 )
 
 app.use(
