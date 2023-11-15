@@ -4,6 +4,10 @@ const app = express();
 const path = require("path");
 const PORT = process.env.PORT;
 
+const main = require("./routes/main")
+const users = require("./routes/users")
+const products = require("./routes/products")
+
 app.use(express.static(path.join(__dirname, "public")));
 
 app.listen(
@@ -12,20 +16,14 @@ app.listen(
     }
 )
 
-app.get(
-    "/", (req, res) => {
-        res.sendFile(path.join(__dirname, "views", "home.html"));
-    }
+app.use(
+    "/home", main
 )
 
-app.get(
-    "/login", (req, res) => {
-        res.sendFile(path.join(__dirname, "views", "login.html"));
-    }
+app.use(
+    "/users", users
 )
 
-app.get(
-    "/register", (req, res) => {
-        res.sendFile(path.join(__dirname, "views", "register.html"));
-    }
+app.use(
+    "/products", products
 )
