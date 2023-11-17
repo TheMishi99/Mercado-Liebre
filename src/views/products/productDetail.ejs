@@ -18,8 +18,9 @@
     <main class="productDetail-main">
       <div class="product-info">
         <% let product = products.find(product=> product.id == productID) %>
-        <h2 class="product-name">Nombre de usuario: <%= product.name %></h2>
-        <h2 class="product-age">Edad: <%= product.age %></h2>
+        <img src="<%= product.image %>" width="360" alt="Cafetera" />
+        <h2 class="product-name">Nombre de producto: <%= product.name %></h2>
+        <h2 class="product-age">Precio: $<%= product.price %></h2>
       </div>
     </main>
     <%- include("../partials/footer") %>
