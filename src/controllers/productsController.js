@@ -2,7 +2,7 @@ const path = require("path");
 const products = require("../database/products");
 const productosController = {
     all: (req, res) => {
-        res.render("products", {
+        res.render("products/products", {
             products
         });
     },
