@@ -7,8 +7,11 @@ const productosController = {
         });
     },
     product: (req, res) => {
-        const prodID = req.params.id
-        res.send(`Estas en el producto ${prodID}`);
+        let prodID = req.params.productID
+        res.render("products/productDetail", {
+            products,
+            prodID
+        });
     }
 };
 

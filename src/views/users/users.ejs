@@ -21,9 +21,9 @@
         <ul>
           <% for( let i=0; i < users.length; i++ ) { %>
           <li>
-            <p style="font-size: 1.5rem">
+            <a href="/users/<%= users[i].id %>" style="font-size: 1.5rem">
               <%= users[i].name %>, <%= users[i].age %>
-            </p>
+            </a>
           </li>
           <% } %>
         </ul>

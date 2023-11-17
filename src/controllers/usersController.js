@@ -8,17 +8,18 @@ const usersController = {
             formUserSearch
         });
     },
-    user: (req, res) => {
-        res.render("./users/user", {
-            users,
-            userID: req.params.userID
-        })
-    },
     login: (req, res) => {
         res.render("./users/login");
     },
     register: (req, res) => {
         res.render("./users/register");
+    },
+    user: (req, res) => {
+        const userID = req.params.userID;
+        res.render("./users/userDetail", {
+            users,
+            userID
+        })
     }
 };
 
