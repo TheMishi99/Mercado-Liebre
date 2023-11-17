@@ -16,17 +16,52 @@
   <body>
     <%- include("../partials/header") %>
     <main class="products-main">
-      <h1 style="font-size: 2rem">Estos son los productos</h1>
-      <ul>
-        <% for( let i=0; i < products.length; i++ ) { %>
-        <li>
-          <p style="font-size: 1.5rem">
-            <%= products[i].name %>, <%= products[i].price %>
-          </p>
-        </li>
-        <% } %>
-      </ul>
-      
+      <div class="products-list">
+        <h1 style="font-size: 2rem">Estos son los productos</h1>
+        <ul>
+          <% for( let i=0; i < products.length; i++ ) { %>
+          <li>
+            <a href="/products/<%= products[i].id %>" style="font-size: 1.5rem">
+              <%= products[i].name %>, $<%= products[i].price %>
+            </a>
+          </li>
+          <% } %>
+        </ul>
+      </div>
+      <div class="products-search">
+        <h1 style="font-size: 2rem">Buscar Productos</h1>
+        <form action="/products" method="get">
+          <input type="text" name="search" placeholder="Pedrito" />
+          <input type="submit" value="Buscar" />
+        </form>
+      </div>
+      <div class="products-search-results">
+        <h2 style="font-size: 1.6rem">Resultados</h2>
+        <ul>
+          <% if (formProductSearch=="" ) { %>
+          <li>
+            <p style="font-size: 1.5rem">Sin resultados</p>
+          </li>
+          <% } else { %>
+            <% found=0 %>
+            <% for( let i=0; i < products.length; i++ ) { %>
+              <% if (products[i].name.toLowerCase().includes(formProductSearch)) { %>
+                <li>
+                  <a href="/products/<%= products[i].id %>">
+                    <%= products[i].name %>, $<%= products[i].price %>
+                  </a>
+                </li>
+                <% found+=1; %>
+              <% } %>
+            <% } %>
+            <% if (found==0) { %>
+              <li>
+                <p style="font-size: 1.5rem">Sin resultados</p>
+              </li>
+            <% } %>
+          <% } %>
+        </ul>
+      </div>
     </main>
     <%- include("../partials/footer") %>
     <script

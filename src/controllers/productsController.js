@@ -2,15 +2,17 @@ const path = require("path");
 const products = require("../database/products");
 const productosController = {
     all: (req, res) => {
+        let formProductSearch = req.query.search;
         res.render("products/products", {
-            products
+            products,
+            formProductSearch
         });
     },
     product: (req, res) => {
-        let prodID = req.params.productID
+        let productID = req.params.productID
         res.render("products/productDetail", {
             products,
-            prodID
+            productID
         });
     }
 };
