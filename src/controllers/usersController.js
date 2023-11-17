@@ -1,16 +1,7 @@
 const path = require("path");
+const users = require("../database/users");
 const usersController = {
     show: (req, res) => {
-        let users = [
-            {
-                name: "Mishi",
-                age: 20
-            },
-            {
-                name: "Ely",
-                age: 21
-            }
-        ];
         res.render("users", {
             users
         });

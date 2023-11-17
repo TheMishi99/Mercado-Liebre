@@ -33,12 +33,12 @@ body .go-up-button {
     position: fixed;
     border: 1px solid black;
     border-radius: 50%;
-    width: 40px;
-    height: 40px;
+    width: 35px;
+    height: 35px;
     aspect-ratio: 1 / 1;
     z-index: 10;
-    bottom: 10px;
-    right: 10px;
+    bottom: 15px;
+    right: 15px;
     text-align: center;
     background-color: #EAC926;
     display: flex;
@@ -233,7 +233,6 @@ header .burger-menu i {
     align-items: flex-start;
     justify-content: center;
     position: relative;
-    background-color: #EAC926;
 }
 
 .home-main section article .article-info i {
@@ -299,7 +298,6 @@ header .burger-menu i {
 .login-main .login-container {
     margin: 20px 0px;
     width: 275px;
-    height: 180px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -348,7 +346,6 @@ header .burger-menu i {
     margin: 0px 5px 0px 0px;
     border: none;
     padding: 8px;
-    transition: background-color 200ms;
 }
 
 /*Register*/
@@ -478,7 +475,6 @@ header .burger-menu i {
     margin: 0px 5px 0px 0px;
     border: none;
     padding: 8px;
-    transition: background-color 200ms;
 }
 
 /*Footer*/
@@ -622,7 +618,6 @@ footer>h4 strong {
 
     .home-main section article {
         width: 43%;
-        height: 150px;
     }
 
     .home-main section article .imagen {
@@ -635,13 +630,8 @@ footer>h4 strong {
 
     .home-main section article .article-info i {
         font-size: 1.7vw;
-        transition: rotate 1000ms;
         right: 0px;
         top: -15px;
-    }
-
-    .home-main section article:hover .article-info i {
-        rotate: -90deg;
     }
 
     .home-main section article .article-info .precio {
@@ -651,14 +641,6 @@ footer>h4 strong {
     .home-main section article .article-info h4,
     .home-main section article .article-info .descuento {
         font-size: 0.6rem;
-    }
-
-    .home-main section article .article-info h4 {
-        display: none;
-    }
-
-    .home-main section article:hover .article-info h4 {
-        display: block;
     }
 
     /*Login*/
@@ -677,6 +659,7 @@ footer>h4 strong {
 
     .login-main .login-container form .form-buttons button {
         font-size: 0.8rem;
+        transition: background-color 200ms;
     }
 
     .login-main .login-container form .form-buttons button:hover {
@@ -718,6 +701,7 @@ footer>h4 strong {
 
     .register-main .register-container form .form-buttons button {
         font-size: 0.8rem;
+        transition: background-color 200ms;
     }
 
     .register-main .register-container form .form-buttons button:hover {
@@ -774,7 +758,6 @@ footer>h4 strong {
     /*Home*/
     .home-main section article {
         width: 22%;
-        height: 30vw;
         transition: box-shadow 500ms;
     }
 
@@ -786,21 +769,27 @@ footer>h4 strong {
         height: 15vw;
     }
 
-    .home-main section article .icon {
-        width: 10%;
-    }
-
-    .home-main section article .icon i {
+    .home-main section article .article-info i {
         font-size: 0.9vw;
+        transition: rotate 1000ms;
     }
 
-    .home-main section article .precio-box .precio,
-    .home-main section article .descuento-box .descuento {
+    .home-main section article:hover .article-info i {
+        rotate: -90deg;
+    }
+
+    .home-main section article .article-info .precio,
+    .home-main section article .article-info .descuento {
         font-size: 1.2vw;
     }
 
-    .home-main section article .nombre-box h4 {
+    .home-main section article .article-info h4 {
         font-size: 1.2vw;
+        display: none;
+    }
+
+    .home-main section article:hover .article-info h4 {
+        display: flex;
     }
 
     /*Login*/
