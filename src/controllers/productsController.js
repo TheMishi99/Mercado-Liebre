@@ -1,7 +1,20 @@
 const path = require("path");
 const productosController = {
     all: (req, res) => {
-        res.sendFile(path.join(__dirname, "../", "views", "products.html"))
+        let products = [
+            {
+                name: "Mishi",
+                age: 20
+            },
+            {
+                name: "Ely",
+                age: 21
+            }
+        ];
+        res.render("products", {
+            products
+        });
+        res.render("products");
     },
     product: (req, res) => {
         const prodID = req.params.id

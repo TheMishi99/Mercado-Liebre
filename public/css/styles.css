@@ -1,0 +1,899 @@
+/*
+Paleta de Colores
+
+Amarillo: #EAC926;
+Azul: #03264C;
+Celeste: #1259c3;
+Gris oscuro: #666;
+Gris claro: #ebebeb;
+Verde: #39b54a;
+*/
+
+* {
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-size: 12px;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+
+header,
+.banner,
+footer {
+    width: 100%;
+}
+
+body .go-up-button {
+    position: fixed;
+    border: 1px solid black;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    aspect-ratio: 1 / 1;
+    z-index: 10;
+    bottom: 10px;
+    right: 10px;
+    text-align: center;
+    background-color: #EAC926;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+body .go-up-button:link,
+body .go-up-button:visited {
+    text-decoration: none;
+}
+
+body .go-up-button i {
+    color: white;
+    font-size: 1.5rem;
+}
+
+/*Header*/
+header {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #EAC926;
+}
+
+header .mercado-liebre_logo {
+    align-self: flex-start;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    width: 50%;
+}
+
+header .mercado-liebre_logo img {
+    width: 100%;
+}
+
+header .search {
+    margin: 10px 0px 10px 0px;
+    width: 50%;
+    height: 25px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+header .search .search-bar,
+header .search .search-button {
+    height: 100%;
+    border-radius: 8px;
+    border: none;
+}
+
+header .search-bar {
+    width: 75%;
+    padding: 4px;
+}
+
+header .search-button {
+    width: 15%;
+    background-color: #1259C3;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    cursor: pointer;
+    border: none;
+}
+
+header .search-button i {
+    font-size: 0.8rem;
+}
+
+header .text {
+    width: 100%;
+    text-align: center;
+    font-size: 1rem;
+}
+
+header nav {
+    width: 100%;
+    padding: 10px;
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-evenly;
+}
+
+header nav ul {
+    list-style: none;
+    margin: 0px 0px 10px 0px;
+}
+
+header .burger-menu a,
+header nav ul li a:link,
+header nav ul li a:visited {
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+}
+
+header .burger-menu {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    margin: 10px 0px 10px 0px;
+    justify-self: center;
+}
+
+header .burger-menu i {
+    padding: 4px;
+    color: white;
+    font-size: 20px;
+    border: 1px solid #1259C3;
+    background-color: #1259C3;
+    border-radius: 5px;
+}
+
+.banner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.banner img {
+    width: 100%;
+}
+
+/*Home*/
+.home-main {
+    background-color: #ebebeb;
+    margin: 0px 0px 15px 0px;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+}
+
+.home-main section {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.home-main section h3 {
+    margin: 10px 0px 10px 0px;
+    width: 100%;
+    font-size: 2rem;
+    align-self: flex-start;
+    color: #666;
+}
+
+.home-main section article {
+    margin: 10px;
+    padding: 15px;
+    width: 100%;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center
+}
+
+.home-main section article .imagen {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.home-main section article .imagen img {
+    width: 100%;
+}
+
+.home-main section article .article-info {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: center;
+    position: relative;
+    background-color: #EAC926;
+}
+
+.home-main section article .article-info i {
+    margin: 0px 0px 5px 0px;
+    border: 1px solid #39b54a;
+    border-radius: 15px;
+    color: #39b54a;
+    width: 10%;
+    aspect-ratio: 1 / 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    position: absolute;
+    right: 0px;
+    top: -25px;
+    z-index: 10;
+}
+
+.home-main section article .article-info .precio {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 40%;
+    margin: 5px 0px;
+    font-size: 1.5rem;
+}
+
+.home-main section article .article-info .descuento {
+    margin: 6px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 60%;
+    color: #39b54a;
+}
+
+.home-main section article .article-info h4,
+.home-main section article .article-info .descuento {
+    font-size: 1.33rem;
+}
+
+.home-main section article .article-info h4 {
+    margin: 2px 0px 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    color: #666;
+    text-align: center;
+}
+
+/*Login*/
+.login-main {
+    margin: 0px 0px 15px 0px;
+    background-color: #ebebeb;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-main .login-container {
+    margin: 20px 0px;
+    width: 275px;
+    height: 180px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #EAC926;
+    border-radius: 10px;
+}
+
+.login-main .login-container h3 {
+    align-self: center;
+    font-size: 1.4rem;
+}
+
+.login-main .login-container form {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-main .login-container form input[type="text"],
+.login-main .login-container form input[type="password"] {
+    width: 100%;
+    font-size: 0.8rem;
+}
+
+.login-main .login-container form input {
+    margin: 10px 0px 5px;
+    border: 1px solid white;
+    padding: 6px;
+}
+
+.login-main .login-container form .form-buttons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 0px;
+}
+
+.login-main .login-container form .form-buttons button {
+    border-radius: 5px;
+    background-color: #06a4ff;
+    color: white;
+    margin: 0px 5px 0px 0px;
+    border: none;
+    padding: 8px;
+    transition: background-color 200ms;
+}
+
+/*Register*/
+.register-main {
+    margin: 0px 0px 15px 0px;
+    background-color: #ebebeb;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.register-main .register-container {
+    margin: 20px 0px;
+    width: 275px;
+    height: 650px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #EAC926;
+    border-radius: 10px;
+}
+
+.register-main .register-container h3 {
+    width: 100%;
+    text-align: center;
+    align-self: center;
+    font-size: 1.4rem;
+}
+
+.register-main .register-container form {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.register-main .register-container form input[type="text"],
+.register-main .register-container form input[type="email"],
+.register-main .register-container form input[type="password"],
+.register-main .register-container form input[type="date"] {
+    width: 100%;
+    font-size: 0.8rem;
+}
+
+.register-main .register-container form input[type="file"] {
+    width: 100%;
+    font-size: 0.75rem;
+}
+
+.register-main .register-container form input {
+    margin: 10px 0px 5px;
+    border: 1px solid white;
+    padding: 6px;
+}
+
+.register-main .register-container form label {
+    margin: 15px 0px 0px 0px;
+    font-size: 1rem;
+    font-weight: bold;
+    align-self: flex-start;
+}
+
+.register-main .register-container form .userProfile-container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.register-main .register-container form .userProfile-container .option {
+    width: 30%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.register-main .register-container form .userProfile-container .option input {
+    margin: 10px 2px 10px 0px;
+}
+
+.register-main .register-container form .userProfile-container .option label {
+    margin: 10px 10px 10px 0px;
+    font-size: 0.7rem;
+}
+
+.register-main .register-container form .userInterest-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.register-main .register-container form .userInterest-container .option {
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.register-main .register-container form .userInterest-container .option input {
+    margin: 5px 2px 5px 0px;
+}
+
+.register-main .register-container form .userInterest-container .option label {
+    margin: 5px 10px 5px 0px;
+    font-size: 0.7rem;
+    font-weight: normal;
+}
+
+.register-main .register-container form .form-buttons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 0px;
+}
+
+.register-main .register-container form .form-buttons button {
+    border-radius: 5px;
+    background-color: #06a4ff;
+    color: white;
+    margin: 0px 5px 0px 0px;
+    border: none;
+    padding: 8px;
+    transition: background-color 200ms;
+}
+
+/*Footer*/
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 15px 0px 0px;
+}
+
+footer ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    margin: 10px 0px 10px 0px;
+}
+
+footer ul li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0px 90px 40px 90px;
+}
+
+footer ul li i {
+    font-size: 2em;
+    color: #1259C3;
+    margin: 0px 0px 10px 0px;
+}
+
+footer ul li h4 {
+    text-align: center;
+}
+
+footer ul li h4 strong {
+    font-size: 0.8rem;
+    color: #666;
+}
+
+footer ul li p {
+    font-size: 0.6rem;
+    text-align: center;
+}
+
+footer>h4 {
+    margin: 0px 0px 20px 20px;
+    align-self: flex-start;
+}
+
+footer>h4 strong {
+    color: #666;
+    font-size: 0.6rem;
+}
+
+/*Tablet*/
+@media (min-width: 361px) {
+
+    /*Header*/
+    header .mercado-liebre_logo {
+        width: 32%;
+    }
+
+    header .search {
+        width: 32%;
+        height: 20px;
+    }
+
+    header .search .search-bar {
+        font-size: 0.6rem;
+    }
+
+    header .search .search-button i {
+        font-size: 0.8rem;
+    }
+
+    header .text {
+        width: 32%;
+        font-size: 0.7rem;
+    }
+
+    header nav {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    header nav ul {
+        margin: 0;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: center;
+        justify-content: space-evenly;
+        width: 50%;
+    }
+
+    header nav ul li {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid #1259C3;
+        border-radius: 5px;
+        background-color: #1259C3;
+        padding: 2px;
+    }
+
+    header nav ul li:hover {
+        background-color: #06a4ff;
+    }
+
+    header nav ul li a:link,
+    header nav ul li a:visited,
+    header nav ul li a i {
+        font-size: 0.62rem;
+        color: white;
+    }
+
+
+    header .burger-menu {
+        display: none;
+    }
+
+    /*Home*/
+    .home-main {
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+    }
+
+    .home-main section {
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .home-main section h3 {
+        font-size: 1.4rem;
+    }
+
+    .home-main section article {
+        width: 43%;
+        height: 150px;
+    }
+
+    .home-main section article .imagen {
+        height: 80%;
+    }
+
+    .home-main section article .article-info {
+        height: 20%;
+    }
+
+    .home-main section article .article-info i {
+        font-size: 1.7vw;
+        transition: rotate 1000ms;
+        right: 0px;
+        top: -15px;
+    }
+
+    .home-main section article:hover .article-info i {
+        rotate: -90deg;
+    }
+
+    .home-main section article .article-info .precio {
+        font-size: 0.7rem;
+    }
+
+    .home-main section article .article-info h4,
+    .home-main section article .article-info .descuento {
+        font-size: 0.6rem;
+    }
+
+    .home-main section article .article-info h4 {
+        display: none;
+    }
+
+    .home-main section article:hover .article-info h4 {
+        display: block;
+    }
+
+    /*Login*/
+    .login-main .login-container {
+        height: 190px;
+    }
+
+    .login-main .login-container h3 {
+        font-size: 1.5rem;
+    }
+
+    .login-main .login-container form input[type="text"],
+    .login-main .login-container form input[type="password"] {
+        font-size: 0.9rem;
+    }
+
+    .login-main .login-container form .form-buttons button {
+        font-size: 0.8rem;
+    }
+
+    .login-main .login-container form .form-buttons button:hover {
+        background-color: #0022AA;
+    }
+
+    /*Register*/
+    .register-main .register-container {
+        width: 295px;
+        height: 670px;
+    }
+
+    .register-main .register-container h3 {
+        font-size: 1.5rem;
+    }
+
+    .register-main .register-container form input[type="text"],
+    .register-main .register-container form input[type="email"],
+    .register-main .register-container form input[type="password"],
+    .register-main .register-container form input[type="date"] {
+        font-size: 0.9rem;
+    }
+
+    .register-main .register-container form input[type="file"] {
+        font-size: 0.79rem;
+    }
+
+    .register-main .register-container form label {
+        font-size: 1.1rem;
+    }
+
+    .register-main .register-container form .userProfile-container .option label {
+        font-size: 0.8rem;
+    }
+
+    .register-main .register-container form .userInterest-container .option label {
+        font-size: 0.8rem;
+    }
+
+    .register-main .register-container form .form-buttons button {
+        font-size: 0.8rem;
+    }
+
+    .register-main .register-container form .form-buttons button:hover {
+        background-color: #0022AA;
+    }
+
+
+    /*Footer*/
+    footer ul li i {
+        font-size: 2.5em;
+    }
+
+    footer ul li h4 strong {
+        font-size: 1rem;
+    }
+
+    footer ul li p {
+        font-size: 0.8rem;
+    }
+
+    footer>h4 strong {
+        color: #666;
+        font-size: 0.8rem;
+    }
+}
+
+/*Desktop*/
+@media (min-width: 769px) {
+
+    /*Header*/
+    header .search {
+        height: 30px;
+    }
+
+    header .search .search-bar {
+        font-size: 1.2rem;
+    }
+
+    header .search .search-button i {
+        font-size: 1.6rem;
+    }
+
+    header .text {
+        font-size: 1.3rem;
+    }
+
+    header nav ul li a:link,
+    header nav ul li a:visited,
+    header nav ul li a i {
+        font-size: 1.4rem;
+        color: white;
+    }
+
+    /*Home*/
+    .home-main section article {
+        width: 22%;
+        height: 30vw;
+        transition: box-shadow 500ms;
+    }
+
+    .home-main section article:hover {
+        box-shadow: 0px 0px 10px rgb(100, 100, 100);
+    }
+
+    .home-main section article .imagen img {
+        height: 15vw;
+    }
+
+    .home-main section article .icon {
+        width: 10%;
+    }
+
+    .home-main section article .icon i {
+        font-size: 0.9vw;
+    }
+
+    .home-main section article .precio-box .precio,
+    .home-main section article .descuento-box .descuento {
+        font-size: 1.2vw;
+    }
+
+    .home-main section article .nombre-box h4 {
+        font-size: 1.2vw;
+    }
+
+    /*Login*/
+    .login-main .login-container {
+        width: 350px;
+        height: 210px;
+    }
+
+    .login-main .login-container h3 {
+        font-size: 2rem;
+    }
+
+    .login-main .login-container form input[type="text"],
+    .login-main .login-container form input[type="password"] {
+        font-size: 1.4rem;
+    }
+
+    .login-main .login-container form .form-buttons button {
+        font-size: 1rem;
+    }
+
+    /*Register*/
+    .register-main .register-container {
+        width: 350px;
+        height: 730px;
+    }
+
+    .register-main .register-container h3 {
+        font-size: 2rem;
+    }
+
+    .register-main .register-container form input[type="text"],
+    .register-main .register-container form input[type="email"],
+    .register-main .register-container form input[type="password"],
+    .register-main .register-container form input[type="date"] {
+        font-size: 1.4rem;
+    }
+
+    .register-main .register-container form input[type="file"] {
+        font-size: 0.95rem;
+    }
+
+    .register-main .register-container form label {
+        font-size: 1.3rem;
+    }
+
+    .register-main .register-container form .userProfile-container .option label {
+        font-size: 1rem;
+    }
+
+    .register-main .register-container form .userInterest-container .option label {
+        font-size: 1rem;
+    }
+
+    .register-main .register-container form .form-buttons button {
+        font-size: 1rem;
+    }
+
+    .register-main .register-container form .userInterest-container .option {
+        width: 33%;
+    }
+
+    /*Footer*/
+    footer ul {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+
+    footer ul li {
+        margin: 30px 40px;
+    }
+
+    footer ul li i {
+        font-size: 3em;
+        transition: color 200ms;
+    }
+
+    footer ul li i:hover {
+        color: #39b54a;
+    }
+
+    footer ul li h4 strong {
+        font-size: 1.2rem;
+    }
+
+    footer ul li p {
+        font-size: 1rem;
+    }
+
+    footer>h4 strong {
+        color: #666;
+        font-size: 1rem;
+    }
+}
