@@ -52,7 +52,11 @@
             <i class="fa-solid fa-truck-fast"></i>
             <p class="precio">$<%= onOfferProducts[i].price %></p>
             <p class="descuento">40% off</p>
-            <h4><%= onOfferProducts[i].name %></h4>
+            <h4>
+              <a href="/products/<%= lastViewedProducts[i].id %>">
+                <%= lastViewedProducts[i].name %>
+              </a>
+            </h4>
           </div>
         </article>
         <% } %>

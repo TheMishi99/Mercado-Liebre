@@ -230,7 +230,7 @@ header .burger-menu i {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    align-items: flex-start;
+    align-items: center;
     justify-content: center;
     position: relative;
 }
@@ -641,12 +641,12 @@ footer>h4 strong {
     }
 
     .home-main section article .article-info .precio {
-        font-size: 0.7rem;
+        font-size: 0.7825rem;
     }
 
     .home-main section article .article-info h4 a,
     .home-main section article .article-info .descuento {
-        font-size: 0.7rem;
+        font-size: 0.6125rem;
     }
 
     /*Login*/
@@ -791,11 +791,6 @@ footer>h4 strong {
     .home-main section article:hover .article-info i {
         rotate: -90deg;
     }
-
-    .home-main section article .article-info h4 a
-    .home-main section article .article-info .descuento {
-        font-size: 1rem;
-    }
     
     .home-main section article .article-info h4 {
         display: none;
@@ -805,10 +800,14 @@ footer>h4 strong {
         display: flex;
     }
 
-    .home-main section article .article-info h4 a {
-        font-size: 1.2vw;
+    .home-main section article .article-info .precio {
+        font-size: 1.1vw;
     }
 
+    .home-main section article .article-info h4 a,
+    .home-main section article .article-info .descuento {
+        font-size: 0.6vw;
+    }
 
     /*Login*/
     .login-main .login-container {
