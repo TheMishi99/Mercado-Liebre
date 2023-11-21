@@ -15,24 +15,13 @@
 
   <body>
     <%- include("../partials/header") %>
-    <main class="products-main">
-      <div class="products-op">
-        <h1 style="font-size: 2rem">Operaciones</h1>
-        <a class="productCreate-button" href="/products/create">Agregar Producto</a>
-        <a class="productSearch-button" href="/products/search">Buscar Producto</a>
-      </div>
-      <div class="products-list">
-        <h1 style="font-size: 2rem">Estos son los productos</h1>
-        <ul>
-          <% for( let i=0; i < products.length; i++ ) { %>
-          <li>
-            <a href="/products/<%= products[i].id %>" style="font-size: 1.5rem">
-              <%= products[i].name %>, $<%= products[i].price %>
-            </a>
-          </li>
-          <% } %>
-        </ul>
-      </div>
+    <main class="productCreate-main">
+      <h1 style="font-size: 2rem">Agregar Producto</h1>
+      <form method="POST" action="/products/create">
+        <input type="text" name="productName" id="productName" placeholder="Nombre del producto" autocapitalize required>
+        <input type="text" name="productPrice" id="productPrice" placeholder="Precio" pattern="[0-9]+" title="Solo numeros" required>
+        <button type="submit">Agregar</button>
+      </form>
     </main>
     <%- include("../partials/footer") %>
     <script

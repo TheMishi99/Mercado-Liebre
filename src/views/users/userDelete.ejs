@@ -15,23 +15,13 @@
 
   <body>
     <%- include("../partials/header") %>
-    <main class="products-main">
-      <div class="products-op">
-        <h1 style="font-size: 2rem">Operaciones</h1>
-        <a class="productCreate-button" href="/products/create">Agregar Producto</a>
-        <a class="productSearch-button" href="/products/search">Buscar Producto</a>
-      </div>
-      <div class="products-list">
-        <h1 style="font-size: 2rem">Estos son los productos</h1>
-        <ul>
-          <% for( let i=0; i < products.length; i++ ) { %>
-          <li>
-            <a href="/products/<%= products[i].id %>" style="font-size: 1.5rem">
-              <%= products[i].name %>, $<%= products[i].price %>
-            </a>
-          </li>
-          <% } %>
-        </ul>
+    <main class="userDelete-main">
+      <div class="user-info">
+        <% let user = users.find(user => user.id == userID); %>
+        <p>Estas seguro que deseas borrar al usuario "<%= user.name %>"?</p>
+        <form action="/users/:userID/delete?_method=DELETE" method="POST">
+          <input type="submit" value="Confirmar" />
+        </form>
       </div>
     </main>
     <%- include("../partials/footer") %>

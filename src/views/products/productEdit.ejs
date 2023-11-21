@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Bienvenidxs a MercadoLiebre</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/styles.css" />
+  </head>
+
+  <body>
+    <%- include("../partials/header") %>
+    <main class="productEdit-main">
+      <div class="product-info">
+        <h1 style="font-size: 2rem">Datos</h1>
+        <% let product=products.find(product=> product.id == productID) %>
+        <h2 class="product-name">Nombre del producto: <%= product.name %></h2>
+        <h2 class="product-price">Precio: <%= product.price %></h2>
+      </div>
+      <div class="product-newInfo">
+        <h1 style="font-size: 2rem">Nuevos Datos</h1>
+        <form action="/products/:productID/edit?_method=PUT" method="POST">
+          <input type="number" name="productID" value="<%= product.id %>" readonly>
+          <input type="text" name="newProductName" value="<%= product.name %>" />
+          <input type="text" name="newProductPrice" value="<%= product.price %>" />
+          <input type="submit" value="Confirmar" />
+        </form>
+      </div>
+    </main>
+    <%- include("../partials/footer") %>
+    <script
+      src="https://kit.fontawesome.com/eae7cdcb5c.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

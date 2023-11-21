@@ -16,6 +16,11 @@
   <body>
     <%- include("../partials/header") %>
     <main class="users-main">
+      <div class="users-op">
+        <h1 style="font-size: 2rem">Operaciones</h1>
+        <a class="userCreate-button" href="/users/create">Agregar Usuario</a>
+        <a class="userSearch-button" href="/users/search">Buscar Usuario</a>
+      </div>
       <div class="users-list">
         <h1 style="font-size: 2rem">Usuarios</h1>
         <ul>
@@ -25,48 +30,6 @@
               <%= users[i].name %>, <%= users[i].password %>
             </a>
           </li>
-          <% } %>
-        </ul>
-      </div>
-      <div class="users-create">
-        <h1 style="font-size: 2rem">Agregar Usuario</h1>
-        <form method="POST" action="/users">
-          <input type="text" name="userName" id="userName" placeholder="Nombre de Usuario" required>
-          <input type="password" name="userPassword" id="userPassword" placeholder="Contraseña" pattern="[a-zA-Z0-9]{8}" title="La Contraseña debe contener 8 caracteres y al menos un numero" required>
-          <button type="submit">Agregar</button>
-        </form>
-      </div>
-      <div class="users-search">
-        <h1 style="font-size: 2rem">Buscar Usuarios</h1>
-        <form action="/users" method="get">
-          <input type="text" name="search" placeholder="Pedrito" />
-          <input type="submit" value="Buscar" />
-        </form>
-      </div>
-      <div class="users-search-results">
-        <h2 style="font-size: 1.6rem">Resultados</h2>
-        <ul>
-          <% if (formUserSearch=="") { %>
-          <li>
-            <p style="font-size: 1.5rem">Sin resultados</p>
-          </li>
-          <% } else { %>
-            <% found=0 %>
-            <% for( let i=0; i < users.length; i++ ) { %>
-              <% if (users[i].name.toLowerCase().includes(formUserSearch)) { %>
-                <li>
-                  <a href="/users/<%= users[i].id %>">
-                    <%= users[i].name %>, <%= users[i].password %>
-                  </a>
-                </li>
-                <% found+=1; %>
-              <% } %>
-            <% } %>
-            <% if (found==0) { %>
-              <li>
-                <p style="font-size: 1.5rem">Sin resultados</p>
-              </li>
-            <% } %>
           <% } %>
         </ul>
       </div>

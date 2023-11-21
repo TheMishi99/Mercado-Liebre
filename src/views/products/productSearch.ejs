@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Bienvenidxs a MercadoLiebre</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/styles.css" />
+  </head>
+
+  <body>
+    <%- include("../partials/header") %>
+    <main class="productSearch-main">
+      <div class="products-search">
+        <h1 style="font-size: 2rem">Buscar Productos</h1>
+        <form action="/products/search" method="get">
+          <input type="text" name="search" placeholder="Nombre del Producto"/>
+          <input type="submit" value="Buscar" />
+        </form>
+      </div>
+      <div class="products-search-results">
+        <h2 style="font-size: 1.6rem">Resultados</h2>
+        <ul>
+          <% if (formProductSearch=="" ) { %>
+          <li>
+            <p style="font-size: 1.5rem">Sin resultados</p>
+          </li>
+          <% } else { %>
+            <% found=0 %>
+            <% for( let i=0; i < products.length; i++ ) { %>
+              <% if (products[i].name.toLowerCase().includes(formProductSearch)) { %>
+                <li>
+                  <a href="/products/<%= products[i].id %>">
+                    <%= products[i].name %>, $<%= products[i].price %>
+                  </a>
+                </li>
+                <% found+=1; %>
+              <% } %>
+            <% } %>
+            <% if (found==0) { %>
+              <li>
+                <p style="font-size: 1.5rem">Sin resultados</p>
+              </li>
+            <% } %>
+          <% } %>
+        </ul>
+      </div>
+    </main>
+    <%- include("../partials/footer") %>
+    <script
+      src="https://kit.fontawesome.com/eae7cdcb5c.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

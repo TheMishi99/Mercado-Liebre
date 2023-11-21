@@ -15,23 +15,14 @@
 
   <body>
     <%- include("../partials/header") %>
-    <main class="products-main">
-      <div class="products-op">
-        <h1 style="font-size: 2rem">Operaciones</h1>
-        <a class="productCreate-button" href="/products/create">Agregar Producto</a>
-        <a class="productSearch-button" href="/products/search">Buscar Producto</a>
-      </div>
-      <div class="products-list">
-        <h1 style="font-size: 2rem">Estos son los productos</h1>
-        <ul>
-          <% for( let i=0; i < products.length; i++ ) { %>
-          <li>
-            <a href="/products/<%= products[i].id %>" style="font-size: 1.5rem">
-              <%= products[i].name %>, $<%= products[i].price %>
-            </a>
-          </li>
-          <% } %>
-        </ul>
+    <main class="usersCreate-main">
+      <div class="users-create">
+        <h1 style="font-size: 2rem">Agregar Usuario</h1>
+        <form method="POST" action="/users/create">
+          <input type="text" name="userName" id="userName" placeholder="Nombre de Usuario" required>
+          <input type="password" name="userPassword" id="userPassword" placeholder="Contraseña" pattern="[a-zA-Z0-9]{8}" title="La Contraseña debe contener 8 caracteres y al menos un numero" required>
+          <button type="submit">Agregar</button>
+        </form>
       </div>
     </main>
     <%- include("../partials/footer") %>

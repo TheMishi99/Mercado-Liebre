@@ -15,14 +15,21 @@
 
   <body>
     <%- include("../partials/header") %>
-    <main class="userDetail-main">
+    <main class="userEdit-main">
       <div class="user-info">
-        <% let user = users.find(user=> user.id == userID) %>
+        <h1 style="font-size: 2rem">Datos</h1>
+        <% let user=users.find(user=> user.id == userID) %>
         <h2 class="user-name">Nombre de usuario: <%= user.name %></h2>
-        <h2 class="user-age">Contraseña: <%= user.password %></h2>
-        <a href="/users/<%= userID %>/edit">Editar</a>
-        <a href="/users/<%= userID %>/delete">Eliminar</a>
-        <a href="/users">Volver atras</a>
+        <h2 class="user-password">Contraseña: <%= user.password %></h2>
+      </div>
+      <div class="user-newInfo">
+        <h1 style="font-size: 2rem">Nuevos Datos</h1>
+        <form action="/users/:userID/edit?_method=PUT" method="POST">
+          <input type="number" name="userID" value="<%= user.id %>" readonly>
+          <input type="text" name="newUserName" value="<%= user.name %>" />
+          <input type="password" name="newUserPassword" value="<%= user.password %>" />
+          <input type="submit" value="Confirmar" />
+        </form>
       </div>
     </main>
     <%- include("../partials/footer") %>

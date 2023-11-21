@@ -20,7 +20,10 @@
         <% let product = products.find(product=> product.id == productID) %>
         <img src="<%= product.image %>" width="360" alt=<%= product.altName %> />
         <h2 class="product-name">Nombre de producto: <%= product.name %></h2>
-        <h2 class="product-age">Precio: $<%= product.price %></h2>
+        <h2 class="product-age">Precio: $<%= product.price %></h2>        
+        <a href="/products/<%= productID %>/edit">Editar</a>
+        <a href="/products/<%= productID %>/delete">Eliminar</a>
+        <a href="/products">Volver atras</a>
       </div>
     </main>
     <%- include("../partials/footer") %>
