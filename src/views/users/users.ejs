@@ -26,8 +26,8 @@
         <ul>
           <% for( let i=0; i < users.length; i++ ) { %>
           <li>
-            <a href="/users/<%= users[i].id %>" style="font-size: 1.5rem">
-              <%= users[i].name %>, <%= users[i].password %>
+            <a href="/users/<%= users[i].userID %>" style="font-size: 1.5rem">
+              <%= users[i].userName %>, <%= users[i].userPassword %>
             </a>
           </li>
           <% } %>

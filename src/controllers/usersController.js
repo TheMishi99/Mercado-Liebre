@@ -11,29 +11,66 @@ const usersController = {
             users
         });
     },
-    login: (req, res) => {
+    loginGET: (req, res) => {
         res.render("./users/login");
     },
-    register: (req, res) => {
-        res.render("./users/register");
-    },
-    createGET: (req, res) => {
-        res.render("./users/userCreate");
-    },
-    createPOST: (req, res) => {
+    loginPOST: (req, res) => {
         let userName = req.body.userName;
         let userPassword = req.body.userPassword;
-        let user = {
-            id: users[users.length - 1].id + 1,
-            name: userName,
-            password: userPassword
+        let user = users.find(user => user.userName == userName);
+        let verified = false;
+        if(user != null){
+            if(user.userPassword == userPassword){
+                verified = true;
+            }
         }
-        users.push(user);
-        fs.writeFileSync(
-            path.join(__dirname, "../database/users.json"), JSON.stringify(users)
-        );
+        if(verified){
+            res.redirect("/home");
+        }else{
+            res.redirect("/users/login");
+        }
 
-        res.redirect("/users");
+
+    },
+    registerGET: (req, res) => {
+        res.render("./users/register");
+    },
+    registerPOST: (req, res) => {
+        let userFullName = req.body.userFullName;
+        let userName = req.body.userName;
+        let userEmail = req.body.userEmail;
+        let userBirthDate = req.body.userBirthDate;
+        let userAddress = req.body.userAddress;
+        let userProfile = req.body.userProfile;
+        let userInterest = [];
+        if(req.body.userInterest){
+            userInterest = req.body.userInterest;
+        }
+        let userProfileImage = req.file.filename;
+        let userPassword = req.body.userPassword;
+        let userPasswordConfirmation = req.body.userPasswordConfirmation;
+        if(userPassword == userPasswordConfirmation){
+            let newUser = {
+                userID: users[users.length - 1].userID + 1,
+                userFullName,
+                userName,
+                userEmail,
+                userBirthDate,
+                userAddress,
+                userProfile,
+                userInterest,
+                userProfileImage,
+                userPassword,
+                userPasswordConfirmation
+            }
+            users.push(newUser);
+            fs.writeFileSync(
+                path.join(__dirname, "../database/users.json"), JSON.stringify(users)
+            );
+            res.redirect("/users/login");
+        }else{
+            res.redirect("/users/register");
+        }
     },
     searchGET: (req, res) => {
         let formUserSearch = req.query.search;

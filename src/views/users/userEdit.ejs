@@ -18,16 +18,16 @@
     <main class="userEdit-main">
       <div class="user-info">
         <h1 style="font-size: 2rem">Datos</h1>
-        <% let user=users.find(user=> user.id == userID) %>
-        <h2 class="user-name">Nombre de usuario: <%= user.name %></h2>
-        <h2 class="user-password">Contraseña: <%= user.password %></h2>
+        <% let user=users.find(user=> user.userID == userID) %>
+        <h2 class="user-name">Nombre de usuario: <%= user.userName %></h2>
+        <h2 class="user-password">Contraseña: <%= user.userPassword %></h2>
       </div>
       <div class="user-newInfo">
         <h1 style="font-size: 2rem">Nuevos Datos</h1>
         <form action="/users/:userID/edit?_method=PUT" method="POST">
-          <input type="number" name="userID" value="<%= user.id %>" readonly>
-          <input type="text" name="newUserName" value="<%= user.name %>" />
-          <input type="password" name="newUserPassword" value="<%= user.password %>" />
+          <input type="number" name="userID" value="<%= user.userID %>" readonly>
+          <input type="text" name="newUserName" value="<%= user.userName %>" />
+          <input type="password" name="newUserPassword" value="<%= user.userPassword %>" />
           <input type="submit" value="Confirmar" />
         </form>
       </div>

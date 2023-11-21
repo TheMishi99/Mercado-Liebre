@@ -14,18 +14,11 @@
   </head>
 
   <body>
-    <%- include("../partials/header") %>
-    <main class="usersCreate-main">
-      <div class="users-create">
-        <h1 style="font-size: 2rem">Agregar Usuario</h1>
-        <form method="POST" action="/users/create">
-          <input type="text" name="userName" id="userName" placeholder="Nombre de Usuario" required>
-          <input type="password" name="userPassword" id="userPassword" placeholder="Contraseña" pattern="[a-zA-Z0-9]{8}" title="La Contraseña debe contener 8 caracteres y al menos un numero" required>
-          <button type="submit">Agregar</button>
-        </form>
-      </div>
+    <%- include("./partials/header") %>
+    <main class="notFound-main">
+      <h1>PAGINA NO ENCONTRADA</h1>
     </main>
-    <%- include("../partials/footer") %>
+    <%- include("./partials/footer") %>
     <script
       src="https://kit.fontawesome.com/eae7cdcb5c.js"
       crossorigin="anonymous"

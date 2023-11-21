@@ -4,7 +4,12 @@ const express = require("express");
 const app = express();
 const path = require("path");
 const PORT = process.env.PORT;
+
+/* For PUT & DELETE Management */
 const methodOverride = require("method-override");
+
+/* For FILE Management */
+const multer = require("multer");
 
 /* Routers import */
 const main = require("./routes/main")
@@ -44,3 +49,9 @@ app.use(
 app.use(
     "/products", products
 );
+
+app.use(
+    (req, res, next) => {
+        res.status(404).render("notFound");
+    }
+)

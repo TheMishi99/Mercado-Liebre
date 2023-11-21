@@ -1,12 +1,1 @@
-[
-    {
-        "id": 1,
-        "name": "mishi",
-        "password": "gatogat0"
-    },
-    {
-        "id": 2,
-        "name": "ely",
-        "password": "gato"
-    }
-]
+[{"userID":1,"userFullName":"admin","userName":"admin","userEmail":"admin99@gmail.com","userBirthDate":"2003-01-19","userAddress":"a","userProfile":"vendor","userInterest":["moda","jugueteria","vidaSana"],"userPassword":"admin","name":"admin","password":"admin"}]
