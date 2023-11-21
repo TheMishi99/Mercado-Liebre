@@ -1,12 +1,12 @@
 [
     {
         "id": 1,
-        "name": "Mishi",
-        "age": 20
+        "name": "mati",
+        "password": "gato"
     },
     {
         "id": 2,
-        "name": "Ely",
-        "age": 21
+        "name": "ely",
+        "password": "gato"
     }
 ]

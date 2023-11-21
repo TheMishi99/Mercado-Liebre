@@ -28,6 +28,14 @@
           <% } %>
         </ul>
       </div>
+      <div class="products-create">
+        <h1 style="font-size: 2rem">Agregar Producto</h1>
+        <form method="POST" action="/products">
+          <input type="text" name="productName" id="productName" placeholder="Nombre del producto" autocapitalize required>
+          <input type="text" name="productPrice" id="productPrice" placeholder="Precio" pattern="[0-9]*" title="Solo numeros" required>
+          <button type="submit">Agregar</button>
+        </form>
+      </div>
       <div class="products-search">
         <h1 style="font-size: 2rem">Buscar Productos</h1>
         <form action="/products" method="get">
