@@ -17,11 +17,10 @@
     <%- include("../partials/header") %>
     <main class="userDetail-main">
       <div class="user-info">
-        <% let user = users.find(user=> user.userID == userID) %>
         <h2 class="user-name">Nombre de usuario: <%= user.userName %></h2>
-        <h2 class="user-age">Contraseña: <%= user.userPassword %></h2>
-        <a href="/users/<%= userID %>/edit">Editar</a>
-        <a href="/users/<%= userID %>/delete">Eliminar</a>
+        <h2 class="user-age">Contraseña: <%= user.password %></h2>
+        <a href="/users/<%= user.id %>/edit">Editar</a>
+        <a href="/users/<%= user.id %>/delete">Eliminar</a>
         <a href="/users">Volver atras</a>
       </div>
     </main>

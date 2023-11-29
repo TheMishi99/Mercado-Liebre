@@ -17,9 +17,10 @@
     <%- include("../partials/header") %>
     <main class="productCreate-main">
       <h1 style="font-size: 2rem">Agregar Producto</h1>
-      <form method="POST" action="/products/create">
-        <input type="text" name="productName" id="productName" placeholder="Nombre del producto" autocapitalize required>
-        <input type="text" name="productPrice" id="productPrice" placeholder="Precio" pattern="[0-9]+" title="Solo numeros" required>
+      <form method="POST" action="/products/create" enctype="multipart/form-data">
+        <input type="file" name="img" id="img">
+        <input type="text" name="name" id="name" placeholder="Nombre del producto" autocapitalize required>
+        <input type="text" name="price" id="price" placeholder="Precio" pattern="[0-9]+" title="Solo numeros" required>
         <button type="submit">Agregar</button>
       </form>
     </main>

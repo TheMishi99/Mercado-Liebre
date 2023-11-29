@@ -17,9 +17,8 @@
     <%- include("../partials/header") %>
     <main class="userDelete-main">
       <div class="user-info">
-        <% let user = users.find(user => user.id == userID); %>
         <p>Estas seguro que deseas borrar al usuario "<%= user.userName %>"?</p>
-        <form action="/users/:userID/delete?_method=DELETE" method="POST">
+        <form action="/users/<%= user.id %>/delete?_method=DELETE" method="POST">
           <input type="submit" value="Confirmar" />
         </form>
       </div>

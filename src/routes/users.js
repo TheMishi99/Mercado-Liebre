@@ -1,22 +1,23 @@
-const path = require('path');
 const express = require('express');
 const router = express.Router();
 
-/* MULTER Configuration */
+/* Multer Configuration */
+const path = require("path")
 const multer = require('multer');
-const multerDiskStorage = multer.diskStorage({
-    destination: (req, file, callback) => {
-        let folder = path.join(__dirname, "../../public/images/profile-imgs");
-        callback(null, folder);
+const storage = multer.diskStorage({
+    destination: (req, file, cb) => {
+        const destinationFolder = path.join(__dirname, "../../public/images/usersAvatars");
+        cb(null, destinationFolder);
     },
-    filename: (req, file, callback) => {
-        let fileName = Date.now() + path.extname(file.originalname);
-        callback(null, fileName);
+    filename: (req, file, cb) => {
+        const newFileName = "img-" + Date.now() + "-" + file.originalname;
+        cb(null, newFileName);
     }
 });
-const fileUpload = multer({
-    storage: multerDiskStorage
+const uploadFile = multer({
+    storage
 })
+/* Multer Configuration */
 
 
 const usersController = require("../controllers/usersController");
@@ -27,17 +28,17 @@ router.get("/login", usersController.loginGET);
 router.post("/login", usersController.loginPOST);
 
 router.get("/register", usersController.registerGET);
-router.post("/register", fileUpload.single("userProfileImage"), usersController.registerPOST);
+router.post("/register", uploadFile.single("userProfileImage"), usersController.registerPOST);
 
 router.get("/search", usersController.searchGET);
 
-router.get("/:userID", usersController.user);
+router.get("/:id", usersController.user);
 
-router.get("/:userID/edit", usersController.editGET);
-router.put("/:userID/edit", usersController.editPUT);
+router.get("/:id/edit", usersController.editGET);
+router.put("/:id/edit", uploadFile.single("userProfileImage"), usersController.editPUT);
 
-router.get("/:userID/delete", usersController.deleteGET);
-router.delete("/:userID/delete", usersController.deleteDELETE);
+router.get("/:id/delete", usersController.deleteGET);
+router.delete("/:id/delete", usersController.deleteDELETE);
 
 
 module.exports = router;

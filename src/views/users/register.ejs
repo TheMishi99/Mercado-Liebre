@@ -21,8 +21,8 @@
         <form action="/users/register" method="POST" enctype="multipart/form-data">
           <input
             type="text"
-            name="userFullName"
-            id="userFullName"
+            name="fullName"
+            id="fullName"
             placeholder="Nombre y Apellido"
             autocomplete="off"
             required
@@ -41,24 +41,24 @@
           />
           <input
             type="email"
-            name="userEmail"
-            id="userEmail"
+            name="email"
+            id="email"
             placeholder="E-mail"
             autocomplete="off"
             required
           />
-          <label for="userBirthDate">Fecha de Nacimiento</label>
+          <label for="birthDate">Fecha de Nacimiento</label>
           <input
             type="date"
-            name="userBirthDate"
-            id="userBirthDate"
+            name="birthDate"
+            id="birthDate"
             autocomplete="off"
             required
           />
           <input
             type="text"
-            name="userAddress"
-            id="userAddress"
+            name="address"
+            id="address"
             placeholder="Domicilio"
             autocomplete="off"
             required
@@ -70,7 +70,7 @@
             <div class="option">
               <input
                 type="radio"
-                name="userProfile"
+                name="profile"
                 id="buyer"
                 value="vendor"
                 required
@@ -80,7 +80,7 @@
             <div class="option">
               <input
                 type="radio"
-                name="userProfile"
+                name="profile"
                 id="vendor"
                 value="vendor"
                 required
@@ -93,7 +93,7 @@
             <div class="option">
               <input
                 type="checkbox"
-                name="userInterest"
+                name="interests"
                 id="electro"
                 value="electro"
               />
@@ -102,7 +102,7 @@
             <div class="option">
               <input
                 type="checkbox"
-                name="userInterest"
+                name="interests"
                 id="moda"
                 value="moda"
               />
@@ -111,7 +111,7 @@
             <div class="option">
               <input
                 type="checkbox"
-                name="userInterest"
+                name="interests"
                 id="hogar"
                 value="hogar"
               />
@@ -120,7 +120,7 @@
             <div class="option">
               <input
                 type="checkbox"
-                name="userInterest"
+                name="interests"
                 id="jugueteria"
                 value="jugueteria"
               />
@@ -129,7 +129,7 @@
             <div class="option">
               <input
                 type="checkbox"
-                name="userInterest"
+                name="interests"
                 id="vidaSana"
                 value="vidaSana"
               />
@@ -137,19 +137,19 @@
             </div>
           </div>
           <label>Foto de Perfil</label>
-          <input type="file" name="userProfileImage" id="userProfileImage" required/>
+          <input type="file" name="profileImage" id="profileImage" required/>
           <input
             type="password"
-            name="userPassword"
-            id="userPassword"
+            name="password"
+            id="password"
             placeholder="Contraseña"
             autocomplete="off"
             required
           />
           <input
             type="password"
-            name="userPasswordConfirmation"
-            id="userPasswordConfirmation"
+            name="passwordConfirmation"
+            id="passwordConfirmation"
             placeholder="Confirmar Contraseña"
             autocomplete="off"
             required

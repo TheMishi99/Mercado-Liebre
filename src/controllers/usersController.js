@@ -1,14 +1,12 @@
 const fs = require('fs');
 const path = require("path");
-const users = JSON.parse(
-    fs.readFileSync(
-        path.join(__dirname, "../database/users.json")
-    )
-);
+
+const { index, findOne, createOne, modifyOne, deleteOne, searchUsers } = require("../models/user.model");
+
 const usersController = {
     users: (req, res) => {
         res.render("./users/users", {
-            users
+            users: index()
         });
     },
     loginGET: (req, res) => {
@@ -29,98 +27,88 @@ const usersController = {
         }else{
             res.redirect("/users/login");
         }
-
-
     },
     registerGET: (req, res) => {
         res.render("./users/register");
     },
     registerPOST: (req, res) => {
-        let userFullName = req.body.userFullName;
-        let userName = req.body.userName;
-        let userEmail = req.body.userEmail;
-        let userBirthDate = req.body.userBirthDate;
-        let userAddress = req.body.userAddress;
-        let userProfile = req.body.userProfile;
-        let userInterest = [];
-        if(req.body.userInterest){
-            userInterest = req.body.userInterest;
+        let { fullName, userName, email, birthDate, address, profile, interests, password, passwordConfirmation } = req.body;
+        let img = req.file;
+        if(!req.body.userInterest){
+            userInterest = [];
         }
-        let userProfileImage = req.file.filename;
-        let userPassword = req.body.userPassword;
-        let userPasswordConfirmation = req.body.userPasswordConfirmation;
-        if(userPassword == userPasswordConfirmation){
+        if(password == passwordConfirmation){
             let newUser = {
-                userID: users[users.length - 1].userID + 1,
-                userFullName,
+                id: 0,
+                fullName,
                 userName,
-                userEmail,
-                userBirthDate,
-                userAddress,
-                userProfile,
-                userInterest,
-                userProfileImage,
-                userPassword,
-                userPasswordConfirmation
+                email,
+                birthDate,
+                address,
+                profile,
+                interests,
+                profileImage: "/images/usersAvatars/" + img.filename,
+                password,
+                passwordConfirmation
             }
-            users.push(newUser);
-            fs.writeFileSync(
-                path.join(__dirname, "../database/users.json"), JSON.stringify(users)
-            );
+            createOne(newUser);
             res.redirect("/users/login");
         }else{
             res.redirect("/users/register");
         }
     },
     searchGET: (req, res) => {
-        let formUserSearch = req.query.search;
+        let keywords = req.query.search;
         res.render("./users/userSearch", {
-            users,
-            formUserSearch
+            results: searchUsers(keywords)
         })
     },
     editGET: (req, res) => {
-        const userID = req.params.userID;
+        const user = findOne(req.params.id);
         res.render("./users/userEdit", {
-            users,
-            userID
+            user
         })
     },
     editPUT: (req, res) => {
-        let userID = req.body.userID;
-        let newUserName = req.body.newUserName;
-        let newUserPassword = req.body.newUserPassword;
+        let { fullName, userName, email, birthDate, address, profile, interests, password, passwordConfirmation } = req.body;
+        let img = req.file;
 
-        users[userID - 1].name = newUserName;
-        users[userID - 1].password = newUserPassword;
-
-        fs.writeFileSync(
-            path.join(__dirname, "../database/users.json"), JSON.stringify(users)
-        );
-        res.redirect("/users");
+        if(password == passwordConfirmation){
+            let newUser = {
+                id: req.body.id,
+                fullName,
+                userName,
+                email,
+                birthDate,
+                address,
+                profile,
+                interests,
+                profileImage: "/images/usersAvatars/" + img.filename,
+                password,
+                passwordConfirmation
+            }
+            modifyOne(newUser);
+            res.redirect("/users/login");
+        }else{
+            res.redirect("/users/register");
+        }
     },
     deleteGET: (req, res) => {
-        const userID = req.params.userID;
+        const user = findOne(req.params.id);
         res.render(
             "./users/userDelete", {
-                users,
-                userID
+                user
         })
     },
     deleteDELETE: (req, res) => {
-        const userID = req.params.userID;
-        users.splice(userID - 1, 1);
-        
-        fs.writeFileSync(
-            path.join(__dirname, "../database/users.json"), JSON.stringify(users)
-        );
+        const userId = req.params.id;
+        deleteOne(userId);
         res.redirect("/users");
     },
     user: (req, res) => {
-        const userID = req.params.userID;
+        const user = findOne(req.params.id);
         res.render("./users/userDetail", {
-            users,
-            userID
+            user
         })
     }
 };

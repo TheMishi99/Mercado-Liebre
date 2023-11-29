@@ -16,19 +16,162 @@
   <body>
     <%- include("../partials/header") %>
     <main class="userEdit-main">
-      <div class="user-info">
-        <h1 style="font-size: 2rem">Datos</h1>
-        <% let user=users.find(user=> user.userID == userID) %>
-        <h2 class="user-name">Nombre de usuario: <%= user.userName %></h2>
-        <h2 class="user-password">Contraseña: <%= user.userPassword %></h2>
-      </div>
       <div class="user-newInfo">
         <h1 style="font-size: 2rem">Nuevos Datos</h1>
-        <form action="/users/:userID/edit?_method=PUT" method="POST">
-          <input type="number" name="userID" value="<%= user.userID %>" readonly>
-          <input type="text" name="newUserName" value="<%= user.userName %>" />
-          <input type="password" name="newUserPassword" value="<%= user.userPassword %>" />
-          <input type="submit" value="Confirmar" />
+        <form action="/users/<%= user.id %>/edit?_method=PUT" method="POST" enctype="multipart/form-data">
+          <input type="number" name="userID" value="<%= user.id %>" readonly>
+          <img src="<%= user.profileImage %>" alt="Foto de Perfil">
+          <input
+            type="text"
+            name="fullName"
+            id="fullName"
+            placeholder="Nombre y Apellido"
+            autocomplete="off"
+            required
+            pattern="[a-zA-Z]{5,30}"
+            title="Minimo 5 Caracteres"
+            value="<%= user.fullName %>"
+          />
+          <input
+            type="text"
+            name="userName"
+            id="userName"
+            placeholder="Nombre de Usuario"
+            autocomplete="off"
+            required
+            pattern="[a-zA-Z0-9]{5,30}"
+            title="Minimo 5 Caracteres"
+            value="<%= user.userName %>"
+          />
+          <input
+            type="email"
+            name="email"
+            id="email"
+            placeholder="E-mail"
+            autocomplete="off"
+            required
+            value="<%= user.email %>"
+          />
+          <label for="birthDate">Fecha de Nacimiento</label>
+          <input
+            type="date"
+            name="birthDate"
+            id="birthDate"
+            autocomplete="off"
+            required
+            value="<%= user.birthDate %>"
+          />
+          <input
+            type="text"
+            name="address"
+            id="address"
+            placeholder="Domicilio"
+            autocomplete="off"
+            required
+            pattern="[a-zA-Z0-9]{5,30}"
+            title="Minimo 5 Caracteres y al menos un numero"
+            value="<%= user.address %>"
+          />
+          <label>Perfil de Usuario</label>
+          <div class="userProfile-container">
+            <div class="option">
+              <input
+                type="radio"
+                name="profile"
+                id="buyer"
+                value="buyer"
+                required
+                <% if (user.profile.includes("buyer")) { %>
+                  selected
+                <% } %>
+              />
+              <label for="buyer">Comprador</label>
+            </div>
+            <div class="option">
+              <input
+                type="radio"
+                name="profile"
+                id="vendor"
+                value="vendor"
+                required
+                <% if (user.profile.includes("vendor")) { %>
+                  selected
+                <% } %>
+              />
+              <label for="vendor">Vendedor</label>
+            </div>
+          </div>
+          <label>Intereses</label>
+          <div class="userInterest-container">
+            <div class="option">
+              <input
+                type="checkbox"
+                name="interests"
+                id="electro"
+                value="electro"
+                <% if (user.interests.includes("electro")) { %>
+                  selected
+                <% } %>
+              />
+              <label for="electro">Electro</label>
+            </div>
+            <div class="option">
+              <input
+                type="checkbox"
+                name="interests"
+                id="moda"
+                value="moda"
+                <% if (user.interests.includes("moda")) { %>
+                  selected
+                <% } %>
+              />
+              <label for="moda">Moda</label>
+            </div>
+            <div class="option">
+              <input
+                type="checkbox"
+                name="interests"
+                id="hogar"
+                value="hogar"
+                <% if (user.interests.includes("hogar")) { %>
+                  selected
+                <% } %>
+              />
+              <label for="hogar">Hogar</label>
+            </div>
+            <div class="option">
+              <input
+                type="checkbox"
+                name="interests"
+                id="jugueteria"
+                value="jugueteria"
+                <% if (user.interests.includes("jugueteria")) { %>
+                  selected
+                <% } %>
+              />
+              <label for="jugueteria">Jugueteria</label>
+            </div>
+            <div class="option">
+              <input
+                type="checkbox"
+                name="interests"
+                id="vidaSana"
+                value="vidaSana"
+                <% if (user.interests.includes("vidaSana")) { %>
+                  selected
+                <% } %>
+              />
+              <label for="vidaSana">Vida Sana</label>
+            </div>
+          </div>
+          <label>Foto de Perfil</label>
+          <input
+          type="file"
+          name="profileImage"
+          id="profileImage"
+          required
+          />
+          <button type="submit">Confirmar</button>
         </form>
       </div>
     </main>

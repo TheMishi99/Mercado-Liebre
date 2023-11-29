@@ -202,7 +202,7 @@ header .burger-menu i {
     color: #666;
 }
 
-.home-main section article {
+.home-main section a {
     margin: 10px;
     padding: 15px;
     width: 100%;
@@ -214,18 +214,24 @@ header .burger-menu i {
     justify-content: center
 }
 
-.home-main section article .imagen {
+.home-main section a:link,
+.home-main section a:visited {
+    text-decoration: none;
+    color: black;
+}
+
+.home-main section a .imagen {
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.home-main section article .imagen img {
+.home-main section a .imagen img {
     width: 100%;
 }
 
-.home-main section article .article-info {
+.home-main section a .article-info {
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -235,7 +241,7 @@ header .burger-menu i {
     position: relative;
 }
 
-.home-main section article .article-info i {
+.home-main section a .article-info i {
     margin: 0px 0px 5px 0px;
     border: 1px solid #39b54a;
     border-radius: 15px;
@@ -252,7 +258,7 @@ header .burger-menu i {
     z-index: 10;
 }
 
-.home-main section article .article-info .precio {
+.home-main section a .article-info .precio {
     display: flex;
     align-items: center;
     justify-content: flex-start;
@@ -261,7 +267,7 @@ header .burger-menu i {
     font-size: 1.5rem;
 }
 
-.home-main section article .article-info .descuento {
+.home-main section a .article-info .descuento {
     margin: 6px 0px;
     display: flex;
     align-items: center;
@@ -270,12 +276,12 @@ header .burger-menu i {
     color: #39b54a;
 }
 
-.home-main section article .article-info h4 a,
-.home-main section article .article-info .descuento {
+.home-main section a .article-info h4,
+.home-main section a .article-info .descuento {
     font-size: 1.33rem;
 }
 
-.home-main section article .article-info h4 {
+.home-main section a .article-info h4 {
     margin: 2px 0px 5px;
     display: flex;
     align-items: center;
@@ -283,12 +289,6 @@ header .burger-menu i {
     width: 100%;
     color: #666;
     text-align: center;
-}
-
-.home-main section article .article-info h4 a:link,
-.home-main section article .article-info h4 a:visited {
-    text-decoration: none;
-    color: black;
 }
 
 /*Login*/
@@ -483,6 +483,178 @@ header .burger-menu i {
     padding: 8px;
 }
 
+/*Products*/
+.products-main {
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+    background-color: #ebebee;
+}
+
+.products-main .products-op {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+}
+
+.products-main .products-op h1 {
+    width: 100%;
+    font-size: 1.5rem;
+}
+
+.products-main .products-op a {
+    width: 25%;
+    margin: 5px 5px;
+}
+
+.products-main .products-op a:link {
+    text-decoration: none;
+    color: white;
+}
+
+.products-main .products-op a:visited {
+    text-decoration: none;
+    color: white;
+}
+
+.products-main .products-op .productCreate-button {
+    border: none;
+    border-radius: 5px;
+    padding: 2px;
+    background-color: green;
+    text-align: center;
+}
+
+.products-main .products-op .productSearch-button {
+    border: none;
+    border-radius: 5px;
+    padding: 2px;
+    background-color: blue;
+    text-align: center;
+}
+
+.products-main .products-list {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+}
+
+.products-main .products-list h1 {
+    width: 100%;
+    font-size: 1.5rem;
+}
+
+.products-main .products-list ul {
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.products-main .products-list ul li {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    margin: 10px 0px;
+}
+
+.products-main .products-list ul li a {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+}
+
+.products-main .products-list ul li a:link {
+    text-decoration: none;
+    color: black;
+}
+
+.products-main .products-list ul li a:visited {
+    text-decoration: none;
+    color: black;
+}
+
+.products-main .products-list .product-img {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.products-main .products-list .product-img img {
+    width: 100%;
+}
+
+.products-main .products-list .product-info {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    position: relative;
+}
+
+.products-main .products-list .product-info i {
+    margin: 0px 0px 5px 0px;
+    border: 1px solid #39b54a;
+    border-radius: 15px;
+    color: #39b54a;
+    width: 10%;
+    aspect-ratio: 1 / 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    position: absolute;
+    right: 0px;
+    top: -25px;
+    z-index: 10;
+}
+
+.products-main .products-list .product-info .product-price {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    margin: 5px 0px;
+    font-size: 1.5rem;
+}
+
+.products-main .products-list .product-info .product-name {
+    margin: 2px 0px 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    color: #666;
+    text-align: center;
+    font-size: 1.33rem;
+}
+
+
 /*Footer*/
 footer {
     display: flex;
@@ -622,30 +794,30 @@ footer>h4 strong {
         font-size: 1.4rem;
     }
 
-    .home-main section article {
+    .home-main section a {
         width: 43%;
     }
 
-    .home-main section article .imagen {
+    .home-main section a .imagen {
         height: 80%;
     }
 
-    .home-main section article .article-info {
+    .home-main section a .article-info {
         height: 20%;
     }
 
-    .home-main section article .article-info i {
+    .home-main section a .article-info i {
         font-size: 1.7vw;
         right: 0px;
         top: -15px;
     }
 
-    .home-main section article .article-info .precio {
+    .home-main section a .article-info .precio {
         font-size: 0.7825rem;
     }
 
-    .home-main section article .article-info h4 a,
-    .home-main section article .article-info .descuento {
+    .home-main section a .article-info h4,
+    .home-main section a .article-info .descuento {
         font-size: 0.6125rem;
     }
 
@@ -714,6 +886,97 @@ footer>h4 strong {
         background-color: #0022AA;
     }
 
+    /*Products*/
+    .products-main {
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        align-self: center;
+        background-color: #ebebee;
+    }
+
+    .products-main .products-op {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        padding: 5px;
+    }
+
+    .products-main .products-op h1 {
+        width: 100%;
+        font-size: 1.5rem;
+    }
+
+    .products-main .products-op a {
+        width: 25%;
+        margin: 5px 5px;
+    }
+
+    .products-main .products-op a:link {
+        text-decoration: none;
+        color: white;
+    }
+
+    .products-main .products-op a:visited {
+        text-decoration: none;
+        color: white;
+    }
+
+    .products-main .products-op .productCreate-button {
+        border: none;
+        border-radius: 5px;
+        padding: 2px;
+        background-color: green;
+        text-align: center;
+    }
+
+    .products-main .products-op .productSearch-button {
+        border: none;
+        border-radius: 5px;
+        padding: 2px;
+        background-color: blue;
+        text-align: center;
+    }
+
+    .products-main .products-list {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        margin: 5px;
+    }
+
+    .products-main .products-list h1 {
+        width: 100%;
+        font-size: 1.5rem;
+    }
+
+    .products-main .products-list ul {
+        justify-content: space-between;
+    }
+
+    .products-main .products-list ul li {
+        width: 43%;
+    }
+
+    .products-main .products-list .product-info i {
+        font-size: 1.7vw;
+        right: 0px;
+        top: -15px;
+    }
+
+    .products-main .products-list .product-info .product-price {
+        font-size: 0.7825rem;
+    }
+
+    .products-main .products-list .product-info .product-name {
+        font-size: 0.6125rem;
+    }
 
     /*Footer*/
     footer ul li i {
@@ -766,46 +1029,46 @@ footer>h4 strong {
         font-size: 1.6rem;
     }
 
-    .home-main section article {
+    .home-main section a {
         width: 21%;
         transition: box-shadow 500ms;
     }
 
-    .home-main section article:hover {
+    .home-main section a:hover {
         box-shadow: 0px 0px 10px rgb(100, 100, 100);
     }
 
-    .home-main section article .imagen {
+    .home-main section a .imagen {
         height: 90%;
     }
 
-    .home-main section article .imagen img {
+    .home-main section a .imagen img {
         height: 100%;
     }
 
-    .home-main section article .article-info i {
+    .home-main section a .article-info i {
         font-size: 0.9vw;
         transition: rotate 1000ms;
     }
 
-    .home-main section article:hover .article-info i {
+    .home-main section a:hover .article-info i {
         rotate: -90deg;
     }
-    
-    .home-main section article .article-info h4 {
+
+    .home-main section a .article-info h4 {
         display: none;
     }
 
-    .home-main section article:hover .article-info h4 {
+    .home-main section a:hover .article-info h4 {
         display: flex;
     }
 
-    .home-main section article .article-info .precio {
+    .home-main section a .article-info .precio {
         font-size: 1.1vw;
     }
 
-    .home-main section article .article-info h4 a,
-    .home-main section article .article-info .descuento {
+    .home-main section a .article-info h4,
+    .home-main section a .article-info .descuento {
         font-size: 1vw;
     }
 

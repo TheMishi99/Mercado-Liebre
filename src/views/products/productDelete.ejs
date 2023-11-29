@@ -17,9 +17,8 @@
     <%- include("../partials/header") %>
     <main class="productDelete-main">
       <div class="product-info">
-        <% let product = products.find(product => product.id == productID); %>
         <p>Estas seguro que deseas borrar el producto "<%= product.name %>"?</p>
-        <form action="/products/<%= productID %>/delete?_method=DELETE" method="POST">
+        <form action="/products/<%= product.id %>/delete?_method=DELETE" method="POST">
           <input type="submit" value="Confirmar" />
         </form>
       </div>

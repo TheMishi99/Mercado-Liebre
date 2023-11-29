@@ -1,1 +1,14 @@
-[{"userID":1,"userFullName":"admin","userName":"admin","userEmail":"admin99@gmail.com","userBirthDate":"2003-01-19","userAddress":"a","userProfile":"vendor","userInterest":["moda","jugueteria","vidaSana"],"userPassword":"admin","name":"admin","password":"admin"}]
+[
+  {
+    "id": 1,
+    "fullName": "admin",
+    "userName": "admin",
+    "email": "admin99@gmail.com",
+    "birthDate": "2003-01-19",
+    "address": "a",
+    "profile": "vendor",
+    "interests": ["moda", "jugueteria", "vidaSana"],
+    "profileImage": "/images/usersAvatars/img-miFoto.jpg",
+    "password": "admin"
+  }
+]

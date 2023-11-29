@@ -1,87 +1,68 @@
 const fs = require('fs');
 const path = require("path");
-const products = JSON.parse(
-    fs.readFileSync(
-        path.join(__dirname, "../database/products.json")
-    )
-);
+
+const { index, findOne, createOne, modifyOne, deleteOne, searchProducts } = require("../models/product.model");
+
 const productosController = {
     products: (req, res) => {
         res.render("products/products", {
-            products,
+            products: index()
         });
     },
     createGET: (req, res) => {
-        res.render(
-            "products/productCreate", {
-        });
+        res.render("products/productCreate");
     },
     createPOST: (req, res) => {
-        let productName = req.body.productName;
-        let productPrice = req.body.productPrice;
+        let name = req.body.name;
+        let price = req.body.price;
+        let img = req.file;
         let product = {
-            id: products[products.length - 1].id + 1,
-            name: productName,
-            altName: productName,
-            price: productPrice,
-            image: "/images/products/img-tv-samsung-smart.jpg"
+            id: 0,
+            name,
+            altName: name,
+            price,
+            image: "/images/products/" + img.filename
         }
-        products.push(product);
-        fs.writeFileSync(
-            path.join(__dirname, "../database/products.json"), JSON.stringify(products)
-        );
+        createOne(product);
         res.redirect("/products");
     },
     searchGET: (req, res) => {
-        let formProductSearch = req.query.search;
+        let keywords = req.query.search;
         res.render("products/productSearch", {
-            products,
-            formProductSearch
+            results: searchProducts(keywords)
         });
     },
     editGET: (req, res) => {
-        const productID = req.params.productID;
+        let product = findOne(req.query.productID);
         res.render("./products/productEdit", {
-            products,
-            productID
+            product
         })
     },
     editPUT: (req, res) => {
-        let productID = req.body.productID;
-        let newProductName = req.body.newProductName;
-        let newProductPrice = req.body.newProductPrice;
-
-        products[productID - 1].name = newProductName;
-        products[productID - 1].price = newProductPrice;
-
-        fs.writeFileSync(
-            path.join(__dirname, "../database/products.json"), JSON.stringify(products)
-        );
+        let product = {
+            id: req.body.productID,
+            name: req.body.newProductName,
+            price: req.body.newProductPrice
+        }
+        modifyOne(product);
         res.redirect("/products");
     },
     deleteGET: (req, res) => {
-        const productID = req.params.productID;
+        let product = findOne(req.params.productID);
         res.render(
             "./products/productDelete", {
-                products,
-                productID
+                product
         })
     },
     deleteDELETE: (req, res) => {
-        const productID = req.params.productID;
-        console.log(productID);
-        products.splice(productID - 1, 1);
-        
-        fs.writeFileSync(
-            path.join(__dirname, "../database/products.json"), JSON.stringify(products)
-        );
+        let productID = req.params.productID;
+        deleteOne(productID);
         res.redirect("/products");
     },
     product: (req, res) => {
-        let productID = req.params.productID
+        let product = findOne(req.params.productID)
         res.render("products/productDetail", {
-            products,
-            productID
+            product
         });
     }
 };
