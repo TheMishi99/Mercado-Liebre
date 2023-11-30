@@ -1,7 +1,6 @@
 const { readFileSync, writeFileSync, unlinkSync } = require("fs");
 const { join } = require("path");
 
-
 const model = {
   productsPath: join(__dirname, "../database/products.json"),
   index: () => JSON.parse(readFileSync(model.productsPath)),
@@ -19,6 +18,7 @@ const model = {
     );
     allProducts[productIndex].name = newProductData.name;
     allProducts[productIndex].price = newProductData.price;
+    allProducts[productIndex].image = newProductData.image;
     writeFileSync(model.productsPath, JSON.stringify(allProducts));
   },
   deleteOne: (id) => {
@@ -26,16 +26,18 @@ const model = {
     const productToDelete_Index = allProducts.findIndex(
       (product) => product.id == id
     );
-    try {
-      unlinkSync(
-        join(__dirname, "../../public", allProducts[productToDelete_Index].image)
-      );
-      console.log('File removed')
-      allProducts.splice(productToDelete_Index, 1);
-      writeFileSync(model.productsPath, JSON.stringify(allProducts));
-    } catch(err) {
-      console.error('Something wrong happened removing the file', err)
+    if(allProducts[productToDelete_Index].image != "/images/products/default.jpg"){
+      try {
+        unlinkSync(
+          join(__dirname, "../../public", allProducts[productToDelete_Index].image)
+        );
+        console.log('File removed')
+      } catch(err) {
+        console.error('Something wrong happened removing the file', err)
+      }
     }
+    allProducts.splice(productToDelete_Index, 1);
+    writeFileSync(model.productsPath, JSON.stringify(allProducts));
   },
   searchProducts: (keywords) => {
     const allProducts = model.index();

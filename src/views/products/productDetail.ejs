@@ -16,13 +16,23 @@
   <body>
     <%- include("../partials/header") %>
     <main class="productDetail-main">
-      <div class="product-info">
-        <img src="<%= product.image %>" width="360" alt=<%= product.altName %> />
-        <h2 class="product-name">Nombre de producto: <%= product.name %></h2>
-        <h2 class="product-age">Precio: $<%= product.price %></h2>        
-        <a href="/products/<%= product.id %>/edit">Editar</a>
-        <a href="/products/<%= product.id %>/delete">Eliminar</a>
-        <a href="/products">Volver atras</a>
+      <h1>Detalle de Producto</h1>
+      <div class="product">
+        <div class="product-img">
+          <img src="<%= product.image %>" alt=<%= product.altName %> />
+        </div>
+        <div class="product-info">
+          <i class="fa-solid fa-truck-fast"></i>
+          <h2 class="product-price">$<%= product.price %></h2>
+          <h2 class="product-name"><%= product.name %></h2>
+          <div class="product-ops">
+            <a href="/products/<%= product.id %>/edit" class="edit-button">Editar</a>
+            <form action="/products/<%= product.id %>?_method=DELETE" method="POST">
+              <button type="submit" class="delete-button">Eliminar</button>
+            </form>
+            <a href="/products" class="go-back-button">Volver atras</a>
+          </div>
+        </div>
       </div>
     </main>
     <%- include("../partials/footer") %>

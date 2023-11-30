@@ -28,12 +28,11 @@ router.post("/create", uploadFile.single("img"), productsController.createPOST);
 
 router.get("/search", productsController.searchGET);
 
-router.get("/:productID", productsController.product);
+router.get("/:id", productsController.product);
 
-router.get("/:productID/edit", productsController.editGET);
-router.put("/:productID/edit", uploadFile.single("img"), productsController.editPUT);
+router.get("/:id/edit", productsController.editGET);
+router.put("/:id/edit", uploadFile.single("img"), productsController.editPUT);
 
-router.get("/:productID/delete", productsController.deleteGET);
-router.delete("/:productID/delete", productsController.deleteDELETE);
+router.delete("/:id", productsController.deleteDELETE);
 
 module.exports = router;

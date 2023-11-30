@@ -15,13 +15,19 @@ const productosController = {
     createPOST: (req, res) => {
         let name = req.body.name;
         let price = req.body.price;
-        let img = req.file;
+        let image;
+        if(req.file){
+            image = req.file;
+            image = "/images/products/" + image.filename
+        }else{
+            image = "/images/products/default.jpg"
+        }
         let product = {
             id: 0,
             name,
             altName: name,
             price,
-            image: "/images/products/" + img.filename
+            image
         }
         createOne(product);
         res.redirect("/products");
@@ -33,34 +39,34 @@ const productosController = {
         });
     },
     editGET: (req, res) => {
-        let product = findOne(req.query.productID);
+        let product = findOne(req.params.id);
         res.render("./products/productEdit", {
             product
         })
     },
     editPUT: (req, res) => {
+        let image;
+        if(req.file){
+            image = req.file;
+        }else{
+            image = findOne(req.body.id).image
+        }
         let product = {
-            id: req.body.productID,
-            name: req.body.newProductName,
-            price: req.body.newProductPrice
+            id: req.body.id,
+            name: req.body.name,
+            price: req.body.price,
+            image
         }
         modifyOne(product);
         res.redirect("/products");
     },
-    deleteGET: (req, res) => {
-        let product = findOne(req.params.productID);
-        res.render(
-            "./products/productDelete", {
-                product
-        })
-    },
     deleteDELETE: (req, res) => {
-        let productID = req.params.productID;
-        deleteOne(productID);
+        let id = req.params.id;
+        deleteOne(id);
         res.redirect("/products");
     },
     product: (req, res) => {
-        let product = findOne(req.params.productID)
+        let product = findOne(req.params.id)
         res.render("products/productDetail", {
             product
         });

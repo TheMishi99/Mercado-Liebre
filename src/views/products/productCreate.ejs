@@ -16,11 +16,37 @@
   <body>
     <%- include("../partials/header") %>
     <main class="productCreate-main">
-      <h1 style="font-size: 2rem">Agregar Producto</h1>
-      <form method="POST" action="/products/create" enctype="multipart/form-data">
-        <input type="file" name="img" id="img">
-        <input type="text" name="name" id="name" placeholder="Nombre del producto" autocapitalize required>
-        <input type="text" name="price" id="price" placeholder="Precio" pattern="[0-9]+" title="Solo numeros" required>
+      <form
+        method="POST"
+        action="/products/create"
+        enctype="multipart/form-data"
+      >
+        <h1>Agregar Producto</h1>
+        <h2>Foto del Producto</h2>
+        <img
+          src="/images/products/default.jpg"
+          alt="Foto de producto"
+          id="preview"
+        />
+        <input type="file" name="img" id="img" onchange="loadImage(event)" />
+        <input
+          type="text"
+          name="name"
+          id="name"
+          placeholder="Nombre del producto"
+          pattern="^[a-zA-z]+( [a-zA-Z]+)*$"
+          required
+          title="No debe estar vacio"
+        />
+        <input
+          type="text"
+          name="price"
+          id="price"
+          placeholder="Precio"
+          pattern="^[1-9]+[0-9]{0,2}(\.[0-9]{3})*(,([1-9]|[0-9]*[1-9]))?$"
+          required
+          title="Un precio con . para millares y , para decimales (no debe terminar en 0)"
+        />
         <button type="submit">Agregar</button>
       </form>
     </main>
@@ -29,5 +55,11 @@
       src="https://kit.fontawesome.com/eae7cdcb5c.js"
       crossorigin="anonymous"
     ></script>
+    <script>
+      let loadImage = (event) => {
+        let image = document.getElementById("preview");
+        image.src = URL.createObjectURL(event.target.files[0]);
+      };
+    </script>
   </body>
 </html>
