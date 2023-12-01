@@ -444,3 +444,17 @@ Se ingresó a: /users/search?search=
 Se ingresó a: /users/search?search=
 Se ingresó a: /users/search?search=
 Se ingresó a: /users/search?search=
+Se ingresó a: /
+Se ingresó a: /home
+Se ingresó a: /favicon.ico
+Se ingresó a: /products
+Se ingresó a: /products/3
+Se ingresó a: /products/3/edit
+Se ingresó a: /products/3/edit
+Se ingresó a: /products/3/edit?_method=PUT
+Se ingresó a: /products
+Se ingresó a: /products
+Se ingresó a: /products/3
+Se ingresó a: /products/3/edit
+Se ingresó a: /products/3/edit?_method=PUT
+Se ingresó a: /products
