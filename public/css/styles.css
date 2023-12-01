@@ -356,8 +356,8 @@ header .burger-menu i {
 
 /*Register*/
 .register-main {
+    width: 100%;
     margin: 0px 0px 15px 0px;
-    background-color: #ebebeb;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -367,16 +367,17 @@ header .burger-menu i {
 .register-main .register-container {
     margin: 20px 0px;
     width: 275px;
-    height: 650px;
+    height: 950px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    background-color: #ebebeb;
     border: 1px solid #EAC926;
     border-radius: 10px;
 }
 
-.register-main .register-container h3 {
+.register-main .register-container h1 {
     width: 100%;
     text-align: center;
     align-self: center;
@@ -391,6 +392,24 @@ header .burger-menu i {
     justify-content: center;
 }
 
+.register-main .register-container form img {
+    width: 50%;
+    margin: 5px 0px;
+}
+
+.register-main .register-container form label {
+    margin: 15px 0px 0px 0px;
+    font-size: 1rem;
+    font-weight: bold;
+    align-self: flex-start;
+}
+
+.register-main .register-container form input {
+    margin: 10px 0px 5px;
+    border: 1px solid white;
+    padding: 6px;
+}
+
 .register-main .register-container form input[type="text"],
 .register-main .register-container form input[type="email"],
 .register-main .register-container form input[type="password"],
@@ -402,20 +421,9 @@ header .burger-menu i {
 .register-main .register-container form input[type="file"] {
     width: 100%;
     font-size: 0.75rem;
+    border: none;
 }
 
-.register-main .register-container form input {
-    margin: 10px 0px 5px;
-    border: 1px solid white;
-    padding: 6px;
-}
-
-.register-main .register-container form label {
-    margin: 15px 0px 0px 0px;
-    font-size: 1rem;
-    font-weight: bold;
-    align-self: flex-start;
-}
 
 .register-main .register-container form .userProfile-container {
     width: 100%;
@@ -492,6 +500,7 @@ header .burger-menu i {
     align-items: center;
     justify-content: center;
     align-self: center;
+    padding: 10px;
     background-color: #ebebee;
 }
 
@@ -548,7 +557,7 @@ header .burger-menu i {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    margin: 5px;
+    padding: 5px;
 }
 
 .products-main .products-list h1 {
@@ -557,12 +566,13 @@ header .burger-menu i {
 }
 
 .products-main .products-list ul {
-    width: 90%;
+    width: 100%;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    list-style: none;
 }
 
 .products-main .products-list ul li {
@@ -601,7 +611,7 @@ header .burger-menu i {
 }
 
 .products-main .products-list ul li a .product-img img {
-    width: 80%;
+    width: 100%;
 }
 
 .products-main .products-list ul li a .product-info {
@@ -684,7 +694,8 @@ header .burger-menu i {
 .productCreate-main form h2 {
     width: 100%;
     font-size: 1.25rem;
-    text-align: center;
+    text-align: flex-start;
+    margin: 10px 0px 0px;
 }
 
 .productCreate-main form img {
@@ -694,7 +705,7 @@ header .burger-menu i {
 
 .productCreate-main form input {
     width: 100%;
-    margin: 5px 0px;
+    margin: 10px 0px;
     border: none;
     font-size: 1rem;
 }
@@ -711,10 +722,10 @@ header .burger-menu i {
     margin: 5px 0px;
     border: none;
     border-radius: 5px;
-    background-color: green;
-    color: white;
     padding: 5px;
     cursor: pointer;
+    background-color: green;
+    color: white;
 }
 
 /*Product-Search*/
@@ -1124,6 +1135,7 @@ header .burger-menu i {
     align-items: center;
     justify-content: center;
     align-self: center;
+    padding: 10px;
     background-color: #ebebee;
 }
 
@@ -1189,12 +1201,13 @@ header .burger-menu i {
 }
 
 .users-main .users-list ul {
-    width: 90%;
+    width: 100%;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    list-style: none;
 }
 
 .users-main .users-list ul li {
@@ -1524,6 +1537,141 @@ header .burger-menu i {
     color: white;
 }
 
+/*User-Edit*/
+.userEdit-main {
+    width: 100%;
+    margin: 0px 0px 15px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.userEdit-main .user-newInfo {
+    margin: 20px 0px;
+    width: 275px;
+    height: 1010px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #ebebeb;
+    border: 1px solid #EAC926;
+    border-radius: 10px;
+}
+
+.userEdit-main .user-newInfo h1 {
+    width: 100%;
+    text-align: center;
+    align-self: center;
+    font-size: 1.4rem;
+}
+
+.userEdit-main .user-newInfo form {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.userEdit-main .user-newInfo form img {
+    width: 50%;
+    margin: 5px 0px;
+}
+
+.userEdit-main .user-newInfo form label {
+    margin: 15px 0px 0px 0px;
+    font-size: 1rem;
+    font-weight: bold;
+    align-self: flex-start;
+}
+
+.userEdit-main .user-newInfo form input {
+    margin: 10px 0px 5px;
+    border: 1px solid white;
+    padding: 6px;
+}
+
+.userEdit-main .user-newInfo form input[type="number"] {
+    margin: 5px auto 5px 0px;
+    text-align: center;
+    justify-self: flex-start;
+}
+
+.userEdit-main .user-newInfo form input[type="text"],
+.userEdit-main .user-newInfo form input[type="email"],
+.userEdit-main .user-newInfo form input[type="password"],
+.userEdit-main .user-newInfo form input[type="date"] {
+    width: 100%;
+    font-size: 0.8rem;
+}
+
+.userEdit-main .user-newInfo form input[type="file"] {
+    width: 100%;
+    font-size: 0.75rem;
+    border: none;
+}
+
+.userEdit-main .user-newInfo form .userProfile-container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.userEdit-main .user-newInfo form .userProfile-container .option {
+    width: 30%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.userEdit-main .user-newInfo form .userProfile-container .option input {
+    margin: 10px 2px 10px 0px;
+}
+
+.userEdit-main .user-newInfo form .userProfile-container .option label {
+    margin: 10px 10px 10px 0px;
+    font-size: 0.7rem;
+}
+
+.userEdit-main .user-newInfo form .userInterest-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.userEdit-main .user-newInfo form .userInterest-container .option {
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.userEdit-main .user-newInfo form .userInterest-container .option input {
+    margin: 5px 2px 5px 0px;
+}
+
+.userEdit-main .user-newInfo form .userInterest-container .option label {
+    margin: 5px 10px 5px 0px;
+    font-size: 0.7rem;
+    font-weight: normal;
+}
+
+.userEdit-main .user-newInfo form button {
+    width: 70px;
+    margin: 5px 0px;
+    padding: 8px;
+    background-color: lightseagreen;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
 /*Footer*/
 footer {
     display: flex;
@@ -1716,11 +1864,15 @@ footer>h4 strong {
     /*Register*/
     .register-main .register-container {
         width: 295px;
-        height: 670px;
+        height: 1000px;
     }
 
-    .register-main .register-container h3 {
+    .register-main .register-container h1 {
         font-size: 1.5rem;
+    }
+
+    .register-main .register-container form label {
+        font-size: 1.1rem;
     }
 
     .register-main .register-container form input[type="text"],
@@ -1734,14 +1886,7 @@ footer>h4 strong {
         font-size: 0.79rem;
     }
 
-    .register-main .register-container form label {
-        font-size: 1.1rem;
-    }
-
-    .register-main .register-container form .userProfile-container .option label {
-        font-size: 0.8rem;
-    }
-
+    .register-main .register-container form .userProfile-container .option label,
     .register-main .register-container form .userInterest-container .option label {
         font-size: 0.8rem;
     }
@@ -1757,11 +1902,14 @@ footer>h4 strong {
 
     /*Products*/
     .products-main .products-list ul {
-        justify-content: space-between;
+        justify-content: flex-start;
+        align-items: stretch;
     }
 
     .products-main .products-list ul li {
         width: 47%;
+        margin: 10px 27px 10px 0px;
+        align-items: stretch;
     }
 
     .products-main .products-list ul li a .product-info i {
@@ -1789,11 +1937,14 @@ footer>h4 strong {
     }
 
     .productSearch-main .product-search-results ul {
-        justify-content: space-between;
+        justify-content: flex-start;
+        align-items: stretch;
     }
 
     .productSearch-main .product-search-results ul .results-item {
         width: 47%;
+        margin: 10px 27px 10px 0px;
+        align-items: stretch;
     }
 
     .productSearch-main .product-search-results ul .results-item a .product-info i {
@@ -1850,11 +2001,14 @@ footer>h4 strong {
 
     /*Users*/
     .users-main .users-list ul {
-        justify-content: space-between;
+        justify-content: flex-start;
+        align-items: stretch;
     }
 
     .users-main .users-list ul li {
         width: 47%;
+        margin: 10px 27px 10px 0px;
+        align-items: stretch;
     }
 
     .users-main .users-list ul li a .user-info i {
@@ -1874,11 +2028,14 @@ footer>h4 strong {
     }
 
     .userSearch-main .user-search-results ul {
-        justify-content: space-between;
+        justify-content: flex-start;
+        align-items: stretch;
     }
 
     .userSearch-main .user-search-results ul .results-item {
         width: 47%;
+        margin: 10px 27px 10px 0px;
+        align-items: stretch;
     }
 
     .userSearch-main .user-search-results ul .results-item a .user-info .user-userName,
@@ -1910,6 +2067,40 @@ footer>h4 strong {
     .userDetail-main .user .user-info .user-ops a,
     .userDetail-main .user .user-info .user-ops form .delete-button {
         font-size: 2vw;
+    }
+
+    /*User-Edit*/
+    .userEdit-main .user-newInfo {
+        width: 295px;
+        height: 1060px;
+    }
+
+    .userEdit-main .user-newInfo h1 {
+        font-size: 1.5rem;
+    }
+
+    .userEdit-main .user-newInfo form label {
+        font-size: 1.1rem;
+    }
+
+    .userEdit-main .user-newInfo form input[type="text"],
+    .userEdit-main .user-newInfo form input[type="email"],
+    .userEdit-main .user-newInfo form input[type="password"],
+    .userEdit-main .user-newInfo form input[type="date"] {
+        font-size: 0.9rem;
+    }
+
+    .userEdit-main .user-newInfo form input[type="file"] {
+        font-size: 0.79rem;
+    }
+
+    .userEdit-main .user-newInfo form .userProfile-container .option label,
+    .userEdit-main .user-newInfo form .userInterest-container .option label {
+        font-size: 0.8rem;
+    }
+
+    .userEdit-main .user-newInfo form button {
+        font-size: 0.8rem;
     }
 
     /*Footer*/
@@ -2028,11 +2219,15 @@ footer>h4 strong {
     /*Register*/
     .register-main .register-container {
         width: 350px;
-        height: 730px;
+        height: 1100px;
     }
 
-    .register-main .register-container h3 {
+    .register-main .register-container h1 {
         font-size: 2rem;
+    }
+
+    .register-main .register-container form label {
+        font-size: 1.3rem;
     }
 
     .register-main .register-container form input[type="text"],
@@ -2046,24 +2241,17 @@ footer>h4 strong {
         font-size: 0.95rem;
     }
 
-    .register-main .register-container form label {
-        font-size: 1.3rem;
+    .register-main .register-container form .userInterest-container .option {
+        width: 33%;
     }
 
-    .register-main .register-container form .userProfile-container .option label {
-        font-size: 1rem;
-    }
-
+    .register-main .register-container form .userProfile-container .option label,
     .register-main .register-container form .userInterest-container .option label {
         font-size: 1rem;
     }
 
     .register-main .register-container form .form-buttons button {
         font-size: 1rem;
-    }
-
-    .register-main .register-container form .userInterest-container .option {
-        width: 33%;
     }
 
     /*Products*/
@@ -2186,6 +2374,10 @@ footer>h4 strong {
         width: 23%;
     }
 
+    .userSearch-main .user-search-results ul .results-item:hover {
+        box-shadow: 0px 0px 10px rgb(100, 100, 100);
+    }
+
     .userSearch-main .user-search-results ul .results-item a .user-info .user-userName,
     .userSearch-main .user-search-results ul .results-item a .user-info .user-password {
         font-size: 1.3vw;
@@ -2219,6 +2411,44 @@ footer>h4 strong {
     .userDetail-main .user .user-info .user-ops a,
     .userDetail-main .user .user-info .user-ops form .delete-button {
         font-size: 1.5vw;
+    }
+
+    /*User-Edit*/
+    .userEdit-main .user-newInfo {
+        width: 350px;
+        height: 1160px;
+    }
+
+    .userEdit-main .user-newInfo h1 {
+        font-size: 2rem;
+    }
+
+    .userEdit-main .user-newInfo form label {
+        font-size: 1.3rem;
+    }
+
+    .userEdit-main .user-newInfo form input[type="text"],
+    .userEdit-main .user-newInfo form input[type="email"],
+    .userEdit-main .user-newInfo form input[type="password"],
+    .userEdit-main .user-newInfo form input[type="date"] {
+        font-size: 1.4rem;
+    }
+
+    .userEdit-main .user-newInfo form input[type="file"] {
+        font-size: 0.95rem;
+    }
+
+    .userEdit-main .user-newInfo form .userProfile-container .option {
+        width: 33%;
+    }
+
+    .userEdit-main .user-newInfo form .userProfile-container .option label,
+    .userEdit-main .user-newInfo form .userInterest-container .option label {
+        font-size: 1rem;
+    }
+
+    .userEdit-main .user-newInfo form button {
+        font-size: 1rem;
     }
 
     /*Footer*/

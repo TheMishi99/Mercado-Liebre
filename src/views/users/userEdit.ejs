@@ -17,107 +17,154 @@
     <%- include("../partials/header") %>
     <main class="userEdit-main">
       <div class="user-newInfo">
-        <h1 style="font-size: 2rem">Nuevos Datos</h1>
+        <h1>Nuevos Datos</h1>
         <form
           action="/users/<%= user.id %>/edit?_method=PUT"
           method="POST"
           enctype="multipart/form-data"
         >
-          <input type="number" name="userID" value="<%= user.id %>" readonly />
-          <img src="<%= user.profileImage %>" alt="Foto de Perfil" />
+          <label>ID</label>
+          <input type="number" name="id" value="<%= user.id %>" readonly />
+          <label>Foto de Perfil</label>
+          <img
+            src="<%= user.profileImage %>"
+            alt="Foto de Perfil"
+            id="preview"
+          />
+          <input type="file" name="profileImage" id="profileImage" onchange="loadImage(event)"/>
+          <label for="fullName">Nombre Completo</label>
           <input
             type="text"
             name="fullName"
             id="fullName"
             placeholder="Nombre y Apellido"
-            autocomplete="off"
-            required
             value="<%= user.fullName %>"
-          />
-          <input
-            type="text"
-            name="userName"
-            id="userName"
-            placeholder="Nombre de Usuario"
-            autocomplete="off"
             required
-            value="<%= user.userName %>"
           />
+          <label for="email">Email</label>
           <input
             type="email"
             name="email"
             id="email"
             placeholder="E-mail"
-            autocomplete="off"
-            required
             value="<%= user.email %>"
+            required
           />
           <label for="birthDate">Fecha de Nacimiento</label>
           <input
             type="date"
             name="birthDate"
             id="birthDate"
-            autocomplete="off"
-            required
             value="<%= user.birthDate %>"
+            required
           />
+          <label for="address">Domicilio</label>
           <input
             type="text"
             name="address"
             id="address"
             placeholder="Domicilio"
-            autocomplete="off"
-            required
             value="<%= user.address %>"
+            required
           />
           <label>Perfil de Usuario</label>
           <div class="userProfile-container">
             <div class="option">
-              <input type="radio" name="profile" id="buyer" value="buyer"
-              required <% if (user.profile.includes("buyer")) { %> selected <% }
-              %> />
+              <input
+                type="radio"
+                name="profile"
+                id="buyer"
+                value="Comprador" <%= (user.profile == "Comprador") ? "checked" : "" %>
+                required
+              />
               <label for="buyer">Comprador</label>
             </div>
             <div class="option">
-              <input type="radio" name="profile" id="vendor" value="vendor"
-              required <% if (user.profile.includes("vendor")) { %> selected <%
-              } %> />
+              <input
+                type="radio"
+                name="profile"
+                id="vendor"
+                value="Vendedor" <%= (user.profile == "Vendedor") ? "checked" : "" %>
+                required
+              />
               <label for="vendor">Vendedor</label>
             </div>
           </div>
           <label>Intereses</label>
           <div class="userInterest-container">
             <div class="option">
-              <input type="checkbox" name="interests" id="electro"
-              value="electro" <% if (user.interests.includes("electro")) { %>
-              selected <% } %> />
+              <input
+                type="checkbox"
+                name="interests"
+                id="electro"
+                value="Electro" <%= (user.interests.includes("Electro")) ? "checked" : "" %>
+              />
               <label for="electro">Electro</label>
             </div>
             <div class="option">
-              <input type="checkbox" name="interests" id="moda" value="moda" <%
-              if (user.interests.includes("moda")) { %> selected <% } %> />
+              <input
+                type="checkbox"
+                name="interests"
+                id="moda"
+                value="Moda" <%= (user.interests.includes("Moda")) ? "checked" : "" %>
+              />
               <label for="moda">Moda</label>
             </div>
             <div class="option">
-              <input type="checkbox" name="interests" id="hogar" value="hogar"
-              <% if (user.interests.includes("hogar")) { %> selected <% } %> />
+              <input
+                type="checkbox"
+                name="interests"
+                id="hogar"
+                value="Hogar" <%= (user.interests.includes("Hogar")) ? "checked" : "" %>
+              />
               <label for="hogar">Hogar</label>
             </div>
             <div class="option">
-              <input type="checkbox" name="interests" id="jugueteria"
-              value="jugueteria" <% if (user.interests.includes("jugueteria")) {
-              %> selected <% } %> />
+              <input
+                type="checkbox"
+                name="interests"
+                id="jugueteria"
+                value="Jugueteria" <%= (user.interests.includes("Jugueteria")) ? "checked" : "" %>
+              />
               <label for="jugueteria">Jugueteria</label>
             </div>
             <div class="option">
-              <input type="checkbox" name="interests" id="vidaSana"
-              value="vidaSana" <% if (user.interests.includes("vidaSana")) { %>
-              selected <% } %> />
+              <input
+                type="checkbox"
+                name="interests"
+                id="vidaSana"
+                value="Vida Sana" <%= (user.interests.includes("Vida Sana")) ? "checked" : "" %>
+              />
               <label for="vidaSana">Vida Sana</label>
             </div>
           </div>
-          <label>Foto de Perfil</label>
-          <input type="file" name="profileImage" id="profileImage" required />
+          <label for="userName">Nombre de Usuario</label>
+          <input
+            type="text"
+            name="userName"
+            id="userName"
+            placeholder="Nombre de Usuario"
+            value="<%= user.userName %>"
+            required
+          />
+          <label for="password">Contraseña</label>
+          <input
+            type="password"
+            name="password"
+            id="password"
+            placeholder="Contraseña"
+            value="<%= user.password %>"
+            required
+          />
+          <label for="passwordConfirmation">Confirmar Contraseña</label>
+          <input
+            type="password"
+            name="passwordConfirmation"
+            id="passwordConfirmation"
+            placeholder="Confirmar Contraseña"
+            value="<%= user.password %>"
+            required
+          />
           <button type="submit">Confirmar</button>
         </form>
       </div>
@@ -127,5 +174,11 @@
       src="https://kit.fontawesome.com/eae7cdcb5c.js"
       crossorigin="anonymous"
     ></script>
+    <script>
+      let loadImage = (event) => {
+        let image = document.getElementById("preview");
+        image.src = URL.createObjectURL(event.target.files[0]);
+      };
+    </script>
   </body>
 </html>

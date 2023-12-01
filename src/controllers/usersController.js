@@ -39,18 +39,23 @@ const usersController = {
     res.render("./users/register");
   },
   registerPOST: (req, res) => {
+    let interests;
     let {
       fullName,
-      userName,
       email,
       birthDate,
       address,
       profile,
-      interests,
+      userName,
       password,
       passwordConfirmation,
     } = req.body;
     if (password == passwordConfirmation) {
+      if(req.body.interests){
+        interests = req.body.interests;
+      }else{
+        interests = [];
+      }
       let profileImage;
       if (req.file) {
         profileImage = req.file;
@@ -60,14 +65,14 @@ const usersController = {
       }
       let user = {
         id: 0,
+        profileImage,
         fullName,
-        userName,
         email,
         birthDate,
         address,
         profile,
         interests,
-        profileImage,
+        userName,
         password,
       };
       createOne(user);
@@ -89,35 +94,41 @@ const usersController = {
     });
   },
   editPUT: (req, res) => {
+    let id = req.params.id;
     let {
       fullName,
-      userName,
       email,
       birthDate,
       address,
       profile,
       interests,
+      userName,
       password,
       passwordConfirmation,
     } = req.body;
     if (password == passwordConfirmation) {
+      if(req.body.interests){
+        interests = req.body.interests;
+      }else{
+        interests = [];
+      }
       let profileImage;
       if (req.file) {
         profileImage = req.file;
         profileImage = "/images/usersAvatars/" + profileImage.filename;
       } else {
-        profileImage = "/images/usersAvatars/default.jpg";
+        profileImage = findOne(id).profileImage;
       }
       let user = {
-        id: req.params.id,
+        id,
+        profileImage,
         fullName,
-        userName,
         email,
         birthDate,
         address,
         profile,
         interests,
-        profileImage,
+        userName,
         password,
       };
       modifyOne(user);

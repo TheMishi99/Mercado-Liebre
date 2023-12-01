@@ -27,7 +27,11 @@
           <h2><strong>Fecha de Nacimiento:</strong> <%= user.birthDate %></h2>
           <h2><strong>Domicilio:</strong> <%= user.address %></h2>
           <h2><strong>Perfil:</strong> <%= user.profile %></h2>
-          <h2><strong>Intereses:</strong> <%= user.interests.join(", ") %></h2>
+          <% if (user.interests.length != 0) { %>
+            <h2><strong>Intereses:</strong> <%= user.interests.join(", ") %></h2>
+          <% } else { %>
+            <h2><strong>Intereses:</strong> Ninguno</h2>
+          <% } %>
           <h2><strong>Nombre de usuario:</strong> <%= user.userName %></h2>
           <h2><strong>Contraseña:</strong> <%= user.password %></h2>
           <div class="user-ops">

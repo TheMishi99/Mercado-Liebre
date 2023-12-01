@@ -16,6 +16,18 @@ const model = {
     const userIndex = allUsers.findIndex(
       (user) => user.id == newUserData.id
     );
+    if(allUsers[userIndex].profileImage != newUserData.profileImage){
+      if(allUsers[userIndex].profileImage != "/images/usersAvatars/default.jpg"){
+        try {
+          unlinkSync(
+            join(__dirname, "../../public", allUsers[userIndex].profileImage)
+          );
+          console.log('File removed')
+        } catch(err) {
+          console.error('Something wrong happened removing the file', err)
+        }
+      }
+    }
     allUsers[userIndex] = newUserData;
     writeFileSync(model.usersPath, JSON.stringify(allUsers, null, 2));
   },
@@ -24,10 +36,10 @@ const model = {
     const userToDelete_Index = allUsers.findIndex(
       (user) => user.id == id
     );
-    if(allUsers[userToDelete_Index].image != "/images/products/default.jpg"){
+    if(allUsers[userToDelete_Index].profileImage != "/images/usersAvatars/default.jpg"){
       try {
         unlinkSync(
-          join(__dirname, "../../public", allUsers[userToDelete_Index].image)
+          join(__dirname, "../../public", allUsers[userToDelete_Index].profileImage)
         );
         console.log('File removed')
       } catch(err) {

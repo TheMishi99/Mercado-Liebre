@@ -51,16 +51,20 @@ const productosController = {
     });
   },
   editPUT: (req, res) => {
+    let id = req.params.id;
+    let { name, price } = req.body;
     let image;
     if (req.file) {
       image = req.file;
+      image = "/images/products/" + image.filename;
     } else {
-      image = findOne(req.body.id).image;
+      image = findOne(id).image;
     }
     let product = {
-      id: req.body.id,
-      name: req.body.name,
-      price: req.body.price,
+      id,
+      name,
+      altName: name,
+      price,
       image,
     };
     modifyOne(product);

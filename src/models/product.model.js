@@ -16,6 +16,18 @@ const model = {
     const productIndex = allProducts.findIndex(
       (product) => product.id == newProductData.id
     );
+    if(allProducts[productIndex].image != newProductData.image){
+      if(allProducts[productIndex].image != "/images/products/default.jpg"){
+        try {
+          unlinkSync(
+            join(__dirname, "../../public", allProducts[productIndex].image)
+          );
+          console.log('File removed')
+        } catch(err) {
+          console.error('Something wrong happened removing the file', err)
+        }
+      }
+    }
     allProducts[productIndex].name = newProductData.name;
     allProducts[productIndex].price = newProductData.price;
     allProducts[productIndex].image = newProductData.image;

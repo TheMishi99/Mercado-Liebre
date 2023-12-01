@@ -1,17 +1,17 @@
 [
   {
-    "id": 1701390072793,
+    "id": "1701390072793",
+    "profileImage": "/images/usersAvatars/img-1701469139404-img-miFoto.jpg",
     "fullName": "Mati",
-    "userName": "mishi",
     "email": "mishigamer@gmail.com",
     "birthDate": "2003-01-19",
     "address": "asd15",
-    "profile": "Vendedor",
+    "profile": "Comprador",
     "interests": [
       "Electro",
-      "Jugueteria"
+      "Moda"
     ],
-    "profileImage": "/images/usersAvatars/img-1701390072720-img-miFoto.jpg",
+    "userName": "mishi",
     "password": "mishi"
   }
 ]

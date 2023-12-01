@@ -21,6 +21,7 @@
         <form
           action="/products/<%= product.id %>/edit?_method=PUT"
           method="POST"
+          enctype="multipart/form-data"
         >
           <label for="id">ID</label>
           <input
