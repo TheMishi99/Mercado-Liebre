@@ -16,6 +16,9 @@ const main = require("./routes/main")
 const users = require("./routes/users")
 const products = require("./routes/products")
 
+/* Middlewares import */
+const logMiddleware = require("./middlewares/logMiddleware");
+
 /* Public folder */
 app.use(express.static(path.join(__dirname, "../", "public")));
 
@@ -29,6 +32,9 @@ app.use(express.json());
 
 /* PUT & DELETE Methods enabled */
 app.use(methodOverride("_method"));
+
+/* Middlewares Use */
+app.use(logMiddleware);
 
 /* Server Initialize */
 app.listen(

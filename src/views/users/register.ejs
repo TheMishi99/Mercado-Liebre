@@ -24,27 +24,20 @@
             name="fullName"
             id="fullName"
             placeholder="Nombre y Apellido"
-            autocomplete="off"
             required
-            pattern="[a-zA-Z]{5,30}"
-            title="Minimo 5 Caracteres"
           />
           <input
             type="text"
             name="userName"
             id="userName"
             placeholder="Nombre de Usuario"
-            autocomplete="off"
             required
-            pattern="[a-zA-Z0-9]{5,30}"
-            title="Minimo 5 Caracteres"
           />
           <input
             type="email"
             name="email"
             id="email"
             placeholder="E-mail"
-            autocomplete="off"
             required
           />
           <label for="birthDate">Fecha de Nacimiento</label>
@@ -52,7 +45,6 @@
             type="date"
             name="birthDate"
             id="birthDate"
-            autocomplete="off"
             required
           />
           <input
@@ -60,10 +52,7 @@
             name="address"
             id="address"
             placeholder="Domicilio"
-            autocomplete="off"
             required
-            pattern="[a-zA-Z0-9]{5,30}"
-            title="Minimo 5 Caracteres y al menos un numero"
           />
           <label>Perfil de Usuario</label>
           <div class="userProfile-container">
@@ -72,7 +61,7 @@
                 type="radio"
                 name="profile"
                 id="buyer"
-                value="vendor"
+                value="Comprador"
                 required
               />
               <label for="buyer">Comprador</label>
@@ -82,7 +71,7 @@
                 type="radio"
                 name="profile"
                 id="vendor"
-                value="vendor"
+                value="Vendedor"
                 required
               />
               <label for="vendor">Vendedor</label>
@@ -95,7 +84,7 @@
                 type="checkbox"
                 name="interests"
                 id="electro"
-                value="electro"
+                value="Electro"
               />
               <label for="electro">Electro</label>
             </div>
@@ -104,7 +93,7 @@
                 type="checkbox"
                 name="interests"
                 id="moda"
-                value="moda"
+                value="Moda"
               />
               <label for="moda">Moda</label>
             </div>
@@ -113,7 +102,7 @@
                 type="checkbox"
                 name="interests"
                 id="hogar"
-                value="hogar"
+                value="Hogar"
               />
               <label for="hogar">Hogar</label>
             </div>
@@ -122,7 +111,7 @@
                 type="checkbox"
                 name="interests"
                 id="jugueteria"
-                value="jugueteria"
+                value="Jugueteria"
               />
               <label for="jugueteria">Jugueteria</label>
             </div>
@@ -131,7 +120,7 @@
                 type="checkbox"
                 name="interests"
                 id="vidaSana"
-                value="vidaSana"
+                value="Vida Sana"
               />
               <label for="vidaSana">Vida Sana</label>
             </div>
@@ -143,7 +132,6 @@
             name="password"
             id="password"
             placeholder="Contraseña"
-            autocomplete="off"
             required
           />
           <input
@@ -151,7 +139,6 @@
             name="passwordConfirmation"
             id="passwordConfirmation"
             placeholder="Confirmar Contraseña"
-            autocomplete="off"
             required
           />
           <div class="form-buttons">

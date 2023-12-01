@@ -15,36 +15,33 @@
 
   <body>
     <%- include("../partials/header") %>
-    <main class="usersSearch-main">
-      <div class="users-search">
-        <h1 style="font-size: 2rem">Buscar Usuarios</h1>
+    <main class="userSearch-main">
+      <div class="user-search">
+        <h1>Buscar Usuarios</h1>
         <form action="/users/search" method="get">
           <input type="text" name="search" placeholder="Nombre de Usuario" />
-          <input type="submit" value="Buscar" />
+          <button type="submit">Buscar</button>
         </form>
       </div>
-      <div class="users-search-results">
-        <h2 style="font-size: 1.6rem">Resultados</h2>
+      <div class="user-search-results">
+        <h2>Resultados</h2>
         <ul>
-          <% if (formUserSearch=="") { %>
-          <li>
-            <p style="font-size: 1.5rem">Sin resultados</p>
+          <% if (results.length == 0 ) { %>
+          <li class="no-results">
+            <p>Sin resultados</p>
           </li>
           <% } else { %>
-            <% found=0 %>
-            <% for( let i=0; i < users.length; i++ ) { %>
-              <% if (users[i].name.toLowerCase().includes(formUserSearch)) { %>
-                <li>
-                  <a href="/users/<%= users[i].userID %>">
-                    <%= users[i].name %>, <%= users[i].password %>
-                  </a>
-                </li>
-                <% found+=1; %>
-              <% } %>
-            <% } %>
-            <% if (found==0) { %>
-              <li>
-                <p style="font-size: 1.5rem">Sin resultados</p>
+            <% for( let i=0; i < results.length; i++ ) { %>
+              <li class="results-item">
+                <a href="/users/<%= results[i].id %>">
+                  <div class="user-img">
+                    <img src="<%= results[i].profileImage %>" alt="Foto del Usuario">
+                  </div>
+                  <div class="user-info">
+                    <span class="user-userName">Nombre de Usuario: <%= results[i].userName %></span>
+                    <span class="user-password">Contraseña: <%= results[i].password %></span>
+                  </div>
+                </a>
               </li>
             <% } %>
           <% } %>

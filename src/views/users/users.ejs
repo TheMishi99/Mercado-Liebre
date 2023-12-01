@@ -17,17 +17,23 @@
     <%- include("../partials/header") %>
     <main class="users-main">
       <div class="users-op">
-        <h1 style="font-size: 2rem">Operaciones</h1>
+        <h1>Operaciones</h1>
         <a class="userCreate-button" href="/users/register">Agregar Usuario</a>
         <a class="userSearch-button" href="/users/search">Buscar Usuario</a>
       </div>
       <div class="users-list">
-        <h1 style="font-size: 2rem">Usuarios</h1>
+        <h1>Usuarios</h1>
         <ul>
           <% for( let i=0; i < users.length; i++ ) { %>
           <li>
-            <a href="/users/<%= users[i].id %>" style="font-size: 1.5rem">
-              <%= users[i].userName %>, <%= users[i].password %>
+            <a href="/users/<%= users[i].id %>">
+              <div class="user-img">
+                <img src="<%= users[i].profileImage %>" alt="Foto del Usuario">
+              </div>
+              <div class="user-info">
+                <span class="user-userName">Nombre de Usuario: <%= users[i].userName %></span>
+                <span class="user-password">Contraseña: <%= users[i].password %></span>
+              </div>
             </a>
           </li>
           <% } %>

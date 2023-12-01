@@ -18,9 +18,13 @@
     <main class="userEdit-main">
       <div class="user-newInfo">
         <h1 style="font-size: 2rem">Nuevos Datos</h1>
-        <form action="/users/<%= user.id %>/edit?_method=PUT" method="POST" enctype="multipart/form-data">
-          <input type="number" name="userID" value="<%= user.id %>" readonly>
-          <img src="<%= user.profileImage %>" alt="Foto de Perfil">
+        <form
+          action="/users/<%= user.id %>/edit?_method=PUT"
+          method="POST"
+          enctype="multipart/form-data"
+        >
+          <input type="number" name="userID" value="<%= user.id %>" readonly />
+          <img src="<%= user.profileImage %>" alt="Foto de Perfil" />
           <input
             type="text"
             name="fullName"
@@ -75,102 +79,51 @@
           <label>Perfil de Usuario</label>
           <div class="userProfile-container">
             <div class="option">
-              <input
-                type="radio"
-                name="profile"
-                id="buyer"
-                value="buyer"
-                required
-                <% if (user.profile.includes("buyer")) { %>
-                  selected
-                <% } %>
-              />
+              <input type="radio" name="profile" id="buyer" value="buyer"
+              required <% if (user.profile.includes("buyer")) { %> selected <% }
+              %> />
               <label for="buyer">Comprador</label>
             </div>
             <div class="option">
-              <input
-                type="radio"
-                name="profile"
-                id="vendor"
-                value="vendor"
-                required
-                <% if (user.profile.includes("vendor")) { %>
-                  selected
-                <% } %>
-              />
+              <input type="radio" name="profile" id="vendor" value="vendor"
+              required <% if (user.profile.includes("vendor")) { %> selected <%
+              } %> />
               <label for="vendor">Vendedor</label>
             </div>
           </div>
           <label>Intereses</label>
           <div class="userInterest-container">
             <div class="option">
-              <input
-                type="checkbox"
-                name="interests"
-                id="electro"
-                value="electro"
-                <% if (user.interests.includes("electro")) { %>
-                  selected
-                <% } %>
-              />
+              <input type="checkbox" name="interests" id="electro"
+              value="electro" <% if (user.interests.includes("electro")) { %>
+              selected <% } %> />
               <label for="electro">Electro</label>
             </div>
             <div class="option">
-              <input
-                type="checkbox"
-                name="interests"
-                id="moda"
-                value="moda"
-                <% if (user.interests.includes("moda")) { %>
-                  selected
-                <% } %>
-              />
+              <input type="checkbox" name="interests" id="moda" value="moda" <%
+              if (user.interests.includes("moda")) { %> selected <% } %> />
               <label for="moda">Moda</label>
             </div>
             <div class="option">
-              <input
-                type="checkbox"
-                name="interests"
-                id="hogar"
-                value="hogar"
-                <% if (user.interests.includes("hogar")) { %>
-                  selected
-                <% } %>
-              />
+              <input type="checkbox" name="interests" id="hogar" value="hogar"
+              <% if (user.interests.includes("hogar")) { %> selected <% } %> />
               <label for="hogar">Hogar</label>
             </div>
             <div class="option">
-              <input
-                type="checkbox"
-                name="interests"
-                id="jugueteria"
-                value="jugueteria"
-                <% if (user.interests.includes("jugueteria")) { %>
-                  selected
-                <% } %>
-              />
+              <input type="checkbox" name="interests" id="jugueteria"
+              value="jugueteria" <% if (user.interests.includes("jugueteria")) {
+              %> selected <% } %> />
               <label for="jugueteria">Jugueteria</label>
             </div>
             <div class="option">
-              <input
-                type="checkbox"
-                name="interests"
-                id="vidaSana"
-                value="vidaSana"
-                <% if (user.interests.includes("vidaSana")) { %>
-                  selected
-                <% } %>
-              />
+              <input type="checkbox" name="interests" id="vidaSana"
+              value="vidaSana" <% if (user.interests.includes("vidaSana")) { %>
+              selected <% } %> />
               <label for="vidaSana">Vida Sana</label>
             </div>
           </div>
           <label>Foto de Perfil</label>
-          <input
-          type="file"
-          name="profileImage"
-          id="profileImage"
-          required
-          />
+          <input type="file" name="profileImage" id="profileImage" required />
           <button type="submit">Confirmar</button>
         </form>
       </div>

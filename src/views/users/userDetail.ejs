@@ -16,12 +16,28 @@
   <body>
     <%- include("../partials/header") %>
     <main class="userDetail-main">
-      <div class="user-info">
-        <h2 class="user-name">Nombre de usuario: <%= user.userName %></h2>
-        <h2 class="user-age">Contraseña: <%= user.password %></h2>
-        <a href="/users/<%= user.id %>/edit">Editar</a>
-        <a href="/users/<%= user.id %>/delete">Eliminar</a>
-        <a href="/users">Volver atras</a>
+      <h1>Detalle de Usuario</h1>
+      <div class="user">
+        <div class="user-img">
+          <img src="<%= user.profileImage %>" alt="Foto de Perfil">
+        </div>
+        <div class="user-info">
+          <h2><strong>Nombre Completo:</strong> <%= user.fullName %></h2>
+          <h2><strong>Email:</strong> <%= user.email %></h2>
+          <h2><strong>Fecha de Nacimiento:</strong> <%= user.birthDate %></h2>
+          <h2><strong>Domicilio:</strong> <%= user.address %></h2>
+          <h2><strong>Perfil:</strong> <%= user.profile %></h2>
+          <h2><strong>Intereses:</strong> <%= user.interests.join(", ") %></h2>
+          <h2><strong>Nombre de usuario:</strong> <%= user.userName %></h2>
+          <h2><strong>Contraseña:</strong> <%= user.password %></h2>
+          <div class="user-ops">
+            <a href="/users/<%= user.id %>/edit" class="edit-button">Editar</a>
+            <form action="/users/<%= user.id %>?_method=DELETE" method="POST">
+              <button type="submit" class="delete-button">Eliminar</button>
+            </form>
+            <a href="/users" class="go-back-button">Volver atras</a>
+          </div>
+        </div>
       </div>
     </main>
     <%- include("../partials/footer") %>

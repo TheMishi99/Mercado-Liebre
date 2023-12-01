@@ -1,4 +1,4 @@
-const { readFileSync, writeFileSync } = require("fs");
+const { readFileSync, writeFileSync, unlinkSync } = require("fs");
 const { join } = require("path");
 
 const model = {
@@ -9,41 +9,42 @@ const model = {
     const allUsers = model.index();
     user.id = Date.now();
     allUsers.push(user);
-    writeFileSync(model.usersPath, JSON.stringify(allUsers));
+    writeFileSync(model.usersPath, JSON.stringify(allUsers, null, 2));
   },
   modifyOne: (newUserData) => {
     const allUsers = model.index();
     const userIndex = allUsers.findIndex(
       (user) => user.id == newUserData.id
     );
-    allUsers[userIndex].fullName = newUserData.fullName;
-    allUsers[userIndex].userName = newUserData.userName;
-    allUsers[userIndex].email = newUserData.email;
-    allUsers[userIndex].birthDate = newUserData.birthDate;
-    allUsers[userIndex].address = newUserData.address;
-    allUsers[userIndex].profile = newUserData.profile;
-    allUsers[userIndex].interests = newUserData.interests;
-    allUsers[userIndex].password = newUserData.password;
-    writeFileSync(model.usersPath, JSON.stringify(allUsers));
+    allUsers[userIndex] = newUserData;
+    writeFileSync(model.usersPath, JSON.stringify(allUsers, null, 2));
   },
   deleteOne: (id) => {
     const allUsers = model.index();
     const userToDelete_Index = allUsers.findIndex(
       (user) => user.id == id
     );
+    if(allUsers[userToDelete_Index].image != "/images/products/default.jpg"){
+      try {
+        unlinkSync(
+          join(__dirname, "../../public", allUsers[userToDelete_Index].image)
+        );
+        console.log('File removed')
+      } catch(err) {
+        console.error('Something wrong happened removing the file', err)
+      }
+    }
     allUsers.splice(userToDelete_Index, 1);
-    writeFileSync(model.usersPath, JSON.stringify(allUsers));
+    writeFileSync(model.usersPath, JSON.stringify(allUsers, null, 2));
   },
   searchUsers: (keywords) => {
     const allUsers = model.index();
-    if (keywords != null) {
-      return allUsers.filter((user) =>
-        user.name.toLowerCase().includes(keywords.toLowerCase())
-      );
-    } else {
+    if(keywords != null){
+      return allUsers.filter(user => user.userName.toLowerCase().includes(keywords.toLowerCase()))
+    }else{
       return [];
     }
-  },
+  }
 };
 
 module.exports = model;

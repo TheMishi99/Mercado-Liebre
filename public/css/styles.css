@@ -928,15 +928,15 @@ header .burger-menu i {
 }
 
 .productDetail-main .product .product-img {
-    width: 90%;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    align-self: flex-start;
+    padding: 5px;
 }
 
 .productDetail-main .product .product-img img {
-    width: 80%;
+    width: 85%;
 }
 
 .productDetail-main .product .product-info {
@@ -1003,6 +1003,7 @@ header .burger-menu i {
     text-align: center;
     border: none;
     border-radius: 5px;
+    font-size: 2.8vw;
 }
 
 .productDetail-main .product .product-info .product-ops a:link,
@@ -1031,6 +1032,7 @@ header .burger-menu i {
     background-color: red;
     color: white;
     cursor: pointer;
+    font-size: 2.8vw;
 }
 
 .productDetail-main .product .product-info .product-ops .go-back-button {
@@ -1111,6 +1113,415 @@ header .burger-menu i {
     color: white;
     border: none;
     border-radius: 5px;
+}
+
+/*Users*/
+.users-main {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+    background-color: #ebebee;
+}
+
+.users-main .users-op {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+}
+
+.users-main .users-op h1 {
+    width: 100%;
+    font-size: 1.5rem;
+}
+
+.users-main .users-op a {
+    width: 70px;
+    aspect-ratio: 4/3;
+    margin: 5px 5px;
+    border: none;
+    border-radius: 5px;
+    padding: 2px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.users-main .users-op a:link {
+    text-decoration: none;
+    color: white;
+}
+
+.users-main .users-op a:visited {
+    text-decoration: none;
+    color: white;
+}
+
+.users-main .users-op .userCreate-button {
+    background-color: green;
+}
+
+.users-main .users-op .userSearch-button {
+    background-color: blue;
+}
+
+.users-main .users-list {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+}
+
+.users-main .users-list h1 {
+    width: 100%;
+    font-size: 1.5rem;
+}
+
+.users-main .users-list ul {
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.users-main .users-list ul li {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    margin: 10px 0px;
+}
+
+.users-main .users-list ul li a {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+}
+
+.users-main .users-list ul li a:link,
+.users-main .users-list ul li a:visited {
+    text-decoration: none;
+    color: black;
+}
+
+.users-main .users-list ul li a .user-img {
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.users-main .users-list ul li a .user-img img {
+    width: 80%;
+}
+
+.users-main .users-list ul li a .user-info {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    position: relative;
+}
+
+.users-main .users-list ul li a .user-info .user-userName,
+.users-main .users-list ul li a .user-info .user-password {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    margin: 5px 0px;
+    font-size: 1.5rem;
+}
+
+/*User-Search*/
+.userSearch-main {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    background-color: #ebebeb;
+}
+
+.userSearch-main .user-search {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 5px;
+}
+
+.userSearch-main .user-search h1 {
+    width: 100%;
+    font-size: 1.5rem;
+}
+
+.userSearch-main .user-search form {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.userSearch-main .user-search form input {
+    width: 78%;
+    margin: 5px 0px;
+    font-size: 1rem;
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+}
+
+.userSearch-main .user-search form button {
+    width: 20%;
+    margin: 5px 0px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    background-color: blue;
+    color: white;
+    padding: 5px;
+}
+
+.userSearch-main .user-search-results {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+}
+
+.userSearch-main .user-search-results h2 {
+    width: 100%;
+    font-size: 1.5rem;
+}
+
+.userSearch-main .user-search-results ul {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+}
+
+.userSearch-main .user-search-results ul .no-results {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.userSearch-main .user-search-results ul .no-results p {
+    width: 100%;
+    font-size: 1rem;
+}
+
+.userSearch-main .user-search-results ul .results-item {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    margin: 10px 0px;
+}
+
+.userSearch-main .user-search-results ul .results-item a {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+}
+
+.userSearch-main .user-search-results ul .results-item a:link,
+.userSearch-main .user-search-results ul .results-item a:visited {
+    text-decoration: none;
+    color: black;
+}
+
+.userSearch-main .user-search-results ul .results-item a .user-img {
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.userSearch-main .user-search-results ul .results-item a .user-img img {
+    width: 80%;
+}
+
+.userSearch-main .user-search-results ul .results-item a .user-info {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+}
+
+.userSearch-main .user-search-results ul .results-item a .user-info .user-userName,
+.userSearch-main .user-search-results ul .results-item a .user-info .user-password {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    margin: 5px 0px;
+    font-size: 1.5rem;
+}
+
+/*User-Detail*/
+.userDetail-main {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    background-color: #ebebeb;
+}
+
+.userDetail-main h1 {
+    width: 100%;
+    font-size: 1.5rem;
+}
+
+.userDetail-main .user {
+    width: 90%;
+    margin: 5px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    background-color: white;
+}
+
+.userDetail-main .user .user-img {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+}
+
+.userDetail-main .user .user-img img {
+    width: 85%;
+}
+
+.userDetail-main .user .user-info {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+}
+
+.userDetail-main .user .user-info h2 {
+    width: 100%;
+    margin: 5px 0px;
+    font-size: 0.7rem;
+    color: #666;
+}
+
+.userDetail-main .user .user-info h2 strong {
+    font-size: 0.8rem;
+    color: black;
+}
+
+.userDetail-main .user .user-info .user-ops {
+    width: 100%;
+    margin: 5px 0px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.userDetail-main .user .user-info .user-ops a {
+    width: 48%;
+    margin: 5px 0px;
+    padding: 5px;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    font-size: 2.8vw;
+}
+
+.userDetail-main .user .user-info .user-ops a:link,
+.userDetail-main .user .user-info .user-ops a:visited {
+    text-decoration: none;
+}
+
+.userDetail-main .user .user-info .user-ops .edit-button {
+    background-color: lightseagreen;
+    color: white;
+}
+
+.userDetail-main .user .user-info .user-ops form {
+    width: 48%;
+    margin: 5px 0px;
+    border: none;
+    border-radius: 5px;
+}
+
+.userDetail-main .user .user-info .user-ops form .delete-button {
+    width: 100%;
+    padding: 5px;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    background-color: red;
+    color: white;
+    cursor: pointer;
+    font-size: 2.8vw;
+}
+
+.userDetail-main .user .user-info .user-ops .go-back-button {
+    background-color: orange;
+    width: 100%;
+    color: white;
 }
 
 /*Footer*/
@@ -1420,24 +1831,85 @@ footer>h4 strong {
     }
 
     .productDetail-main .product .product-info .product-price {
-        font-size: 1rem;
+        font-size: 2.4vw;
     }
 
     .productDetail-main .product .product-info .product-name {
-        font-size: 1rem;
+        font-size: 2.3vw;
     }
 
-    .productDetail-main .product .product-info .product-ops a {
-        font-size: 1rem;
-    }
-
+    .productDetail-main .product .product-info .product-ops a,
     .productDetail-main .product .product-info .product-ops form .delete-button {
-        font-size: 1rem;
+        font-size: 2vw;
     }
 
     /*Product-Edit*/
     .productEdit-main .product-newInfo {
         width: 300px;
+    }
+
+    /*Users*/
+    .users-main .users-list ul {
+        justify-content: space-between;
+    }
+
+    .users-main .users-list ul li {
+        width: 47%;
+    }
+
+    .users-main .users-list ul li a .user-info i {
+        font-size: 1.8vw;
+        width: 3.5vw;
+        right: -10px;
+    }
+
+    .users-main .users-list ul li a .user-info .user-userName,
+    .users-main .users-list ul li a .user-info .user-password {
+        font-size: 2.5vw;
+    }
+
+    /*User-Search*/
+    .userSearch-main .user-search form {
+        width: 350px;
+    }
+
+    .userSearch-main .user-search-results ul {
+        justify-content: space-between;
+    }
+
+    .userSearch-main .user-search-results ul .results-item {
+        width: 47%;
+    }
+
+    .userSearch-main .user-search-results ul .results-item a .user-info .user-userName,
+    .userSearch-main .user-search-results ul .results-item a .user-info .user-password {
+        font-size: 2.5vw;
+    }
+
+    /*User-Detail*/
+    .userDetail-main .user {
+        width: 85%;
+    }
+
+    .userDetail-main .user .user-img {
+        width: 60%;
+    }
+
+    .userDetail-main .user .user-info {
+        width: 40%;
+    }
+
+    .userDetail-main .user .user-info h2 {
+        font-size: 1.8vw;
+    }
+
+    .userDetail-main .user .user-info h2 strong {
+        font-size: 1.9vw;
+    }
+
+    .userDetail-main .user .user-info .user-ops a,
+    .userDetail-main .user .user-info .user-ops form .delete-button {
+        font-size: 2vw;
     }
 
     /*Footer*/
@@ -1663,11 +2135,11 @@ footer>h4 strong {
     }
 
     .productDetail-main .product .product-img {
-        width: 65%;
+        width: 70%;
     }
 
     .productDetail-main .product .product-info {
-        width: 35%;
+        width: 30%;
     }
 
     .productDetail-main .product .product-info i {
@@ -1678,24 +2150,75 @@ footer>h4 strong {
     }
 
     .productDetail-main .product .product-info .product-price {
-        font-size: 1.5rem;
+        font-size: 1.9vw;
     }
 
     .productDetail-main .product .product-info .product-name {
-        font-size: 1.5rem;
+        font-size: 1.8vw;
     }
 
-    .productDetail-main .product .product-info .product-ops a {
-        font-size: 1.5rem;
-    }
-
+    .productDetail-main .product .product-info .product-ops a,
     .productDetail-main .product .product-info .product-ops form .delete-button {
-        font-size: 1.5rem;
+        font-size: 1.5vw;
     }
 
     /*Product-Edit*/
     .productEdit-main .product-newInfo {
         width: 350px;
+    }
+
+    /*Users*/
+    .users-main .users-list ul li {
+        width: 23%;
+    }
+
+    .users-main .users-list ul li a:hover {
+        box-shadow: 0px 0px 10px rgb(100, 100, 100);
+    }
+
+    .users-main .users-list ul li a .user-info .user-userName,
+    .users-main .users-list ul li a .user-info .user-password {
+        font-size: 1.3vw;
+    }
+
+    /*User-Search*/
+    .userSearch-main .user-search-results ul .results-item {
+        width: 23%;
+    }
+
+    .userSearch-main .user-search-results ul .results-item a .user-info .user-userName,
+    .userSearch-main .user-search-results ul .results-item a .user-info .user-password {
+        font-size: 1.3vw;
+    }
+
+    /*User-Detail*/
+    .userDetail-main h1 {
+        font-size: 2rem;
+    }
+
+    .userDetail-main .user {
+        width: 80%;
+    }
+
+    .userDetail-main .user .user-img {
+        width: 70%;
+    }
+
+    .userDetail-main .user .user-info {
+        width: 30%;
+    }
+
+    .userDetail-main .user .user-info h2 {
+        font-size: 1.3vw;
+    }
+
+    .userDetail-main .user .user-info h2 strong {
+        font-size: 1.4vw;
+    }
+
+    .userDetail-main .user .user-info .user-ops a,
+    .userDetail-main .user .user-info .user-ops form .delete-button {
+        font-size: 1.5vw;
     }
 
     /*Footer*/

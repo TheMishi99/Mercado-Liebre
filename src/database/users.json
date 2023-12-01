@@ -1,14 +1,17 @@
 [
   {
-    "id": 1,
-    "fullName": "admin",
-    "userName": "admin",
-    "email": "admin99@gmail.com",
+    "id": 1701390072793,
+    "fullName": "Mati",
+    "userName": "mishi",
+    "email": "matiasgd99@gmail.com",
     "birthDate": "2003-01-19",
-    "address": "a",
-    "profile": "vendor",
-    "interests": ["moda", "jugueteria", "vidaSana"],
-    "profileImage": "/images/usersAvatars/img-miFoto.jpg",
-    "password": "admin"
+    "address": "asd15",
+    "profile": "Vendedor",
+    "interests": [
+      "Electro",
+      "Jugueteria"
+    ],
+    "profileImage": "/images/usersAvatars/img-1701390072720-img-miFoto.jpg",
+    "password": "mishi"
   }
 ]

@@ -9,7 +9,7 @@ const model = {
     const allProducts = model.index();
     product.id = Date.now();
     allProducts.push(product);
-    writeFileSync(model.productsPath, JSON.stringify(allProducts));
+    writeFileSync(model.productsPath, JSON.stringify(allProducts, null, 2));
   },
   modifyOne: (newProductData) => {
     const allProducts = model.index();
@@ -19,7 +19,7 @@ const model = {
     allProducts[productIndex].name = newProductData.name;
     allProducts[productIndex].price = newProductData.price;
     allProducts[productIndex].image = newProductData.image;
-    writeFileSync(model.productsPath, JSON.stringify(allProducts));
+    writeFileSync(model.productsPath, JSON.stringify(allProducts, null, 2));
   },
   deleteOne: (id) => {
     const allProducts = model.index();
@@ -37,7 +37,7 @@ const model = {
       }
     }
     allProducts.splice(productToDelete_Index, 1);
-    writeFileSync(model.productsPath, JSON.stringify(allProducts));
+    writeFileSync(model.productsPath, JSON.stringify(allProducts, null, 2));
   },
   searchProducts: (keywords) => {
     const allProducts = model.index();
