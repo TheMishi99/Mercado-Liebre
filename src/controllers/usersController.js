@@ -1,5 +1,6 @@
 const fs = require("fs");
 const path = require("path");
+const { validationResult } = require("express-validator");
 
 const {
   index,
@@ -20,65 +21,75 @@ const usersController = {
     res.render("./users/login");
   },
   loginPOST: (req, res) => {
-    let userName = req.body.userName;
-    let userPassword = req.body.userPassword;
-    let user = users.find((user) => user.userName == userName);
-    let verified = false;
-    if (user != null) {
-      if (user.userPassword == userPassword) {
-        verified = true;
+    const errores = validationResult(req);
+    if(errores.isEmpty()){
+      const users = index();
+      let { userName, password } = req.body;
+      let user = users.find((user) => user.userName == userName);
+      let verified = false;
+      if (user != null) {
+        if (user.password == password) {
+          verified = true;
+        }
       }
-    }
-    if (verified) {
-      res.redirect("/home");
-    } else {
-      res.redirect("/users/login");
+      if (verified) {
+        res.redirect("/home");
+      }else{
+        res.redirect("/users/login");
+      }
+    }else{
+      res.render("./users/login", {errors: errores.mapped(), oldData: req.body});
     }
   },
   registerGET: (req, res) => {
     res.render("./users/register");
   },
   registerPOST: (req, res) => {
-    let interests;
-    let {
-      fullName,
-      email,
-      birthDate,
-      address,
-      profile,
-      userName,
-      password,
-      passwordConfirmation,
-    } = req.body;
-    if (password == passwordConfirmation) {
-      if(req.body.interests){
-        interests = req.body.interests;
-      }else{
-        interests = [];
-      }
-      let profileImage;
-      if (req.file) {
-        profileImage = req.file;
-        profileImage = "/images/usersAvatars/" + profileImage.filename;
-      } else {
-        profileImage = "/images/usersAvatars/default.jpg";
-      }
-      let user = {
-        id: 0,
-        profileImage,
+    const errores = validationResult(req);
+    if(errores.isEmpty()){
+      let {
         fullName,
         email,
         birthDate,
         address,
         profile,
-        interests,
         userName,
         password,
-      };
-      createOne(user);
-      res.redirect("/users");
-    } else {
-      res.redirect("/users/register");
+        passwordConfirmation,
+      } = req.body;
+      let interests;
+      if (password == passwordConfirmation) {
+        if(req.body.interests){
+          interests = req.body.interests;
+        }else{
+          interests = [];
+        }
+        let profileImage;
+        if (req.file) {
+          profileImage = req.file;
+          profileImage = "/images/usersAvatars/" + profileImage.filename;
+        } else {
+          profileImage = "/images/usersAvatars/default.jpg";
+        }
+        let user = {
+          id: 0,
+          profileImage,
+          fullName,
+          email,
+          birthDate,
+          address,
+          profile,
+          interests,
+          userName,
+          password,
+        };
+        createOne(user);
+        res.redirect("/users");
+      } else {
+        res.redirect("/users/register");
+      }
+    }else{
+      res.render("./users/register", {errors: errores.mapped(), oldData: req.body});
     }
   },
   searchGET: (req, res) => {
@@ -94,34 +105,10 @@ const usersController = {
     });
   },
   editPUT: (req, res) => {
-    let id = req.params.id;
-    let {
-      fullName,
-      email,
-      birthDate,
-      address,
-      profile,
-      interests,
-      userName,
-      password,
-      passwordConfirmation,
-    } = req.body;
-    if (password == passwordConfirmation) {
-      if(req.body.interests){
-        interests = req.body.interests;
-      }else{
-        interests = [];
-      }
-      let profileImage;
-      if (req.file) {
-        profileImage = req.file;
-        profileImage = "/images/usersAvatars/" + profileImage.filename;
-      } else {
-        profileImage = findOne(id).profileImage;
-      }
-      let user = {
-        id,
-        profileImage,
+    const errores = validationResult(req);
+    if(errores.isEmpty()){
+      let id = req.params.id;
+      let {
         fullName,
         email,
         birthDate,
@@ -130,11 +117,46 @@ const usersController = {
         interests,
         userName,
         password,
-      };
-      modifyOne(user);
-      res.redirect("/users/" + user.id);
-    } else {
-      res.redirect("/users/" + user.id + "/edit");
+        passwordConfirmation,
+      } = req.body;
+      if (password == passwordConfirmation) {
+        if(req.body.interests){
+          if(Array.isArray(req.body.interests.length)){
+            interests = req.body.interests;
+          }else{
+            interests = [];
+            interests.push(req.body.interests);
+          }
+        }else{
+          interests = [];
+        }
+        let profileImage;
+        if (req.file) {
+          profileImage = req.file;
+          profileImage = "/images/usersAvatars/" + profileImage.filename;
+        } else {
+          profileImage = findOne(id).profileImage;
+        }
+        let user = {
+          id,
+          profileImage,
+          fullName,
+          email,
+          birthDate,
+          address,
+          profile,
+          interests,
+          userName,
+          password,
+        };
+        modifyOne(user);
+        res.redirect("/users/" + user.id);
+      } else {
+        res.redirect("/users/" + user.id + "/edit");
+      }
+    }else{
+      const user = findOne(req.params.id);
+      res.render("./users/userEdit", {errors: errores.mapped(), oldData: req.body, user});
     }
   },
   deleteGET: (req, res) => {

@@ -315,6 +315,7 @@ header .burger-menu i {
 .login-main .login-container h3 {
     align-self: center;
     font-size: 1.4rem;
+    margin: 15px 0px 0px;
 }
 
 .login-main .login-container form {
@@ -331,10 +332,19 @@ header .burger-menu i {
     font-size: 0.8rem;
 }
 
+.login-main .login-container form label {
+    margin: 10px 0px 2px;
+    align-self: flex-start;
+}
+
 .login-main .login-container form input {
-    margin: 10px 0px 5px;
+    margin: 3px 0px 10px;
     border: 1px solid white;
     padding: 6px;
+}
+
+.login-main .login-container form .feedback {
+    color: crimson;
 }
 
 .login-main .login-container form .form-buttons {
@@ -367,7 +377,6 @@ header .burger-menu i {
 .register-main .register-container {
     margin: 20px 0px;
     width: 275px;
-    height: 950px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -382,6 +391,7 @@ header .burger-menu i {
     text-align: center;
     align-self: center;
     font-size: 1.4rem;
+    margin: 15px 0px 0px;
 }
 
 .register-main .register-container form {
@@ -408,6 +418,10 @@ header .burger-menu i {
     margin: 10px 0px 5px;
     border: 1px solid white;
     padding: 6px;
+}
+
+.register-main .register-container form .feedback {
+    color: crimson;
 }
 
 .register-main .register-container form input[type="text"],
@@ -1839,9 +1853,6 @@ footer>h4 strong {
     }
 
     /*Login*/
-    .login-main .login-container {
-        height: 190px;
-    }
 
     .login-main .login-container h3 {
         font-size: 1.5rem;
@@ -1864,7 +1875,6 @@ footer>h4 strong {
     /*Register*/
     .register-main .register-container {
         width: 295px;
-        height: 1000px;
     }
 
     .register-main .register-container h1 {
@@ -2200,7 +2210,6 @@ footer>h4 strong {
     /*Login*/
     .login-main .login-container {
         width: 350px;
-        height: 210px;
     }
 
     .login-main .login-container h3 {
@@ -2219,7 +2228,6 @@ footer>h4 strong {
     /*Register*/
     .register-main .register-container {
         width: 350px;
-        height: 1100px;
     }
 
     .register-main .register-container h1 {

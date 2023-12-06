@@ -32,50 +32,58 @@
             id="preview"
           />
           <input type="file" name="profileImage" id="profileImage" onchange="loadImage(event)"/>
-          <label for="fullName">Nombre Completo</label>
+          <label for="fullName">Nombre Completo (*)</label>
           <input
             type="text"
             name="fullName"
             id="fullName"
             placeholder="Nombre y Apellido"
-            value="<%= user.fullName %>"
-            required
+            value="<%= locals.oldData && oldData.fullName ? oldData.fullName : user.fullName %>"
           />
-          <label for="email">Email</label>
+          <% if(locals.errors && errors.fullName) { %>
+            <p class="feedback"><%= errors.fullName.msg %></p>
+          <% } %>
+          <label for="email">Email (*)</label>
           <input
             type="email"
             name="email"
             id="email"
             placeholder="E-mail"
-            value="<%= user.email %>"
-            required
+            value="<%= locals.oldData && oldData.email ? oldData.email : user.email %>"
           />
-          <label for="birthDate">Fecha de Nacimiento</label>
+          <% if(locals.errors && errors.email) { %>
+            <p class="feedback"><%= errors.email.msg %></p>
+          <% } %>
+          <label for="birthDate">Fecha de Nacimiento (*)</label>
           <input
             type="date"
             name="birthDate"
             id="birthDate"
-            value="<%= user.birthDate %>"
-            required
+            value="<%= locals.oldData && oldData.birthDate ? oldData.birthDate : user.birthDate %>"
           />
-          <label for="address">Domicilio</label>
+          <% if(locals.errors && errors.birthDate) { %>
+            <p class="feedback"><%= errors.birthDate.msg %></p>
+          <% } %>
+          <label for="address">Domicilio (*)</label>
           <input
             type="text"
             name="address"
             id="address"
             placeholder="Domicilio"
-            value="<%= user.address %>"
-            required
+            value="<%= locals.oldData && oldData.address ? oldData.address : user.address %>"
           />
-          <label>Perfil de Usuario</label>
+          <% if(locals.errors && errors.address) { %>
+            <p class="feedback"><%= errors.address.msg %></p>
+          <% } %>
+          <label>Perfil de Usuario (*)</label>
           <div class="userProfile-container">
             <div class="option">
               <input
                 type="radio"
                 name="profile"
                 id="buyer"
-                value="Comprador" <%= (user.profile == "Comprador") ? "checked" : "" %>
-                required
+                value="Comprador"
+                <%= locals.oldData && oldData.profile === "Comprador" ? "checked" : (user.profile === "Comprador" ? "checked" : '') %>
               />
               <label for="buyer">Comprador</label>
             </div>
@@ -84,12 +92,15 @@
                 type="radio"
                 name="profile"
                 id="vendor"
-                value="Vendedor" <%= (user.profile == "Vendedor") ? "checked" : "" %>
-                required
+                value="Vendedor"
+                <%= locals.oldData && oldData.profile === "Vendedor" ? "checked" : (user.profile === "Vendedor" ? "checked" : '') %>
               />
               <label for="vendor">Vendedor</label>
             </div>
           </div>
+          <% if(locals.errors && errors.profile) { %>
+            <p class="feedback"><%= errors.profile.msg %></p>
+          <% } %>
           <label>Intereses</label>
           <div class="userInterest-container">
             <div class="option">
@@ -97,7 +108,8 @@
                 type="checkbox"
                 name="interests"
                 id="electro"
-                value="Electro" <%= (user.interests.includes("Electro")) ? "checked" : "" %>
+                value="Electro"
+                <%= locals.oldData && oldData.interests.includes("Electro") ? "checked" : (user.interests.includes("Electro") ? "checked" : '') %>
               />
               <label for="electro">Electro</label>
             </div>
@@ -106,7 +118,8 @@
                 type="checkbox"
                 name="interests"
                 id="moda"
-                value="Moda" <%= (user.interests.includes("Moda")) ? "checked" : "" %>
+                value="Moda"
+                <%= locals.oldData && oldData.interests.includes("Moda") ? "checked" : (user.interests.includes("Moda") ? "checked" : '') %>
               />
               <label for="moda">Moda</label>
             </div>
@@ -115,7 +128,8 @@
                 type="checkbox"
                 name="interests"
                 id="hogar"
-                value="Hogar" <%= (user.interests.includes("Hogar")) ? "checked" : "" %>
+                value="Hogar"
+                <%= locals.oldData && oldData.interests.includes("Hogar") ? "checked" : (user.interests.includes("Hogar") ? "checked" : '') %>
               />
               <label for="hogar">Hogar</label>
             </div>
@@ -124,7 +138,8 @@
                 type="checkbox"
                 name="interests"
                 id="jugueteria"
-                value="Jugueteria" <%= (user.interests.includes("Jugueteria")) ? "checked" : "" %>
+                value="Jugueteria"
+                <%= locals.oldData && oldData.interests.includes("Jugueteria") ? "checked" : (user.interests.includes("Jugueteria") ? "checked" : '') %>
               />
               <label for="jugueteria">Jugueteria</label>
             </div>
@@ -133,38 +148,45 @@
                 type="checkbox"
                 name="interests"
                 id="vidaSana"
-                value="Vida Sana" <%= (user.interests.includes("Vida Sana")) ? "checked" : "" %>
+                value="Vida Sana"
+                <%= locals.oldData && oldData.interests.includes("Vida Sana") ? "checked" : (user.interests.includes("Vida Sana") ? "checked" : '') %>
               />
               <label for="vidaSana">Vida Sana</label>
             </div>
           </div>
-          <label for="userName">Nombre de Usuario</label>
+          <label for="userName">Nombre de Usuario (*)</label>
           <input
             type="text"
             name="userName"
             id="userName"
             placeholder="Nombre de Usuario"
-            value="<%= user.userName %>"
-            required
+            value="<%= locals.oldData && oldData.userName ? oldData.userName : user.userName %>"
           />
-          <label for="password">Contraseña</label>
+          <% if(locals.errors && errors.userName) { %>
+            <p class="feedback"><%= errors.userName.msg %></p>
+          <% } %>
+          <label for="password">Contraseña (*)</label>
           <input
             type="password"
             name="password"
             id="password"
             placeholder="Contraseña"
-            value="<%= user.password %>"
-            required
+            value="<%= locals.oldData && oldData.password ? oldData.password : user.password %>"
           />
-          <label for="passwordConfirmation">Confirmar Contraseña</label>
+          <% if(locals.errors && errors.password) { %>
+            <p class="feedback"><%= errors.password.msg %></p>
+          <% } %>
+          <label for="passwordConfirmation">Confirmar Contraseña (*)</label>
           <input
             type="password"
             name="passwordConfirmation"
             id="passwordConfirmation"
             placeholder="Confirmar Contraseña"
-            value="<%= user.password %>"
-            required
+            value="<%= locals.oldData && oldData.password ? oldData.password : user.password %>"
           />
+          <% if(locals.errors && errors.passwordConfirmation) { %>
+            <p class="feedback"><%= errors.passwordConfirmation.msg %></p>
+          <% } %>
           <button type="submit">Confirmar</button>
         </form>
       </div>

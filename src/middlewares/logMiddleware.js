@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const logPath = path.join(__dirname, 'main-log.txt');
+const logPath = path.join(__dirname, '../logs/main-log.txt');
 
 const logMiddleware = (req, res, next) => {
     let info = "Se ingresó a: " + req.url + "\n";
