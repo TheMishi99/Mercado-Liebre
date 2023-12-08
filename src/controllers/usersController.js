@@ -30,6 +30,7 @@ const usersController = {
       if (user != null) {
         if (user.password == password) {
           verified = true;
+          req.session.userLoggedIn = user;
         }
       }
       if (verified) {

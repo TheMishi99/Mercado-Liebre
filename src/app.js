@@ -5,6 +5,10 @@ const app = express();
 const path = require("path");
 const PORT = process.env.PORT;
 
+/* Session Import */
+const session = require("express-session");
+app.use(session({secret: "I got a secret"}));
+
 /* For PUT & DELETE Management */
 const methodOverride = require("method-override");
 
@@ -19,6 +23,9 @@ const products = require("./routes/products")
 /* Middlewares import */
 const logMiddleware = require("./middlewares/logMiddleware");
 
+/* Middlewares Use */
+app.use(logMiddleware);
+
 /* Public folder */
 app.use(express.static(path.join(__dirname, "../", "public")));
 
@@ -32,9 +39,6 @@ app.use(express.json());
 
 /* PUT & DELETE Methods enabled */
 app.use(methodOverride("_method"));
-
-/* Middlewares Use */
-app.use(logMiddleware);
 
 /* Server Initialize */
 app.listen(

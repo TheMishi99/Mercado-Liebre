@@ -21,16 +21,19 @@ const uploadFile = multer({
 })
 /* Multer Configuration */
 
+/* AuthMiddleware */
+const authMiddleware = require("../middlewares/authMiddleware");
+
 router.get("/", productsController.products);
 
-router.get("/create", productsController.createGET);
+router.get("/create", authMiddleware, productsController.createGET);
 router.post("/create", uploadFile.single("img"), productsController.createPOST);
 
 router.get("/search", productsController.searchGET);
 
 router.get("/:id", productsController.product);
 
-router.get("/:id/edit", productsController.editGET);
+router.get("/:id/edit", authMiddleware, productsController.editGET);
 router.put("/:id/edit", uploadFile.single("img"), productsController.editPUT);
 
 router.delete("/:id", productsController.deleteDELETE);

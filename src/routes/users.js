@@ -27,14 +27,20 @@ const loginValidations = require("../middlewares/loginValidations");
 const registerValidations = require("../middlewares/registerValidations");
 /* Validations */
 
+/* Middlewares */
+const authMiddleware = require("../middlewares/authMiddleware");
+const guestMiddleware = require("../middlewares/guestMiddleware");
+
+/* Middlewares */
+
 const usersController = require("../controllers/usersController");
 
-router.get("/", usersController.users);
+router.get("/", authMiddleware, usersController.users);
 
-router.get("/login", usersController.loginGET);
+router.get("/login", guestMiddleware, usersController.loginGET);
 router.post("/login", loginValidations, usersController.loginPOST);
 
-router.get("/register", usersController.registerGET);
+router.get("/register", guestMiddleware, usersController.registerGET);
 router.post(
   "/register",
   uploadFile.single("profileImage"),
@@ -42,11 +48,11 @@ router.post(
   usersController.registerPOST
 );
 
-router.get("/search", usersController.searchGET);
+router.get("/search", authMiddleware, usersController.searchGET);
 
-router.get("/:id", usersController.user);
+router.get("/:id", authMiddleware, usersController.user);
 
-router.get("/:id/edit", usersController.editGET);
+router.get("/:id/edit", authMiddleware, usersController.editGET);
 router.put(
   "/:id/edit",
   uploadFile.single("profileImage"),
