@@ -6,7 +6,7 @@ let authMiddleware = (req, res, next) => {
   ) {
     next();
   } else {
-    res.send("No tenes permiso para ver esta pagina");
+    res.send("Debes de ser administrador para acceder a esta pagina");
   }
 };
 

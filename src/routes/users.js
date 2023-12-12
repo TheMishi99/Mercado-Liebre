@@ -38,11 +38,14 @@ const usersController = require("../controllers/usersController");
 router.get("/", authMiddleware, usersController.users);
 
 router.get("/login", guestMiddleware, usersController.loginGET);
-router.post("/login", loginValidations, usersController.loginPOST);
+router.post("/login", guestMiddleware, loginValidations, usersController.loginPOST);
+
+router.get("/logout", authMiddleware, usersController.logout);
 
 router.get("/register", guestMiddleware, usersController.registerGET);
 router.post(
   "/register",
+  guestMiddleware,
   uploadFile.single("profileImage"),
   registerValidations,
   usersController.registerPOST
@@ -55,10 +58,11 @@ router.get("/:id", authMiddleware, usersController.user);
 router.get("/:id/edit", authMiddleware, usersController.editGET);
 router.put(
   "/:id/edit",
+  authMiddleware,
   uploadFile.single("profileImage"),
   registerValidations,
   usersController.editPUT
 );
-router.delete("/:id/", usersController.deleteDELETE);
+router.delete("/:id/", authMiddleware, usersController.deleteDELETE);
 
 module.exports = router;

@@ -43,7 +43,7 @@ app.use(methodOverride("_method"));
 /* Server Initialize */
 app.listen(
     PORT, () => {
-        console.log(`El servidor esta escuchando en el puerto ${PORT}`);
+        console.log(`Servidor Funcionando...`);
         console.log(`Accede por este link -> http://localhost:${PORT}`);
     }
 )
@@ -63,6 +63,8 @@ app.use(
 
 app.use(
     (req, res, next) => {
-        res.status(404).render("error");
+        res.status(404).render("error", {
+            userLoggedIn: req.session.userLoggedIn
+        });
     }
 )

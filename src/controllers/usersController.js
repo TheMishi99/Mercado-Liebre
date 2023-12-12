@@ -15,10 +15,13 @@ const usersController = {
   users: (req, res) => {
     res.render("./users/users", {
       users: index(),
+      userLoggedIn: req.session.userLoggedIn
     });
   },
   loginGET: (req, res) => {
-    res.render("./users/login");
+    res.render("./users/login", {
+      userLoggedIn: req.session.userLoggedIn
+    });
   },
   loginPOST: (req, res) => {
     const errores = validationResult(req);
@@ -42,8 +45,14 @@ const usersController = {
       res.render("./users/login", {errors: errores.mapped(), oldData: req.body});
     }
   },
+  logout: (req, res) => {
+    req.session.userLoggedIn = undefined
+    res.redirect("/home");
+  },
   registerGET: (req, res) => {
-    res.render("./users/register");
+    res.render("./users/register", {
+      userLoggedIn: req.session.userLoggedIn
+    });
   },
   registerPOST: (req, res) => {
     const errores = validationResult(req);
@@ -97,12 +106,14 @@ const usersController = {
     let keywords = req.query.search;
     res.render("./users/userSearch", {
       results: searchUsers(keywords),
+      userLoggedIn: req.session.userLoggedIn
     });
   },
   editGET: (req, res) => {
     const user = findOne(req.params.id);
     res.render("./users/userEdit", {
       user,
+      userLoggedIn: req.session.userLoggedIn
     });
   },
   editPUT: (req, res) => {
@@ -160,12 +171,6 @@ const usersController = {
       res.render("./users/userEdit", {errors: errores.mapped(), oldData: req.body, user});
     }
   },
-  deleteGET: (req, res) => {
-    const user = findOne(req.params.id);
-    res.render("./users/userDelete", {
-      user,
-    });
-  },
   deleteDELETE: (req, res) => {
     const userId = req.params.id;
     deleteOne(userId);
@@ -175,6 +180,7 @@ const usersController = {
     const user = findOne(req.params.id);
     res.render("./users/userDetail", {
       user,
+      userLoggedIn: req.session.userLoggedIn
     });
   },
 };

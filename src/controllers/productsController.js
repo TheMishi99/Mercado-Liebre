@@ -14,10 +14,13 @@ const productosController = {
   products: (req, res) => {
     res.render("products/products", {
       products: index(),
+      userLoggedIn: req.session.userLoggedIn
     });
   },
   createGET: (req, res) => {
-    res.render("products/productCreate");
+    res.render("products/productCreate", {
+      userLoggedIn: req.session.userLoggedIn
+    });
   },
   createPOST: (req, res) => {
     let { name, price } = req.body;
@@ -42,12 +45,14 @@ const productosController = {
     let keywords = req.query.search;
     res.render("products/productSearch", {
       results: searchProducts(keywords),
+      userLoggedIn: req.session.userLoggedIn
     });
   },
   editGET: (req, res) => {
     let product = findOne(req.params.id);
     res.render("./products/productEdit", {
       product,
+      userLoggedIn: req.session.userLoggedIn
     });
   },
   editPUT: (req, res) => {
@@ -79,6 +84,7 @@ const productosController = {
     let product = findOne(req.params.id);
     res.render("products/productDetail", {
       product,
+      userLoggedIn: req.session.userLoggedIn
     });
   },
 };
