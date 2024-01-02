@@ -2,6 +2,8 @@ const fs = require("fs");
 const path = require("path");
 const { validationResult } = require("express-validator");
 
+const db = require("../database/models");
+
 const {
   index,
   findOne,
@@ -13,10 +15,14 @@ const {
 
 const usersController = {
   users: (req, res) => {
-    res.render("./users/users", {
-      users: index(),
-      userLoggedIn: req.session.userLoggedIn
-    });
+    db.Users.findAll()
+      .then(data => res.render("./users/users", {
+          users: data,
+          userLoggedIn: req.session.userLoggedIn
+        })
+      )
+      .catch(err => res.send(err))
+    ;
   },
   loginGET: (req, res) => {
     res.render("./users/login", {
