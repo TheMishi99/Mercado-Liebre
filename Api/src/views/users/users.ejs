@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Bienvenidxs a MercadoLiebre</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/styles.css" />
+  </head>
+
+  <body>
+    <%- include("../partials/header") %>
+    <main class="users-main">
+      <div class="users-op">
+        <h1>Operaciones</h1>
+        <a class="userCreate-button" href="/users/register">Agregar Usuario</a>
+        <a class="userSearch-button" href="/users/search">Buscar Usuario</a>
+      </div>
+      <div class="users-list">
+        <h1>Usuarios</h1>
+        <ul>
+          <% for( let i=0; i < users.length; i++ ) { %>
+          <li>
+            <a href="/users/<%= users[i].id %>">
+              <div class="user-img">
+                <img
+                  src="<%= users[i].profileImage %>"
+                  alt="Foto del Usuario"
+                />
+              </div>
+              <div class="user-info">
+                <span class="user-userName"
+                  >Nombre de Usuario: <%= users[i].userName %></span
+                >
+                <span class="user-password"
+                  >Contraseña: <%= users[i].password %></span
+                >
+              </div>
+            </a>
+          </li>
+          <% } %>
+        </ul>
+      </div>
+    </main>
+    <%- include("../partials/footer") %>
+    <script
+      src="https://kit.fontawesome.com/eae7cdcb5c.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

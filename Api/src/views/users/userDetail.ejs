@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Bienvenidxs a MercadoLiebre</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/styles.css" />
+  </head>
+
+  <body>
+    <%- include("../partials/header") %>
+    <main class="userDetail-main">
+      <h1>Detalle de Usuario</h1>
+      <div class="user">
+        <div class="user-img">
+          <img src="<%= user.profileImage %>" alt="Foto de Perfil" />
+        </div>
+        <div class="user-info">
+          <h2><strong>Nombre Completo:</strong> <%= user.fullName %></h2>
+          <h2><strong>Email:</strong> <%= user.email %></h2>
+          <h2><strong>Fecha de Nacimiento:</strong> <%= user.birthDate %></h2>
+          <h2><strong>Domicilio:</strong> <%= user.address %></h2>
+          <h2><strong>Perfil:</strong> <%= user.profile %></h2>
+          <% if (user.interests.length != 0) { %>
+          <h2><strong>Intereses:</strong> <%= user.interests.join(", ") %></h2>
+          <% } else { %>
+          <h2><strong>Intereses:</strong> Ninguno</h2>
+          <% } %>
+          <h2><strong>Nombre de usuario:</strong> <%= user.userName %></h2>
+          <h2><strong>Contraseña:</strong> <%= user.password %></h2>
+          <div class="user-ops">
+            <a href="/users/<%= user.id %>/edit" class="edit-button">Editar</a>
+            <form action="/users/<%= user.id %>?_method=DELETE" method="POST">
+              <button type="submit" class="delete-button">Eliminar</button>
+            </form>
+            <a href="/users" class="go-back-button">Volver atras</a>
+          </div>
+        </div>
+      </div>
+    </main>
+    <%- include("../partials/footer") %>
+    <script
+      src="https://kit.fontawesome.com/eae7cdcb5c.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

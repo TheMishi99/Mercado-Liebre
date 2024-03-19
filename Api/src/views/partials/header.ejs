@@ -1,0 +1,67 @@
+<header id="header">
+  <a href="/home" class="mercado-liebre_logo">
+    <img
+      src="/images/logo-mercado-liebre.svg"
+      width="150"
+      alt="Logo de MercadoLiebre"
+    />
+  </a>
+  <form class="search" action="/products/search" method="get">
+    <input
+      type="search"
+      name="search"
+      id="search"
+      placeholder="Buscar productos, marcas..."
+      autocomplete="off"
+      autocapitalize="off"
+      class="search-bar"
+    />
+    <button type="submit" class="search-button">
+      <i class="fa-solid fa-magnifying-glass"></i>
+    </button>
+  </form>
+  <p class="text">
+    <i class="fa-solid fa-hand-holding-dollar"></i>
+    Comprá en cuotas y sin tarjeta de crédito
+  </p>
+  <div class="burger-menu">
+    <a href="#">
+      <i class="fas fa-bars"></i>
+    </a>
+  </div>
+  <nav>
+    <ul class="ul-1">
+      <li><a href="/home#ofertas">Ofertas</a></li>
+      <li><a href="https://www.mercadolibre.com.ar/">Tiendas Oficiales</a></li>
+      <li><a href="#">Vender</a></li>
+      <li><a href="/about">Ayuda</a></li>
+    </ul>
+    <ul class="ul-2">
+      <% if(!userLoggedIn) { %>
+      <li>
+        <a href="/users/login"
+          >Ingresá <i class="fa-solid fa-right-to-bracket"></i
+        ></a>
+      </li>
+      <li>
+        <a href="/users/register"
+          >Creá tu cuenta <i class="fa-solid fa-user"></i
+        ></a>
+      </li>
+      <% } else { %>
+      <li>
+        <a href="/users/logout"
+          >Cerrar Sesion <i class="fa-solid fa-right-to-bracket"></i
+        ></a>
+      </li>
+      <% } %>
+
+      <li>
+        <a href="#">Mis compras <i class="fa-solid fa-cart-shopping"></i></a>
+      </li>
+    </ul>
+  </nav>
+</header>
+<section class="banner">
+  <img src="/images/img-home-banner.jpg" width="360" alt="Banner de ofertas" />
+</section>
