@@ -80,8 +80,8 @@ const productosController = {
       if (productInDb) {
         let { name, price } = req.body;
         let image =
-          "/images/products/" +
-          ((req.file && req.file.filename) || productInDb.image);
+          "/images/products/" + (req.file && req.file.filename) ||
+          productInDb.image;
         let product = {
           name,
           altName: name,

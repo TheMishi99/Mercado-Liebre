@@ -207,8 +207,8 @@ const usersController = {
                 : [req.body.interests]
               : [];
             let profileImage =
-              "/images/usersAvatars/" +
-              ((req.file && req.file.filename) || userInDb.profileImage);
+              "/images/usersAvatars/" + (req.file && req.file.filename) ||
+              userInDb.profileImage;
             let user = {
               profileImage,
               fullName,
