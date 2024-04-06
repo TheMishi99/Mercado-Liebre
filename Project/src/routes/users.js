@@ -31,7 +31,6 @@ const registerValidations = require("../middlewares/registerValidations");
 const authMiddleware = require("../middlewares/authMiddleware");
 const guestMiddleware = require("../middlewares/guestMiddleware");
 const isLoggedMiddleware = require("../middlewares/isLoggedMiddleware");
-
 /* Middlewares */
 
 const usersController = require("../controllers/usersController");

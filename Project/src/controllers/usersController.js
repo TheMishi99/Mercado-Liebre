@@ -5,7 +5,6 @@ const bcryptjs = require("bcryptjs");
 
 const db = require("../database/models");
 const { Op } = require("sequelize");
-
 const usersController = {
   users: async (req, res) => {
     try {
@@ -206,9 +205,17 @@ const usersController = {
                 ? req.body.interests
                 : [req.body.interests]
               : [];
-            let profileImage =
-              "/images/usersAvatars/" + (req.file && req.file.filename) ||
-              userInDb.profileImage;
+            let profileImage;
+            if (req.file) {
+              profileImage = "/images/usersAvatars/" + req.file.filename;
+              if (userInDb.profileImage != "/images/usersAvatars/default.jpg") {
+                fs.unlinkSync(
+                  path.join(__dirname, "../../public", userInDb.profileImage)
+                );
+              }
+            } else {
+              profileImage = userInDb.profileImage;
+            }
             let user = {
               profileImage,
               fullName,

@@ -79,9 +79,17 @@ const productosController = {
       const productInDb = await db.Products.findByPk(id);
       if (productInDb) {
         let { name, price } = req.body;
-        let image =
-          "/images/products/" + (req.file && req.file.filename) ||
-          productInDb.image;
+        let image;
+        if (req.file) {
+          image = "/images/products/" + req.file.filename;
+          if (productInDb.image != "/images/products/default.jpg") {
+            fs.unlinkSync(
+              path.join(__dirname, "../../public", productInDb.image)
+            );
+          }
+        } else {
+          image = productInDb.image;
+        }
         let product = {
           name,
           altName: name,
