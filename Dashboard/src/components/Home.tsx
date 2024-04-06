@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import ProductsList from "./ProductsList";
+import ProductsList from "./Products/ProductsList";
 
 import { type Product } from "../Types";
 
@@ -71,7 +71,10 @@ const Home = () => {
   }, []);
 
   return (
-    <div id="home" className="w-full flex flex-col justify-center items-center">
+    <div
+      id="home"
+      className="w-full h-[80%] flex flex-col justify-center items-center bg-zinc-200 p-2 gap-3 overflow-auto"
+    >
       <ProductsList title="Recent Products" products={recentProducts} />
       <ProductsList title="On Offer Products" products={recentProducts} />
     </div>

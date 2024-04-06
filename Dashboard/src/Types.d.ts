@@ -6,6 +6,12 @@ export type Product = {
     image: string
 }
 
+export type NavItem = {
+    title: string
+    url: string
+    icon?: string
+}
+
 export interface MyRoute {
     url: string;
     element: JSX.Element

@@ -1,0 +1,2491 @@
+/*
+Paleta de Colores
+
+Amarillo: #EAC926;
+Azul: #03264C;
+Celeste: #1259c3;
+Gris oscuro: #666;
+Gris claro: #ebebeb;
+Verde: #39b54a;
+*/
+
+* {
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-size: 12px;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+
+header,
+.banner,
+footer {
+    width: 100%;
+}
+
+body .go-up-button {
+    position: fixed;
+    border: 1px solid black;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    aspect-ratio: 1 / 1;
+    z-index: 10;
+    bottom: 15px;
+    right: 15px;
+    text-align: center;
+    background-color: #EAC926;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+body .go-up-button:link,
+body .go-up-button:visited {
+    text-decoration: none;
+}
+
+body .go-up-button i {
+    color: white;
+    font-size: 1.5rem;
+}
+
+/*Header*/
+header {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #EAC926;
+}
+
+header .mercado-liebre_logo {
+    align-self: flex-start;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    width: 50%;
+}
+
+header .mercado-liebre_logo img {
+    width: 100%;
+}
+
+header .search {
+    margin: 10px 0px 10px 0px;
+    width: 50%;
+    height: 25px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+header .search .search-bar,
+header .search .search-button {
+    height: 100%;
+    border-radius: 8px;
+    border: none;
+}
+
+header .search-bar {
+    width: 75%;
+    padding: 4px;
+}
+
+header .search-button {
+    width: 15%;
+    background-color: #1259C3;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    cursor: pointer;
+    border: none;
+}
+
+header .search-button i {
+    font-size: 0.8rem;
+}
+
+header .text {
+    width: 100%;
+    text-align: center;
+    font-size: 1rem;
+}
+
+header nav {
+    width: 100%;
+    padding: 10px;
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-evenly;
+}
+
+header nav ul {
+    list-style: none;
+    margin: 0px 0px 10px 0px;
+}
+
+header .burger-menu a,
+header nav ul li a:link,
+header nav ul li a:visited {
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+}
+
+header .burger-menu {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    margin: 10px 0px 10px 0px;
+    justify-self: center;
+}
+
+header .burger-menu i {
+    padding: 4px;
+    color: white;
+    font-size: 20px;
+    border: 1px solid #1259C3;
+    background-color: #1259C3;
+    border-radius: 5px;
+}
+
+.banner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.banner img {
+    width: 100%;
+}
+
+/*Home*/
+.home-main {
+    background-color: #ebebeb;
+    margin: 0px 0px 15px 0px;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+}
+
+.home-main section {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.home-main section h3 {
+    margin: 10px 0px 10px 0px;
+    width: 100%;
+    font-size: 2rem;
+    align-self: flex-start;
+    color: #666;
+}
+
+.home-main section a {
+    margin: 10px;
+    padding: 15px;
+    width: 100%;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center
+}
+
+.home-main section a:link,
+.home-main section a:visited {
+    text-decoration: none;
+    color: black;
+}
+
+.home-main section a .imagen {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.home-main section a .imagen img {
+    width: 100%;
+}
+
+.home-main section a .article-info {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.home-main section a .article-info i {
+    margin: 0px 0px 5px 0px;
+    border: 1px solid #39b54a;
+    border-radius: 15px;
+    color: #39b54a;
+    width: 10%;
+    aspect-ratio: 1 / 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    position: absolute;
+    right: 0px;
+    top: -25px;
+    z-index: 10;
+}
+
+.home-main section a .article-info .precio {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 40%;
+    margin: 5px 0px;
+    font-size: 1.5rem;
+}
+
+.home-main section a .article-info .descuento {
+    margin: 6px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 60%;
+    color: #39b54a;
+}
+
+.home-main section a .article-info h4,
+.home-main section a .article-info .descuento {
+    font-size: 1.33rem;
+}
+
+.home-main section a .article-info h4 {
+    margin: 2px 0px 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    color: #666;
+    text-align: center;
+}
+
+/*Login*/
+.login-main {
+    margin: 0px 0px 15px 0px;
+    background-color: #ebebeb;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-main .login-container {
+    margin: 20px 0px;
+    width: 275px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #EAC926;
+    border-radius: 10px;
+}
+
+.login-main .login-container h3 {
+    align-self: center;
+    font-size: 1.4rem;
+    margin: 15px 0px 0px;
+}
+
+.login-main .login-container form {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-main .login-container form input[type="text"],
+.login-main .login-container form input[type="password"] {
+    width: 100%;
+    font-size: 0.8rem;
+}
+
+.login-main .login-container form label {
+    margin: 10px 0px 2px;
+    align-self: flex-start;
+}
+
+.login-main .login-container form input {
+    margin: 3px 0px 10px;
+    border: 1px solid white;
+    padding: 6px;
+}
+
+.login-main .login-container form .feedback {
+    color: crimson;
+}
+
+.login-main .login-container form .form-buttons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 0px;
+}
+
+.login-main .login-container form .form-buttons button {
+    border-radius: 5px;
+    background-color: #06a4ff;
+    color: white;
+    margin: 0px 5px 0px 0px;
+    border: none;
+    padding: 8px;
+}
+
+/*Register*/
+.register-main {
+    width: 100%;
+    margin: 0px 0px 15px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.register-main .register-container {
+    margin: 20px 0px;
+    width: 275px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #ebebeb;
+    border: 1px solid #EAC926;
+    border-radius: 10px;
+}
+
+.register-main .register-container h1 {
+    width: 100%;
+    text-align: center;
+    align-self: center;
+    font-size: 1.4rem;
+    margin: 15px 0px 0px;
+}
+
+.register-main .register-container form {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.register-main .register-container form img {
+    width: 50%;
+    margin: 5px 0px;
+}
+
+.register-main .register-container form label {
+    margin: 15px 0px 0px 0px;
+    font-size: 1rem;
+    font-weight: bold;
+    align-self: flex-start;
+}
+
+.register-main .register-container form input {
+    margin: 10px 0px 5px;
+    border: 1px solid white;
+    padding: 6px;
+}
+
+.register-main .register-container form .feedback {
+    color: crimson;
+}
+
+.register-main .register-container form input[type="text"],
+.register-main .register-container form input[type="email"],
+.register-main .register-container form input[type="password"],
+.register-main .register-container form input[type="date"] {
+    width: 100%;
+    font-size: 0.8rem;
+}
+
+.register-main .register-container form input[type="file"] {
+    width: 100%;
+    font-size: 0.75rem;
+    border: none;
+}
+
+
+.register-main .register-container form .userProfile-container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.register-main .register-container form .userProfile-container .option {
+    width: 30%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.register-main .register-container form .userProfile-container .option input {
+    margin: 10px 2px 10px 0px;
+}
+
+.register-main .register-container form .userProfile-container .option label {
+    margin: 10px 10px 10px 0px;
+    font-size: 0.7rem;
+}
+
+.register-main .register-container form .userInterest-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.register-main .register-container form .userInterest-container .option {
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.register-main .register-container form .userInterest-container .option input {
+    margin: 5px 2px 5px 0px;
+}
+
+.register-main .register-container form .userInterest-container .option label {
+    margin: 5px 10px 5px 0px;
+    font-size: 0.7rem;
+    font-weight: normal;
+}
+
+.register-main .register-container form .form-buttons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 0px;
+}
+
+.register-main .register-container form .form-buttons button {
+    border-radius: 5px;
+    background-color: #06a4ff;
+    color: white;
+    margin: 0px 5px 0px 0px;
+    border: none;
+    padding: 8px;
+}
+
+/*Products*/
+.products-main {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+    padding: 10px;
+    background-color: #ebebee;
+}
+
+.products-main .products-op {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+}
+
+.products-main .products-op h1 {
+    width: 100%;
+    font-size: 1.5rem;
+}
+
+.products-main .products-op a {
+    width: 70px;
+    aspect-ratio: 4/3;
+    margin: 5px 5px;
+    border: none;
+    border-radius: 5px;
+    padding: 2px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.products-main .products-op a:link {
+    text-decoration: none;
+    color: white;
+}
+
+.products-main .products-op a:visited {
+    text-decoration: none;
+    color: white;
+}
+
+.products-main .products-op .productCreate-button {
+    background-color: green;
+}
+
+.products-main .products-op .productSearch-button {
+    background-color: blue;
+}
+
+.products-main .products-list {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+}
+
+.products-main .products-list h1 {
+    width: 100%;
+    font-size: 1.5rem;
+}
+
+.products-main .products-list ul {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+}
+
+.products-main .products-list ul li {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    margin: 10px 0px;
+}
+
+.products-main .products-list ul li a {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+}
+
+.products-main .products-list ul li a:link,
+.products-main .products-list ul li a:visited {
+    text-decoration: none;
+    color: black;
+}
+
+.products-main .products-list ul li a .product-img {
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-self: flex-start;
+}
+
+.products-main .products-list ul li a .product-img img {
+    width: 100%;
+}
+
+.products-main .products-list ul li a .product-info {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    position: relative;
+}
+
+.products-main .products-list ul li a .product-info i {
+    margin: 0px 0px 5px 0px;
+    border: 1px solid #39b54a;
+    border-radius: 15px;
+    color: #39b54a;
+    width: 10%;
+    aspect-ratio: 1 / 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    position: absolute;
+    right: 0px;
+    top: -10px;
+    z-index: 10;
+}
+
+.products-main .products-list ul li a .product-info .product-price {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    margin: 5px 0px;
+    font-size: 1.5rem;
+}
+
+.products-main .products-list ul li a .product-info .product-name {
+    margin: 2px 0px 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    color: #666;
+    text-align: center;
+    font-size: 1.33rem;
+}
+
+/*Product-Create*/
+.productCreate-main {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+}
+
+.productCreate-main form {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 275px;
+    padding: 15px;
+    background-color: #ebebeb;
+    border: 1px solid #EAC926;
+    border-radius: 5px;
+}
+
+.productCreate-main form h1 {
+    width: 100%;
+    font-size: 1.5rem;
+    text-align: flex-start;
+}
+
+.productCreate-main form h2 {
+    width: 100%;
+    font-size: 1.25rem;
+    text-align: flex-start;
+    margin: 10px 0px 0px;
+}
+
+.productCreate-main form img {
+    width: 50%;
+    margin: 5px 0px;
+}
+
+.productCreate-main form input {
+    width: 100%;
+    margin: 10px 0px;
+    border: none;
+    font-size: 1rem;
+}
+
+.productCreate-main form input[type="text"] {
+    width: 100%;
+    margin: 5px 0px;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.productCreate-main form button {
+    width: 30%;
+    margin: 5px 0px;
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+    cursor: pointer;
+    background-color: green;
+    color: white;
+}
+
+/*Product-Search*/
+.productSearch-main {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    background-color: #ebebeb;
+}
+
+.productSearch-main .product-search {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 5px;
+}
+
+.productSearch-main .product-search h1 {
+    width: 100%;
+    font-size: 1.5rem;
+}
+
+.productSearch-main .product-search form {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.productSearch-main .product-search form input {
+    width: 78%;
+    margin: 5px 0px;
+    font-size: 1rem;
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+}
+
+.productSearch-main .product-search form button {
+    width: 20%;
+    margin: 5px 0px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    background-color: blue;
+    color: white;
+    padding: 5px;
+}
+
+.productSearch-main .product-search-results {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+}
+
+.productSearch-main .product-search-results h2 {
+    width: 100%;
+    font-size: 1.5rem;
+}
+
+.productSearch-main .product-search-results ul {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+}
+
+.productSearch-main .product-search-results ul .no-results {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.productSearch-main .product-search-results ul .no-results p {
+    width: 100%;
+    font-size: 1rem;
+}
+
+.productSearch-main .product-search-results ul .results-item {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    margin: 10px 0px;
+}
+
+.productSearch-main .product-search-results ul .results-item a {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+}
+
+.productSearch-main .product-search-results ul .results-item a:link,
+.productSearch-main .product-search-results ul .results-item a:visited {
+    text-decoration: none;
+    color: black;
+}
+
+.productSearch-main .product-search-results ul .results-item a .product-img {
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-self: flex-start;
+}
+
+.productSearch-main .product-search-results ul .results-item a .product-img img {
+    width: 100%;
+}
+
+.productSearch-main .product-search-results ul .results-item a .product-info {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    position: relative;
+}
+
+.productSearch-main .product-search-results ul .results-item a .product-info i {
+    margin: 0px 0px 5px 0px;
+    border: 1px solid #39b54a;
+    border-radius: 15px;
+    color: #39b54a;
+    width: 10%;
+    aspect-ratio: 1 / 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    position: absolute;
+    right: 0px;
+    top: -10px;
+    z-index: 10;
+}
+
+.productSearch-main .product-search-results ul .results-item a .product-info .product-price {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    margin: 5px 0px;
+    font-size: 1.5rem;
+}
+
+.productSearch-main .product-search-results ul .results-item a .product-info .product-name {
+    margin: 2px 0px 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    color: #666;
+    text-align: center;
+    font-size: 1.33rem;
+}
+
+/*Product-Detail*/
+.productDetail-main {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    background-color: #ebebeb;
+}
+
+.productDetail-main h1 {
+    width: 100%;
+    font-size: 1.5rem;
+}
+
+.productDetail-main .product {
+    width: 90%;
+    margin: 5px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    background-color: white;
+}
+
+.productDetail-main .product .product-img {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+}
+
+.productDetail-main .product .product-img img {
+    width: 85%;
+}
+
+.productDetail-main .product .product-info {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    position: relative;
+}
+
+.productDetail-main .product .product-info i {
+    margin: 0px 0px 5px 0px;
+    border: 1px solid #39b54a;
+    border-radius: 15px;
+    color: #39b54a;
+    width: 10%;
+    aspect-ratio: 1 / 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    position: absolute;
+    right: 0px;
+    top: -30px;
+    z-index: 10;
+}
+
+.productDetail-main .product .product-info .product-price {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    margin: 5px 0px;
+    font-size: 1.5rem;
+}
+
+.productDetail-main .product .product-info .product-name {
+    margin: 2px 0px 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    color: #666;
+    text-align: center;
+    font-size: 1.33rem;
+}
+
+.productDetail-main .product .product-info .product-ops {
+    width: 100%;
+    margin: 5px 0px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.productDetail-main .product .product-info .product-ops a {
+    width: 48%;
+    margin: 5px 0px;
+    padding: 5px;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    font-size: 2.8vw;
+}
+
+.productDetail-main .product .product-info .product-ops a:link,
+.productDetail-main .product .product-info .product-ops a:visited {
+    text-decoration: none;
+}
+
+.productDetail-main .product .product-info .product-ops .edit-button {
+    background-color: lightseagreen;
+    color: white;
+}
+
+.productDetail-main .product .product-info .product-ops form {
+    width: 48%;
+    margin: 5px 0px;
+    border: none;
+    border-radius: 5px;
+}
+
+.productDetail-main .product .product-info .product-ops form .delete-button {
+    width: 100%;
+    padding: 5px;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    background-color: red;
+    color: white;
+    cursor: pointer;
+    font-size: 2.8vw;
+}
+
+.productDetail-main .product .product-info .product-ops .go-back-button {
+    background-color: orange;
+    width: 100%;
+    color: white;
+}
+
+/*Product-Edit*/
+.productEdit-main {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+}
+
+.productEdit-main .product-newInfo {
+    width: 275px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background-color: #ebebeb;
+    border: 1px solid #EAC926;
+    border-radius: 5px;
+    padding: 15px;
+}
+
+.productEdit-main .product-newInfo h1 {
+    width: 100%;
+    font-size: 1.5rem;
+}
+
+.productEdit-main .product-newInfo form {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.productEdit-main .product-newInfo form label {
+    width: 100%;
+    text-align: flex-start;
+    margin: 5px 0px 0px;
+}
+
+.productEdit-main .product-newInfo form input {
+    width: 100%;
+    margin: 5px 0px;
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.productEdit-main .product-newInfo form input[type="number"] {
+    width: 30px;
+    margin: 5px auto 5px 0px;
+    text-align: center;
+    justify-self: flex-start;
+}
+
+.productEdit-main .product-newInfo form img {
+    width: 100%;
+    margin: 5px 0px;
+}
+
+.productEdit-main .product-newInfo form button {
+    width: 70px;
+    margin: 5px 0px;
+    padding: 5px;
+    background-color: lightseagreen;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+/*Users*/
+.users-main {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+    padding: 10px;
+    background-color: #ebebee;
+}
+
+.users-main .users-op {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+}
+
+.users-main .users-op h1 {
+    width: 100%;
+    font-size: 1.5rem;
+}
+
+.users-main .users-op a {
+    width: 70px;
+    aspect-ratio: 4/3;
+    margin: 5px 5px;
+    border: none;
+    border-radius: 5px;
+    padding: 2px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.users-main .users-op a:link {
+    text-decoration: none;
+    color: white;
+}
+
+.users-main .users-op a:visited {
+    text-decoration: none;
+    color: white;
+}
+
+.users-main .users-op .userCreate-button {
+    background-color: green;
+}
+
+.users-main .users-op .userSearch-button {
+    background-color: blue;
+}
+
+.users-main .users-list {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+}
+
+.users-main .users-list h1 {
+    width: 100%;
+    font-size: 1.5rem;
+}
+
+.users-main .users-list ul {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+}
+
+.users-main .users-list ul li {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    margin: 10px 0px;
+}
+
+.users-main .users-list ul li a {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+}
+
+.users-main .users-list ul li a:link,
+.users-main .users-list ul li a:visited {
+    text-decoration: none;
+    color: black;
+}
+
+.users-main .users-list ul li a .user-img {
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.users-main .users-list ul li a .user-img img {
+    width: 80%;
+}
+
+.users-main .users-list ul li a .user-info {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    position: relative;
+}
+
+.users-main .users-list ul li a .user-info .user-userName {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    margin: 5px 0px;
+    font-size: 1.5rem;
+}
+
+/*User-Search*/
+.userSearch-main {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    background-color: #ebebeb;
+}
+
+.userSearch-main .user-search {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 5px;
+}
+
+.userSearch-main .user-search h1 {
+    width: 100%;
+    font-size: 1.5rem;
+}
+
+.userSearch-main .user-search form {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.userSearch-main .user-search form input {
+    width: 78%;
+    margin: 5px 0px;
+    font-size: 1rem;
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+}
+
+.userSearch-main .user-search form button {
+    width: 20%;
+    margin: 5px 0px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    background-color: blue;
+    color: white;
+    padding: 5px;
+}
+
+.userSearch-main .user-search-results {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+}
+
+.userSearch-main .user-search-results h2 {
+    width: 100%;
+    font-size: 1.5rem;
+}
+
+.userSearch-main .user-search-results ul {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+}
+
+.userSearch-main .user-search-results ul .no-results {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.userSearch-main .user-search-results ul .no-results p {
+    width: 100%;
+    font-size: 1rem;
+}
+
+.userSearch-main .user-search-results ul .results-item {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    margin: 10px 0px;
+}
+
+.userSearch-main .user-search-results ul .results-item a {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+}
+
+.userSearch-main .user-search-results ul .results-item a:link,
+.userSearch-main .user-search-results ul .results-item a:visited {
+    text-decoration: none;
+    color: black;
+}
+
+.userSearch-main .user-search-results ul .results-item a .user-img {
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.userSearch-main .user-search-results ul .results-item a .user-img img {
+    width: 80%;
+}
+
+.userSearch-main .user-search-results ul .results-item a .user-info {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+}
+
+.userSearch-main .user-search-results ul .results-item a .user-info .user-userName {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    margin: 5px 0px;
+    font-size: 1.5rem;
+}
+
+/*User-Detail*/
+.userDetail-main {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    background-color: #ebebeb;
+}
+
+.userDetail-main h1 {
+    width: 100%;
+    font-size: 1.5rem;
+}
+
+.userDetail-main .user {
+    width: 90%;
+    margin: 5px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    background-color: white;
+}
+
+.userDetail-main .user .user-img {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+}
+
+.userDetail-main .user .user-img img {
+    width: 85%;
+}
+
+.userDetail-main .user .user-info {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+}
+
+.userDetail-main .user .user-info h2 {
+    width: 100%;
+    margin: 5px 0px;
+    font-size: 0.7rem;
+    color: #666;
+}
+
+.userDetail-main .user .user-info h2 strong {
+    font-size: 0.8rem;
+    color: black;
+}
+
+.userDetail-main .user .user-info .user-ops {
+    width: 100%;
+    margin: 5px 0px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.userDetail-main .user .user-info .user-ops a {
+    width: 48%;
+    margin: 5px 0px;
+    padding: 5px;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    font-size: 2.8vw;
+}
+
+.userDetail-main .user .user-info .user-ops a:link,
+.userDetail-main .user .user-info .user-ops a:visited {
+    text-decoration: none;
+}
+
+.userDetail-main .user .user-info .user-ops .edit-button {
+    background-color: lightseagreen;
+    color: white;
+}
+
+.userDetail-main .user .user-info .user-ops form {
+    width: 48%;
+    margin: 5px 0px;
+    border: none;
+    border-radius: 5px;
+}
+
+.userDetail-main .user .user-info .user-ops form .delete-button {
+    width: 100%;
+    padding: 5px;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    background-color: red;
+    color: white;
+    cursor: pointer;
+    font-size: 2.8vw;
+}
+
+.userDetail-main .user .user-info .user-ops .go-back-button {
+    background-color: orange;
+    width: 100%;
+    color: white;
+}
+
+/*User-Edit*/
+.userEdit-main {
+    width: 100%;
+    margin: 0px 0px 15px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.userEdit-main .user-newInfo {
+    margin: 20px 0px;
+    width: 275px;
+    height: 1010px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #ebebeb;
+    border: 1px solid #EAC926;
+    border-radius: 10px;
+}
+
+.userEdit-main .user-newInfo h1 {
+    width: 100%;
+    text-align: center;
+    align-self: center;
+    font-size: 1.4rem;
+}
+
+.userEdit-main .user-newInfo form {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.userEdit-main .user-newInfo form img {
+    width: 50%;
+    margin: 5px 0px;
+}
+
+.userEdit-main .user-newInfo form label {
+    margin: 15px 0px 0px 0px;
+    font-size: 1rem;
+    font-weight: bold;
+    align-self: flex-start;
+}
+
+.userEdit-main .user-newInfo form input {
+    margin: 10px 0px 5px;
+    border: 1px solid white;
+    padding: 6px;
+}
+
+.userEdit-main .user-newInfo form input[type="number"] {
+    margin: 5px auto 5px 0px;
+    text-align: center;
+    justify-self: flex-start;
+}
+
+.userEdit-main .user-newInfo form input[type="text"],
+.userEdit-main .user-newInfo form input[type="email"],
+.userEdit-main .user-newInfo form input[type="password"],
+.userEdit-main .user-newInfo form input[type="date"] {
+    width: 100%;
+    font-size: 0.8rem;
+}
+
+.userEdit-main .user-newInfo form input[type="file"] {
+    width: 100%;
+    font-size: 0.75rem;
+    border: none;
+}
+
+.userEdit-main .user-newInfo form .userProfile-container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.userEdit-main .user-newInfo form .userProfile-container .option {
+    width: 30%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.userEdit-main .user-newInfo form .userProfile-container .option input {
+    margin: 10px 2px 10px 0px;
+}
+
+.userEdit-main .user-newInfo form .userProfile-container .option label {
+    margin: 10px 10px 10px 0px;
+    font-size: 0.7rem;
+}
+
+.userEdit-main .user-newInfo form .userInterest-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.userEdit-main .user-newInfo form .userInterest-container .option {
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.userEdit-main .user-newInfo form .userInterest-container .option input {
+    margin: 5px 2px 5px 0px;
+}
+
+.userEdit-main .user-newInfo form .userInterest-container .option label {
+    margin: 5px 10px 5px 0px;
+    font-size: 0.7rem;
+    font-weight: normal;
+}
+
+.userEdit-main .user-newInfo form button {
+    width: 70px;
+    margin: 5px 0px;
+    padding: 8px;
+    background-color: lightseagreen;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+/*Footer*/
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 15px 0px 0px;
+}
+
+footer ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    margin: 10px 0px 10px 0px;
+}
+
+footer ul li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0px 90px 40px 90px;
+}
+
+footer ul li i {
+    font-size: 2em;
+    color: #1259C3;
+    margin: 0px 0px 10px 0px;
+}
+
+footer ul li h4 {
+    text-align: center;
+}
+
+footer ul li h4 strong {
+    font-size: 0.8rem;
+    color: #666;
+}
+
+footer ul li p {
+    font-size: 0.6rem;
+    text-align: center;
+}
+
+footer>h4 {
+    margin: 0px 0px 20px 20px;
+    align-self: flex-start;
+}
+
+footer>h4 strong {
+    color: #666;
+    font-size: 0.6rem;
+}
+
+/*Tablet*/
+@media (min-width: 361px) {
+
+    /*Header*/
+    header .mercado-liebre_logo {
+        width: 32%;
+    }
+
+    header .search {
+        width: 32%;
+        height: 20px;
+    }
+
+    header .search .search-bar {
+        font-size: 0.6rem;
+    }
+
+    header .search .search-button i {
+        font-size: 0.8rem;
+    }
+
+    header .text {
+        width: 32%;
+        font-size: 0.7rem;
+    }
+
+    header nav {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    header nav ul {
+        margin: 0;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: center;
+        justify-content: space-evenly;
+        width: 50%;
+    }
+
+    header nav ul li {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid #1259C3;
+        border-radius: 5px;
+        background-color: #1259C3;
+        padding: 2px;
+    }
+
+    header nav ul li:hover {
+        background-color: #06a4ff;
+    }
+
+    header nav ul li a:link,
+    header nav ul li a:visited,
+    header nav ul li a i {
+        font-size: 0.62rem;
+        color: white;
+    }
+
+
+    header .burger-menu {
+        display: none;
+    }
+
+    /*Home*/
+    .home-main {
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+    }
+
+    .home-main section {
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .home-main section h3 {
+        font-size: 1.4rem;
+    }
+
+    .home-main section a {
+        width: 43%;
+    }
+
+    .home-main section a .imagen {
+        height: 80%;
+    }
+
+    .home-main section a .article-info {
+        height: 20%;
+    }
+
+    .home-main section a .article-info i {
+        font-size: 1.7vw;
+        right: 0px;
+        top: -15px;
+    }
+
+    .home-main section a .article-info .precio {
+        font-size: 0.7825rem;
+    }
+
+    .home-main section a .article-info h4,
+    .home-main section a .article-info .descuento {
+        font-size: 0.6125rem;
+    }
+
+    /*Login*/
+
+    .login-main .login-container h3 {
+        font-size: 1.5rem;
+    }
+
+    .login-main .login-container form input[type="text"],
+    .login-main .login-container form input[type="password"] {
+        font-size: 0.9rem;
+    }
+
+    .login-main .login-container form .form-buttons button {
+        font-size: 0.8rem;
+        transition: background-color 200ms;
+    }
+
+    .login-main .login-container form .form-buttons button:hover {
+        background-color: #0022AA;
+    }
+
+    /*Register*/
+    .register-main .register-container {
+        width: 295px;
+    }
+
+    .register-main .register-container h1 {
+        font-size: 1.5rem;
+    }
+
+    .register-main .register-container form label {
+        font-size: 1.1rem;
+    }
+
+    .register-main .register-container form input[type="text"],
+    .register-main .register-container form input[type="email"],
+    .register-main .register-container form input[type="password"],
+    .register-main .register-container form input[type="date"] {
+        font-size: 0.9rem;
+    }
+
+    .register-main .register-container form input[type="file"] {
+        font-size: 0.79rem;
+    }
+
+    .register-main .register-container form .userProfile-container .option label,
+    .register-main .register-container form .userInterest-container .option label {
+        font-size: 0.8rem;
+    }
+
+    .register-main .register-container form .form-buttons button {
+        font-size: 0.8rem;
+        transition: background-color 200ms;
+    }
+
+    .register-main .register-container form .form-buttons button:hover {
+        background-color: #0022AA;
+    }
+
+    /*Products*/
+    .products-main .products-list ul {
+        justify-content: flex-start;
+        align-items: stretch;
+    }
+
+    .products-main .products-list ul li {
+        width: 47%;
+        margin: 10px 27px 10px 0px;
+        align-items: stretch;
+    }
+
+    .products-main .products-list ul li a .product-info i {
+        font-size: 1.8vw;
+        width: 3.5vw;
+        right: -10px;
+    }
+
+    .products-main .products-list ul li a .product-info .product-price {
+        font-size: 2.5vw;
+    }
+
+    .products-main .products-list ul li a .product-info .product-name {
+        font-size: 2.3vw;
+    }
+
+    /*Product-Create*/
+    .productCreate-main form {
+        width: 300px;
+    }
+
+    /*Product-Search*/
+    .productSearch-main .product-search form {
+        width: 350px;
+    }
+
+    .productSearch-main .product-search-results ul {
+        justify-content: flex-start;
+        align-items: stretch;
+    }
+
+    .productSearch-main .product-search-results ul .results-item {
+        width: 47%;
+        margin: 10px 27px 10px 0px;
+        align-items: stretch;
+    }
+
+    .productSearch-main .product-search-results ul .results-item a .product-info i {
+        font-size: 1.8vw;
+        width: 3.5vw;
+        right: -10px;
+    }
+
+    .productSearch-main .product-search-results ul .results-item a .product-info .product-price {
+        font-size: 2.5vw;
+    }
+
+    .productSearch-main .product-search-results ul .results-item a .product-info .product-name {
+        font-size: 2.3vw;
+    }
+
+    /*Product-Detail*/
+    .productDetail-main .product {
+        width: 85%;
+    }
+
+    .productDetail-main .product .product-img {
+        width: 60%;
+    }
+
+    .productDetail-main .product .product-info {
+        width: 40%;
+    }
+
+    .productDetail-main .product .product-info i {
+        width: 1.8rem;
+        font-size: 0.9rem;
+        right: 0px;
+        top: 0px;
+    }
+
+    .productDetail-main .product .product-info .product-price {
+        font-size: 2.4vw;
+    }
+
+    .productDetail-main .product .product-info .product-name {
+        font-size: 2.3vw;
+    }
+
+    .productDetail-main .product .product-info .product-ops a,
+    .productDetail-main .product .product-info .product-ops form .delete-button {
+        font-size: 2vw;
+    }
+
+    /*Product-Edit*/
+    .productEdit-main .product-newInfo {
+        width: 300px;
+    }
+
+    /*Users*/
+    .users-main .users-list ul {
+        justify-content: flex-start;
+        align-items: stretch;
+    }
+
+    .users-main .users-list ul li {
+        width: 47%;
+        margin: 10px 27px 10px 0px;
+        align-items: stretch;
+    }
+
+    .users-main .users-list ul li a .user-info i {
+        font-size: 1.8vw;
+        width: 3.5vw;
+        right: -10px;
+    }
+
+    .users-main .users-list ul li a .user-info .user-userName {
+        font-size: 2.5vw;
+    }
+
+    /*User-Search*/
+    .userSearch-main .user-search form {
+        width: 350px;
+    }
+
+    .userSearch-main .user-search-results ul {
+        justify-content: flex-start;
+        align-items: stretch;
+    }
+
+    .userSearch-main .user-search-results ul .results-item {
+        width: 47%;
+        margin: 10px 27px 10px 0px;
+        align-items: stretch;
+    }
+
+    .userSearch-main .user-search-results ul .results-item a .user-info .user-userName,
+    .userSearch-main .user-search-results ul .results-item a .user-info .user-password {
+        font-size: 2.5vw;
+    }
+
+    /*User-Detail*/
+    .userDetail-main .user {
+        width: 85%;
+    }
+
+    .userDetail-main .user .user-img {
+        width: 60%;
+    }
+
+    .userDetail-main .user .user-info {
+        width: 40%;
+    }
+
+    .userDetail-main .user .user-info h2 {
+        font-size: 1.8vw;
+    }
+
+    .userDetail-main .user .user-info h2 strong {
+        font-size: 1.9vw;
+    }
+
+    .userDetail-main .user .user-info .user-ops a,
+    .userDetail-main .user .user-info .user-ops form .delete-button {
+        font-size: 2vw;
+    }
+
+    /*User-Edit*/
+    .userEdit-main .user-newInfo {
+        width: 295px;
+        height: 1060px;
+    }
+
+    .userEdit-main .user-newInfo h1 {
+        font-size: 1.5rem;
+    }
+
+    .userEdit-main .user-newInfo form label {
+        font-size: 1.1rem;
+    }
+
+    .userEdit-main .user-newInfo form input[type="text"],
+    .userEdit-main .user-newInfo form input[type="email"],
+    .userEdit-main .user-newInfo form input[type="password"],
+    .userEdit-main .user-newInfo form input[type="date"] {
+        font-size: 0.9rem;
+    }
+
+    .userEdit-main .user-newInfo form input[type="file"] {
+        font-size: 0.79rem;
+    }
+
+    .userEdit-main .user-newInfo form .userProfile-container .option label,
+    .userEdit-main .user-newInfo form .userInterest-container .option label {
+        font-size: 0.8rem;
+    }
+
+    .userEdit-main .user-newInfo form button {
+        font-size: 0.8rem;
+    }
+
+    /*Footer*/
+    footer ul li i {
+        font-size: 2.5em;
+    }
+
+    footer ul li h4 strong {
+        font-size: 1rem;
+    }
+
+    footer ul li p {
+        font-size: 0.8rem;
+    }
+
+    footer>h4 strong {
+        color: #666;
+        font-size: 0.8rem;
+    }
+}
+
+/*Desktop*/
+@media (min-width: 769px) {
+
+    /*Header*/
+    header .search {
+        height: 30px;
+    }
+
+    header .search .search-bar {
+        font-size: 1.2rem;
+    }
+
+    header .search .search-button i {
+        font-size: 1.6rem;
+    }
+
+    header .text {
+        font-size: 1.3rem;
+    }
+
+    header nav ul li a:link,
+    header nav ul li a:visited,
+    header nav ul li a i {
+        font-size: 1.4rem;
+        color: white;
+    }
+
+    /*Home*/
+    .home-main section h3 {
+        font-size: 1.6rem;
+    }
+
+    .home-main section a {
+        width: 21%;
+        transition: box-shadow 500ms;
+    }
+
+    .home-main section a:hover {
+        box-shadow: 0px 0px 10px rgb(100, 100, 100);
+    }
+
+    .home-main section a .imagen {
+        height: 90%;
+    }
+
+    .home-main section a .imagen img {
+        height: 100%;
+    }
+
+    .home-main section a .article-info i {
+        font-size: 0.9vw;
+        transition: rotate 1000ms;
+    }
+
+    .home-main section a:hover .article-info i {
+        rotate: -90deg;
+    }
+
+    .home-main section a .article-info h4 {
+        display: none;
+    }
+
+    .home-main section a:hover .article-info h4 {
+        display: flex;
+    }
+
+    .home-main section a .article-info .precio {
+        font-size: 1.1vw;
+    }
+
+    .home-main section a .article-info h4,
+    .home-main section a .article-info .descuento {
+        font-size: 1vw;
+    }
+
+    /*Login*/
+    .login-main .login-container {
+        width: 350px;
+    }
+
+    .login-main .login-container h3 {
+        font-size: 2rem;
+    }
+
+    .login-main .login-container form input[type="text"],
+    .login-main .login-container form input[type="password"] {
+        font-size: 1.4rem;
+    }
+
+    .login-main .login-container form .form-buttons button {
+        font-size: 1rem;
+    }
+
+    /*Register*/
+    .register-main .register-container {
+        width: 350px;
+    }
+
+    .register-main .register-container h1 {
+        font-size: 2rem;
+    }
+
+    .register-main .register-container form label {
+        font-size: 1.3rem;
+    }
+
+    .register-main .register-container form input[type="text"],
+    .register-main .register-container form input[type="email"],
+    .register-main .register-container form input[type="password"],
+    .register-main .register-container form input[type="date"] {
+        font-size: 1.4rem;
+    }
+
+    .register-main .register-container form input[type="file"] {
+        font-size: 0.95rem;
+    }
+
+    .register-main .register-container form .userInterest-container .option {
+        width: 33%;
+    }
+
+    .register-main .register-container form .userProfile-container .option label,
+    .register-main .register-container form .userInterest-container .option label {
+        font-size: 1rem;
+    }
+
+    .register-main .register-container form .form-buttons button {
+        font-size: 1rem;
+    }
+
+    /*Products*/
+    .products-main .products-list ul li {
+        width: 23%;
+    }
+
+    .products-main .products-list ul li a:hover {
+        box-shadow: 0px 0px 10px rgb(100, 100, 100);
+    }
+
+    .products-main .products-list ul li a:hover .product-info i {
+        rotate: -90deg;
+    }
+
+    .products-main .products-list ul li a .product-info i {
+        font-size: 1vw;
+        width: 2.25vw;
+        transition: rotate 1000ms;
+    }
+
+    .products-main .products-list ul li a .product-info .product-price {
+        font-size: 1.5vw;
+    }
+
+    .products-main .products-list ul li a .product-info .product-name {
+        font-size: 1.3vw;
+    }
+
+    /*Product-Create*/
+    .productCreate-main form {
+        width: 350px;
+    }
+
+    /*Product-Search*/
+    .productSearch-main .product-search-results ul .results-item {
+        width: 23%;
+    }
+
+    .productSearch-main .product-search-results ul .results-item:hover {
+        box-shadow: 0px 0px 10px rgb(100, 100, 100);
+    }
+
+    .productSearch-main .product-search-results ul .results-item:hover .product-info i {
+        rotate: -90deg;
+    }
+
+    .productSearch-main .product-search-results ul .results-item a .product-info i {
+        font-size: 1vw;
+        width: 2.25vw;
+        transition: rotate 1000ms;
+    }
+
+    .productSearch-main .product-search-results ul .results-item a .product-info .product-price {
+        font-size: 1.5vw;
+    }
+
+    .productSearch-main .product-search-results ul .results-item a .product-info .product-name {
+        font-size: 1.3vw;
+    }
+
+    /*Product-Detail*/
+    .productDetail-main h1 {
+        font-size: 2rem;
+    }
+
+    .productDetail-main .product {
+        width: 80%;
+    }
+
+    .productDetail-main .product .product-img {
+        width: 70%;
+    }
+
+    .productDetail-main .product .product-info {
+        width: 30%;
+    }
+
+    .productDetail-main .product .product-info i {
+        width: 2.4rem;
+        font-size: 1.2rem;
+        right: 0px;
+        top: 0px;
+    }
+
+    .productDetail-main .product .product-info .product-price {
+        font-size: 1.9vw;
+    }
+
+    .productDetail-main .product .product-info .product-name {
+        font-size: 1.8vw;
+    }
+
+    .productDetail-main .product .product-info .product-ops a,
+    .productDetail-main .product .product-info .product-ops form .delete-button {
+        font-size: 1.5vw;
+    }
+
+    /*Product-Edit*/
+    .productEdit-main .product-newInfo {
+        width: 350px;
+    }
+
+    /*Users*/
+    .users-main .users-list ul li {
+        width: 23%;
+    }
+
+    .users-main .users-list ul li a:hover {
+        box-shadow: 0px 0px 10px rgb(100, 100, 100);
+    }
+
+    .users-main .users-list ul li a .user-info .user-userName {
+        font-size: 1.3vw;
+    }
+
+    /*User-Search*/
+    .userSearch-main .user-search-results ul .results-item {
+        width: 23%;
+    }
+
+    .userSearch-main .user-search-results ul .results-item:hover {
+        box-shadow: 0px 0px 10px rgb(100, 100, 100);
+    }
+
+    .userSearch-main .user-search-results ul .results-item a .user-info .user-userName,
+    .userSearch-main .user-search-results ul .results-item a .user-info .user-password {
+        font-size: 1.3vw;
+    }
+
+    /*User-Detail*/
+    .userDetail-main h1 {
+        font-size: 2rem;
+    }
+
+    .userDetail-main .user {
+        width: 80%;
+    }
+
+    .userDetail-main .user .user-img {
+        width: 70%;
+    }
+
+    .userDetail-main .user .user-info {
+        width: 30%;
+    }
+
+    .userDetail-main .user .user-info h2 {
+        font-size: 1.3vw;
+    }
+
+    .userDetail-main .user .user-info h2 strong {
+        font-size: 1.4vw;
+    }
+
+    .userDetail-main .user .user-info .user-ops a,
+    .userDetail-main .user .user-info .user-ops form .delete-button {
+        font-size: 1.5vw;
+    }
+
+    /*User-Edit*/
+    .userEdit-main .user-newInfo {
+        width: 350px;
+        height: 1160px;
+    }
+
+    .userEdit-main .user-newInfo h1 {
+        font-size: 2rem;
+    }
+
+    .userEdit-main .user-newInfo form label {
+        font-size: 1.3rem;
+    }
+
+    .userEdit-main .user-newInfo form input[type="text"],
+    .userEdit-main .user-newInfo form input[type="email"],
+    .userEdit-main .user-newInfo form input[type="password"],
+    .userEdit-main .user-newInfo form input[type="date"] {
+        font-size: 1.4rem;
+    }
+
+    .userEdit-main .user-newInfo form input[type="file"] {
+        font-size: 0.95rem;
+    }
+
+    .userEdit-main .user-newInfo form .userProfile-container .option {
+        width: 33%;
+    }
+
+    .userEdit-main .user-newInfo form .userProfile-container .option label,
+    .userEdit-main .user-newInfo form .userInterest-container .option label {
+        font-size: 1rem;
+    }
+
+    .userEdit-main .user-newInfo form button {
+        font-size: 1rem;
+    }
+
+    /*Footer*/
+    footer ul {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+
+    footer ul li {
+        margin: 30px 40px;
+    }
+
+    footer ul li i {
+        font-size: 3em;
+        transition: color 200ms;
+    }
+
+    footer ul li i:hover {
+        color: #39b54a;
+    }
+
+    footer ul li h4 strong {
+        font-size: 1.2rem;
+    }
+
+    footer ul li p {
+        font-size: 1rem;
+    }
+
+    footer>h4 strong {
+        color: #666;
+        font-size: 1rem;
+    }
+}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Bienvenidxs a MercadoLiebre</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/styles.css" />
+  </head>
+
+  <body>
+    <%- include("../partials/header") %>
+    <main class="userSearch-main">
+      <div class="user-search">
+        <h1>Buscar Usuarios</h1>
+        <form action="/users/search" method="get">
+          <input type="text" name="search" placeholder="Nombre de Usuario" />
+          <button type="submit">Buscar</button>
+        </form>
+      </div>
+      <div class="user-search-results">
+        <h2>Resultados</h2>
+        <ul>
+          <% if (results.length == 0 ) { %>
+          <li class="no-results">
+            <p>Sin resultados</p>
+          </li>
+          <% } else { %> <% for( let i=0; i < results.length; i++ ) { %>
+          <li class="results-item">
+            <a href="/users/<%= results[i].id %>">
+              <div class="user-img">
+                <img
+                  src="<%= results[i].profileImage %>"
+                  alt="Foto del Usuario"
+                />
+              </div>
+              <div class="user-info">
+                <span class="user-userName"
+                  >Nombre de Usuario: <%= results[i].userName %></span
+                >
+              </div>
+            </a>
+          </li>
+          <% } %> <% } %>
+        </ul>
+      </div>
+    </main>
+    <%- include("../partials/footer") %>
+    <script
+      src="https://kit.fontawesome.com/eae7cdcb5c.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
