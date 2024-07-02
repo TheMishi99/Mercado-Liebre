@@ -1,42 +1,20 @@
 import React, { useEffect, useState } from "react";
-import Header from "./Header";
-import Footer from "./Footer";
-import Home from "./Home";
-import ProductsList from "./Products/ProductsList";
+
+import SideBar from "./SideBar";
+import Header from "./Partials/Header";
+import Footer from "./Partials/Footer";
 
 import { Routes, Route } from "react-router-dom";
 
-import { NavItem, Product } from "../Types";
-import SideBar from "./SideBar";
-import CreateProduct from "./CreateProduct";
+import { NavItem } from "../Types";
+import Home from "./Home";
+import Products from "./Products/Products";
+import CreateProduct from "./Products/CreateProduct";
 
 function App() {
   const [navItems, setNavItems] = useState<Array<NavItem>>([]);
 
   useEffect(() => {
-    setAllProducts([
-      {
-        id: 1,
-        name: "Gato Barato",
-        altName: "Gato Barato",
-        price: "15000",
-        image: "",
-      },
-      {
-        id: 1,
-        name: "Gato Medio",
-        altName: "Gato Medio",
-        price: "20000",
-        image: "",
-      },
-      {
-        id: 1,
-        name: "Gato Caro",
-        altName: "Gato Caro",
-        price: "25000",
-        image: "",
-      },
-    ]);
     setNavItems([
       { title: "Home", url: "/" },
       { title: "Products", url: "/products" },
@@ -58,11 +36,7 @@ function App() {
           <Header />
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route
-              path="/products"
-              element={
-              }
-            />
+            <Route path="/products" element={<Products />} />
             <Route path="/products/create" element={<CreateProduct />} />
           </Routes>
           <Footer />

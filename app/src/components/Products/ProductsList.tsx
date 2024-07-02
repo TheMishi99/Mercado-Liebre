@@ -7,7 +7,7 @@ interface ProductsListProps {
 
 const ProductsList = ({ title, products }: ProductsListProps) => {
   return (
-    <div className="w-[90%] flex flex-col justify-center items-center bg-zinc-100 p-2 rounded-xl">
+    <div className="w-full flex flex-col justify-center items-center bg-zinc-100 p-2 rounded-xl">
       <h1 className="w-full flex justify-start items-center text-xl text-black">
         {title}
       </h1>

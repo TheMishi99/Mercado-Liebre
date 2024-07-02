@@ -10,13 +10,16 @@ const Products = () => {
       const products = await fetch("http://localhost:5678/api/products").then(
         (response) => response.json()
       );
-      setAllProducts(products);
+      setAllProducts(products.data);
     };
     fetchProducts();
   }, []);
 
   return (
-    <div className="w-full h-[80%] flex justify-center items-center">
+    <div
+      id="products"
+      className="w-full h-[78%] flex flex-wrap justify-center items-start bg-zinc-200 p-2 gap-3 rounded-xl overflow-auto"
+    >
       <ProductsList title="All Products" products={allProducts} />
     </div>
   );

@@ -4,9 +4,20 @@ const apiProductsController = {
     try {
       const products = await db.Products.findAll();
       if (products) {
+        const newProductsArray = products.map((product) => {
+          const { id, image, name, altName, price } = product;
+          return {
+            id,
+            image,
+            name,
+            altName,
+            price,
+            detailUrl: "/api/products/" + id,
+          };
+        });
         const response = {
           status: 200,
-          data: products,
+          data: newProductsArray,
           url: "/api/products",
         };
         return res.json(response);
@@ -21,9 +32,17 @@ const apiProductsController = {
       const id = req.params.id;
       const product = await db.Products.findByPk(id);
       if (product) {
+        const { id, image, name, altName, price } = product;
+        const newProduct = {
+          id,
+          image,
+          name,
+          altName,
+          price,
+        };
         const response = {
           status: 200,
-          data: product,
+          data: newProduct,
           url: "/api/products/" + id,
         };
         return res.json(response);
