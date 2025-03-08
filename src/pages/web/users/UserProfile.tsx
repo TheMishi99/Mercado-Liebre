@@ -1,27 +1,21 @@
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Loader from "../../../components/Loader";
+import { useUserContext } from "../../../contexts/UserContext";
 import { VITE_API_URL } from "../../../config/app.config";
-import { useUsersContext } from "../../../contexts/UsersContext";
-import { useMemo } from "react";
 
-export default function UserDetailPage() {
-  const { id } = useParams();
-  const { usersLoading, usersError, users } = useUsersContext();
-  const userFound = useMemo(
-    () => users.find((user) => user.id === id),
-    [users, id]
-  );
+export default function UserProfilePage() {
+  const { user, userError, userLoading } = useUserContext();
   return (
     <div
       id="user-detail"
       className="w-full flex flex-col justify-center items-center p-2 gap-2"
     >
-      {usersLoading ? (
+      {userLoading ? (
         <Loader />
-      ) : usersError ? (
-        <p>{usersError}</p>
+      ) : userError ? (
+        <p>{userError}</p>
       ) : (
-        userFound && (
+        user && (
           <>
             <h2 className="w-full font-bold text-start text-xl">
               Detalle de Usuario
@@ -35,7 +29,7 @@ export default function UserDetailPage() {
                 className="w-full flex justify-center items-center"
               >
                 <img
-                  src={`${VITE_API_URL}/${userFound.profile_image}`}
+                  src={`${VITE_API_URL}/${user.profile_image}`}
                   alt="Foto de Perfil"
                   className="w-full rounded-xl"
                 />
@@ -45,56 +39,44 @@ export default function UserDetailPage() {
                 className="w-full flex flex-col justify-center items-center p-2 gap-2"
               >
                 <p className="w-full text-start">
-                  <strong>Nombre Completo:</strong> {userFound.full_name}
+                  <strong>Nombre Completo:</strong> {user.full_name}
                 </p>
                 <p className="w-full text-start">
-                  <strong>Email:</strong> {userFound.email}
+                  <strong>Email:</strong> {user.email}
                 </p>
                 <p className="w-full text-start">
-                  <strong>Fecha de Nacimiento:</strong> {userFound.birth_date}
+                  <strong>Fecha de Nacimiento:</strong> {user.birth_date}
                 </p>
                 <p className="w-full text-start">
-                  <strong>Domicilio:</strong> {userFound.address}
+                  <strong>Domicilio:</strong> {user.address}
                 </p>
                 <p className="w-full text-start">
-                  <strong>Perfil:</strong> {userFound.profile}
+                  <strong>Perfil:</strong> {user.profile}
                 </p>
-                {userFound.interests.length === 0 ? (
+                {user.interests.length === 0 ? (
                   <p className="w-full text-start">
                     <strong>Intereses:</strong> Ninguno
                   </p>
                 ) : (
                   <p className="w-full text-start">
                     <strong>Intereses:</strong>{" "}
-                    {userFound.interests.map((int) => int.name).join(", ")}
+                    {user.interests.map((int) => int.name).join(", ")}
                   </p>
                 )}
                 <p className="w-full text-start">
-                  <strong>Nombre de usuario:</strong> {userFound.username}
+                  <strong>Nombre de usuario:</strong> {user.username}
                 </p>
                 <div
                   id="user-ops"
                   className="w-full flex justify-center items-center p-2 gap-2"
                 >
                   <Link
-                    to={`/users/${userFound.id}/edit`}
+                    to={`/users/${user.id}/edit`}
                     id="edit-button"
                     className="p-2 bg-yellow-400 rounded-xl"
                   >
                     Editar
                   </Link>
-                  <form
-                    action="/users/<%= userFound.id %>?_method=DELETE"
-                    method="POST"
-                  >
-                    <button
-                      type="submit"
-                      id="delete-button"
-                      className="p-2 bg-red-500 rounded-xl"
-                    >
-                      Eliminar
-                    </button>
-                  </form>
                   <Link
                     to="/users"
                     id="go-back-button"

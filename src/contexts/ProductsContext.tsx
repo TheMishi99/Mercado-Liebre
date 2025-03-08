@@ -58,7 +58,7 @@ export default function ProductsProvider({
     setProductsError(error);
     if (newProduct)
       setProducts((products) =>
-        products.map((prod) => (prod.id === id ? newProduct : prod))
+        products.map((prod) => (prod.id === Number(id) ? newProduct : prod))
       );
   };
 
@@ -67,7 +67,7 @@ export default function ProductsProvider({
     setProductsError(error);
     if (ok)
       setProducts((products) =>
-        products.filter((product) => product.id !== id)
+        products.filter((product) => product.id !== Number(id))
       );
   };
 

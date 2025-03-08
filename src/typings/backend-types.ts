@@ -1,5 +1,5 @@
 export type UserType = {
-  id: string;
+  id: number;
   profile_image: string;
   full_name: string;
   email: string;
@@ -13,7 +13,7 @@ export type UserType = {
 };
 
 export type ProductType = {
-  id: string;
+  id: number;
   image: string;
   name: string;
   alt_name: string;
@@ -21,12 +21,12 @@ export type ProductType = {
 };
 
 export type InterestType = {
-  id: string;
+  id: number;
   name: string;
 };
 
 export type UserInterestType = {
-  id: string;
-  user_id: string;
-  interest_id: string;
+  id: number;
+  user_id: number;
+  interest_id: number;
 };

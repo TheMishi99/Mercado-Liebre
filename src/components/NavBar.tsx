@@ -17,11 +17,11 @@ export default function NavBar({ items, order = "row" }: NavBarProps) {
           .map((item, index) => (
             <li
               key={item.title + index}
-              className="w-full sm:flex-1 flex justify-center items-center sm:rounded-xl bg-blue-700 text-white font-bold hover:bg-blue-600"
+              className="w-full sm:flex-1 flex justify-center items-center sm:rounded-xl bg-blue-700 text-white font-bold hover:bg-blue-600 rounded-xl"
             >
               <Link
                 to={item.url}
-                className="w-full flex justify-center items-center p-2"
+                className="w-full flex justify-center items-center p-2 text-center"
               >
                 {item.title}
               </Link>

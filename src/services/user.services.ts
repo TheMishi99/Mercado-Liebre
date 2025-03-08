@@ -2,6 +2,7 @@ import { VITE_API_URL } from "../config/app.config";
 import {
   ApiErrorResponse,
   ApiLoginUserResponse,
+  ApiLogoutUserResponse,
   ApiRegisterUserResponse,
   ApiUserResponse,
   ApiUsersResponse,
@@ -96,5 +97,42 @@ export async function usersRegister({
   } catch (error) {
     if (error instanceof Error) return [error.message, false];
     return ["Unknown Error", false];
+  }
+}
+
+export async function usersLogout(): Promise<[string | null, boolean]> {
+  try {
+    const response = await fetch(`${VITE_API_URL}/api/users/logout`, {
+      credentials: "include",
+      method: "POST",
+    });
+    if (!response.ok) {
+      const apiErrorResponse: ApiErrorResponse = await response.json();
+      throw new Error(apiErrorResponse.error);
+    }
+    const apiLogoutUserResponse: ApiLogoutUserResponse = await response.json();
+    return [null, apiLogoutUserResponse.ok];
+  } catch (error) {
+    if (error instanceof Error) return [error.message, false];
+    return ["Unknown Error", false];
+  }
+}
+
+export async function usersSession(): Promise<
+  [string | null, UserType | null]
+> {
+  try {
+    const response = await fetch(`${VITE_API_URL}/api/users/session`, {
+      credentials: "include",
+    });
+    if (!response.ok) {
+      const apiErrorResponse: ApiErrorResponse = await response.json();
+      throw new Error(apiErrorResponse.error);
+    }
+    const apiUserSessionResponse: ApiUserResponse = await response.json();
+    return [null, apiUserSessionResponse.user];
+  } catch (error) {
+    if (error instanceof Error) return [error.message, null];
+    return ["Unknown Error", null];
   }
 }

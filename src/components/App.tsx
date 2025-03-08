@@ -14,13 +14,15 @@ import UsersRegisterPage from "../pages/web/users/UsersRegisterPage";
 import UserProvider from "../contexts/UserContext";
 import DashboardHomePage from "../pages/dashboard/DashboardHomePage";
 import DashboardProductsPage from "../pages/dashboard/products/DashboardProductsPage";
-import UserDetailPage from "../pages/web/users/UsersDetail";
+import UserDetailPage from "../pages/web/users/UserDetail";
 import ProductsMain from "../pages/web/products/ProductsMain";
 import UsersMain from "../pages/web/users/UsersMain";
 import ProductsCart from "../pages/web/products/ProductsCart";
 import ProductsProvider from "../contexts/ProductsContext";
 import UsersProvider from "../contexts/UsersContext";
 import SearchProducts from "../pages/web/products/SearchProducts";
+import UsersLogoutPage from "../pages/web/users/UsersLogoutPage";
+import UserProfilePage from "../pages/web/users/UserProfile";
 
 export default function App() {
   return (
@@ -46,6 +48,8 @@ export default function App() {
                   <Route path="" element={<UsersMain />} />
                   <Route path="login" element={<UsersLoginPage />} />
                   <Route path="register" element={<UsersRegisterPage />} />
+                  <Route path="logout" element={<UsersLogoutPage />} />
+                  <Route path="profile" element={<UserProfilePage />} />
                   <Route path=":id" element={<UserDetailPage />} />
                 </Route>
                 <Route path="*" element={<NotFoundPage />} />

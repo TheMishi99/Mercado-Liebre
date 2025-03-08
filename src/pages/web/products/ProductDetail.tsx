@@ -8,7 +8,7 @@ export default function ProductDetail() {
   const { id } = useParams();
   const { productsLoading, productsError, products } = useProductsContext();
   const productFound = useMemo(
-    () => products.find((product) => product.id === id),
+    () => products.find((product) => product.id === Number(id)),
     [products, id]
   );
 
@@ -20,16 +20,30 @@ export default function ProductDetail() {
         <p>{productsError}</p>
       ) : (
         productFound && (
-          <div id="product-detail">
-            <div id="product-img">
+          <div
+            id="product-detail"
+            className="w-full flex flex-col md:flex-row justify-center items-center p-2 gap-2"
+          >
+            <div
+              id="product-img"
+              className="w-full md:w-[49%] flex justify-center items-center p-2 gap-2"
+            >
               <img
                 src={`${VITE_API_URL}/${productFound.image}`}
                 alt={productFound.alt_name}
+                className="w-[70%] rounded-xl"
               />
             </div>
-            <div id="product-info">
-              <p>{productFound.image}</p>
-              <p>{productFound.price}</p>
+            <div
+              id="product-info"
+              className="w-full md:w-[49%] flex flex-col justify-start items-start p-2 gap-2"
+            >
+              <p>
+                <strong>Nombre del Producto</strong>: {productFound.name}
+              </p>
+              <p>
+                <strong>Precio</strong>: ${productFound.price}
+              </p>
             </div>
           </div>
         )
