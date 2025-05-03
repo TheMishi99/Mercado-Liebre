@@ -1,21 +1,21 @@
 import { Link } from "react-router-dom";
 import Loader from "../../../components/Loader";
-import { useUserContext } from "../../../contexts/UserContext";
 import { VITE_API_URL } from "../../../config/app.config";
+import { useAuth } from "../../../contexts/AuthContext";
 
 export default function UserProfilePage() {
-  const { user, userError, userLoading } = useUserContext();
+  const { userLogged, isError, isLoading } = useAuth();
   return (
     <div
       id="user-detail"
       className="w-full flex flex-col justify-center items-center p-2 gap-2"
     >
-      {userLoading ? (
+      {isLoading ? (
         <Loader />
-      ) : userError ? (
-        <p>{userError}</p>
+      ) : isError ? (
+        <p>{isError}</p>
       ) : (
-        user && (
+        userLogged && (
           <>
             <h2 className="w-full font-bold text-start text-xl">
               Detalle de Usuario
@@ -29,7 +29,7 @@ export default function UserProfilePage() {
                 className="w-full flex justify-center items-center"
               >
                 <img
-                  src={`${VITE_API_URL}/${user.profile_image}`}
+                  src={`${VITE_API_URL}/${userLogged.profile_image}`}
                   alt="Foto de Perfil"
                   className="w-full rounded-xl"
                 />
@@ -39,39 +39,39 @@ export default function UserProfilePage() {
                 className="w-full flex flex-col justify-center items-center p-2 gap-2"
               >
                 <p className="w-full text-start">
-                  <strong>Nombre Completo:</strong> {user.full_name}
+                  <strong>Nombre Completo:</strong> {userLogged.full_name}
                 </p>
                 <p className="w-full text-start">
-                  <strong>Email:</strong> {user.email}
+                  <strong>Email:</strong> {userLogged.email}
                 </p>
                 <p className="w-full text-start">
-                  <strong>Fecha de Nacimiento:</strong> {user.birth_date}
+                  <strong>Fecha de Nacimiento:</strong> {userLogged.birth_date}
                 </p>
                 <p className="w-full text-start">
-                  <strong>Domicilio:</strong> {user.address}
+                  <strong>Domicilio:</strong> {userLogged.address}
                 </p>
                 <p className="w-full text-start">
-                  <strong>Perfil:</strong> {user.profile}
+                  <strong>Perfil:</strong> {userLogged.profile}
                 </p>
-                {user.interests.length === 0 ? (
+                {userLogged.interests.length === 0 ? (
                   <p className="w-full text-start">
                     <strong>Intereses:</strong> Ninguno
                   </p>
                 ) : (
                   <p className="w-full text-start">
                     <strong>Intereses:</strong>{" "}
-                    {user.interests.map((int) => int.name).join(", ")}
+                    {userLogged.interests.map((int) => int.name).join(", ")}
                   </p>
                 )}
                 <p className="w-full text-start">
-                  <strong>Nombre de usuario:</strong> {user.username}
+                  <strong>Nombre de usuario:</strong> {userLogged.username}
                 </p>
                 <div
                   id="user-ops"
                   className="w-full flex justify-center items-center p-2 gap-2"
                 >
                   <Link
-                    to={`/users/${user.id}/edit`}
+                    to={`/users/${userLogged.id}/edit`}
                     id="edit-button"
                     className="p-2 bg-yellow-400 rounded-xl"
                   >

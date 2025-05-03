@@ -1,9 +1,9 @@
 import Loader from "../../../components/Loader";
 import ProductsList from "../../../components/web/products/ProductsList";
-import { useProductsContext } from "../../../contexts/ProductsContext";
+import { useProducts } from "../../../contexts/ProductsContext";
 
 export default function ProductsMain() {
-  const { productsLoading, productsError, products } = useProductsContext();
+  const { isLoading: productsLoading, isError: productsError, products } = useProducts();
   return (
     <div
       id="products-main"

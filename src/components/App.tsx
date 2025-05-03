@@ -11,7 +11,7 @@ import AboutPage from "../pages/web/AboutPage";
 import UsersPage from "../pages/web/users/UsersPage";
 import UsersLoginPage from "../pages/web/users/UsersLoginPage";
 import UsersRegisterPage from "../pages/web/users/UsersRegisterPage";
-import UserProvider from "../contexts/UserContext";
+import AuthProvider from "../contexts/AuthContext";
 import DashboardHomePage from "../pages/dashboard/DashboardHomePage";
 import DashboardProductsPage from "../pages/dashboard/products/DashboardProductsPage";
 import UserDetailPage from "../pages/web/users/UserDetail";
@@ -23,6 +23,8 @@ import UsersProvider from "../contexts/UsersContext";
 import SearchProducts from "../pages/web/products/SearchProducts";
 import UsersLogoutPage from "../pages/web/users/UsersLogoutPage";
 import UserProfilePage from "../pages/web/users/UserProfile";
+import InterestsProvider from "../contexts/InterestsContext";
+import LoadingProvider from "../providers/LoadingProvider";
 
 export default function App() {
   return (
@@ -31,36 +33,43 @@ export default function App() {
       className="w-full flex flex-col justify-center items-center bg-white text-black"
     >
       <ProductsProvider>
-        <UsersProvider>
-          <UserProvider>
-            <Routes>
-              <Route path="/" element={<Web />}>
-                <Route path="" element={<HomePage />} />
-                <Route path="about" element={<AboutPage />} />
-                <Route path="products" element={<ProductsPage />}>
-                  <Route path="" element={<ProductsMain />} />
-                  <Route path="create" element={<CreateProduct />} />
-                  <Route path="cart" element={<ProductsCart />} />
-                  <Route path="search" element={<SearchProducts />} />
-                  <Route path=":id" element={<ProductDetail />} />
-                </Route>
-                <Route path="users" element={<UsersPage />}>
-                  <Route path="" element={<UsersMain />} />
-                  <Route path="login" element={<UsersLoginPage />} />
-                  <Route path="register" element={<UsersRegisterPage />} />
-                  <Route path="logout" element={<UsersLogoutPage />} />
-                  <Route path="profile" element={<UserProfilePage />} />
-                  <Route path=":id" element={<UserDetailPage />} />
-                </Route>
-                <Route path="*" element={<NotFoundPage />} />
-              </Route>
-              <Route path="/dashboard" element={<Dashboard />}>
-                <Route path="" element={<DashboardHomePage />} />
-                <Route path="products" element={<DashboardProductsPage />} />
-              </Route>
-            </Routes>
-          </UserProvider>
-        </UsersProvider>
+        <InterestsProvider>
+          <UsersProvider>
+            <AuthProvider>
+              <LoadingProvider>
+                <Routes>
+                  <Route path="/" element={<Web />}>
+                    <Route path="" element={<HomePage />} />
+                    <Route path="about" element={<AboutPage />} />
+                    <Route path="products" element={<ProductsPage />}>
+                      <Route path="" element={<ProductsMain />} />
+                      <Route path="create" element={<CreateProduct />} />
+                      <Route path="cart" element={<ProductsCart />} />
+                      <Route path="search" element={<SearchProducts />} />
+                      <Route path=":id" element={<ProductDetail />} />
+                    </Route>
+                    <Route path="users" element={<UsersPage />}>
+                      <Route path="" element={<UsersMain />} />
+                      <Route path="login" element={<UsersLoginPage />} />
+                      <Route path="register" element={<UsersRegisterPage />} />
+                      <Route path="logout" element={<UsersLogoutPage />} />
+                      <Route path="profile" element={<UserProfilePage />} />
+                      <Route path=":id" element={<UserDetailPage />} />
+                    </Route>
+                    <Route path="*" element={<NotFoundPage />} />
+                  </Route>
+                  <Route path="/dashboard" element={<Dashboard />}>
+                    <Route path="" element={<DashboardHomePage />} />
+                    <Route
+                      path="products"
+                      element={<DashboardProductsPage />}
+                    />
+                  </Route>
+                </Routes>
+              </LoadingProvider>
+            </AuthProvider>
+          </UsersProvider>
+        </InterestsProvider>
       </ProductsProvider>
     </div>
   );

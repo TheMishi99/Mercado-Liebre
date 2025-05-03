@@ -1,32 +1,38 @@
 import { Link } from "react-router-dom";
-import { NavBarItem } from "../typings/frontend-types";
+import { NavbarItem } from "../typings/frontend-types";
 
-interface NavBarProps {
-  items: NavBarItem[];
-  order?: "column" | "row";
-}
-export default function NavBar({ items, order = "row" }: NavBarProps) {
+export default function Navbar({
+  items,
+  direction = "row",
+}: Readonly<{
+  items: NavbarItem[];
+  direction?: "col" | "row";
+}>) {
   return (
     <nav className="w-full flex justify-center items-center">
       <ul
-        className="w-full flex flex-col sm:flex-row justify-center items-center gap-2"
-        style={{ flexDirection: order }}
+        className={`w-full flex flex-${direction} ${
+          direction === "row" ? "flex-wrap" : ""
+        } justify-center items-center gap-2`}
       >
-        {items
-          .filter((item) => item.condition)
-          .map((item, index) => (
-            <li
-              key={item.title + index}
-              className="w-full sm:flex-1 flex justify-center items-center sm:rounded-xl bg-blue-700 text-white font-bold hover:bg-blue-600 rounded-xl"
-            >
-              <Link
-                to={item.url}
-                className="w-full flex justify-center items-center p-2 text-center"
+        {items.map(
+          (item) =>
+            item.condition && (
+              <li
+                key={item.id}
+                className={`${
+                  direction === "col" ? "w-full" : ""
+                } flex justify-center items-center`}
               >
-                {item.title}
-              </Link>
-            </li>
-          ))}
+                <Link
+                  to={item.url}
+                  className="w-full p-2 text-center bg-blue-700 text-white font-bold hover:bg-blue-600 rounded-xl"
+                >
+                  {item.title}
+                </Link>
+              </li>
+            )
+        )}
       </ul>
     </nav>
   );

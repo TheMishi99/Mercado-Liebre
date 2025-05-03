@@ -1,10 +1,10 @@
 import { useMemo } from "react";
 import ProductsList from "../../../components/web/products/ProductsList";
-import { useProductsContext } from "../../../contexts/ProductsContext";
+import { useProducts } from "../../../contexts/ProductsContext";
 import Loader from "../../../components/Loader";
 
 export default function SearchProducts() {
-  const { productsLoading, productsError, products } = useProductsContext();
+  const { isLoading: productsLoading, isError: productsError, products } = useProducts();
   const results = useMemo(
     () =>
       products.filter((product) =>

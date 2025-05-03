@@ -1,9 +1,9 @@
 import Loader from "../../../components/Loader";
 import UsersList from "../../../components/web/users/UsersList";
-import { useUsersContext } from "../../../contexts/UsersContext";
+import { useUsers } from "../../../contexts/UsersContext";
 
 export default function UsersMain() {
-  const { usersLoading, usersError, users } = useUsersContext();
+  const { isLoading: usersLoading, isError: usersError, users } = useUsers();
   return (
     <div
       id="users-main"

@@ -1,14 +1,16 @@
 import MercadoLiebreLogo from "../../assets/images/logo-mercado-liebre.svg";
-import NavBar from "../NavBar";
+import { NavbarItem } from "../../typings/frontend-types";
+import Navbar from "../NavBar";
 
-const navBarItems = [
-  { title: "Volver a la tienda", url: "/", condition: true },
-  { title: "Home", url: "/dashboard", condition: true },
-  { title: "Products", url: "/dashboard/products", condition: true },
+const navbarItems: NavbarItem[] = [
+  { id: 1, condition: true, url: "/", title: "Volver a la tienda" },
+  { id: 2, condition: true, url: "/dashboard", title: "Home" },
+  { id: 3, condition: true, url: "/dashboard/products", title: "Products" },
   {
-    title: "Create Product",
-    url: "/dashboard/products/create",
+    id: 4,
     condition: true,
+    url: "/dashboard/products/create",
+    title: "Create Product",
   },
 ];
 
@@ -23,7 +25,7 @@ export default function SideBar() {
           <img src={MercadoLiebreLogo} alt="Logo" className="w-full" />
         </a>
       </div>
-      <NavBar items={navBarItems} order="column" />
+      <Navbar items={navbarItems} direction="col" />
     </div>
   );
 }

@@ -1,11 +1,11 @@
 import { useRef } from "react";
-import { useUserContext } from "../../../contexts/UserContext";
 import { useNavigate } from "react-router-dom";
+import { useAuth } from "../../../contexts/AuthContext";
 
 export default function UsersLoginForm() {
   const usernameRef = useRef(null);
   const passwordRef = useRef(null);
-  const { login } = useUserContext();
+  const { login } = useAuth();
   const navigator = useNavigate();
 
   const handleFormSubmit = async (event: React.FormEvent<HTMLFormElement>) => {

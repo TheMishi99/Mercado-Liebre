@@ -1,8 +1,8 @@
 import { Link, useNavigate } from "react-router-dom";
-import { useUserContext } from "../../../contexts/UserContext";
+import { useAuth } from "../../../contexts/AuthContext";
 
 export default function UsersLogoutPage() {
-  const { logout } = useUserContext();
+  const { logout } = useAuth();
   const navigator = useNavigate();
   const handleLogoutButtonClick = async () => {
     await logout();

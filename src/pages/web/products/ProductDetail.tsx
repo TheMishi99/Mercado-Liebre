@@ -1,12 +1,12 @@
 import { useParams } from "react-router-dom";
 import Loader from "../../../components/Loader";
 import { VITE_API_URL } from "../../../config/app.config";
-import { useProductsContext } from "../../../contexts/ProductsContext";
+import { useProducts } from "../../../contexts/ProductsContext";
 import { useMemo } from "react";
 
 export default function ProductDetail() {
   const { id } = useParams();
-  const { productsLoading, productsError, products } = useProductsContext();
+  const { isLoading: productsLoading, isError: productsError, products } = useProducts();
   const productFound = useMemo(
     () => products.find((product) => product.id === Number(id)),
     [products, id]

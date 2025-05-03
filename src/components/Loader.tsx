@@ -1,8 +1,12 @@
+import { BiLoader } from "react-icons/bi";
+
 export default function Loader() {
   return (
     <div
       id="loader"
-      className="size-14 rounded-full border-[5px] border-zinc-400 border-t-blue-500 animate-spin"
-    ></div>
+      className="h-screen w-screen flex justify-center items-center"
+    >
+      <BiLoader className="size-8 animate-spin" />
+    </div>
   );
 }

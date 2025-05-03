@@ -1,7 +1,8 @@
-export type NavBarItem = {
-  title: string;
+export type NavbarItem = {
+  id: number;
+  condition: boolean;
   url: string;
-  condition?: boolean;
+  title: string;
 };
 
 export interface MyRoute {

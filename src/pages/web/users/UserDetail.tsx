@@ -1,18 +1,20 @@
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import Loader from "../../../components/Loader";
 import { VITE_API_URL } from "../../../config/app.config";
-import { useUsersContext } from "../../../contexts/UsersContext";
+import { useUsers } from "../../../contexts/UsersContext";
 import { useMemo } from "react";
-import { useUserContext } from "../../../contexts/UserContext";
 
 export default function UserDetailPage() {
   const { id } = useParams();
-  const { usersLoading, usersError, users } = useUsersContext();
+  const {
+    isLoading: usersLoading,
+    isError: usersError,
+    users,
+  } = useUsers();
   const userFound = useMemo(
     () => users.find((user) => user.id === Number(id)),
     [users, id]
   );
-  const { user: currentUser } = useUserContext();
 
   return (
     <div
@@ -75,39 +77,6 @@ export default function UserDetailPage() {
                 <p className="w-full text-start">
                   <strong>Nombre de usuario:</strong> {userFound.username}
                 </p>
-                {currentUser?.id === userFound.id && (
-                  <div
-                    id="user-ops"
-                    className="w-full flex justify-center items-center p-2 gap-2"
-                  >
-                    <Link
-                      to={`/users/${userFound.id}/edit`}
-                      id="edit-button"
-                      className="p-2 bg-yellow-400 rounded-xl"
-                    >
-                      Editar
-                    </Link>
-                    <form
-                      action="/users/<%= userFound.id %>?_method=DELETE"
-                      method="POST"
-                    >
-                      <button
-                        type="submit"
-                        id="delete-button"
-                        className="p-2 bg-red-500 rounded-xl"
-                      >
-                        Eliminar
-                      </button>
-                    </form>
-                    <Link
-                      to="/users"
-                      id="go-back-button"
-                      className="p-2 bg-zinc-400 rounded-xl"
-                    >
-                      Volver atras
-                    </Link>
-                  </div>
-                )}
               </div>
             </div>
           </>

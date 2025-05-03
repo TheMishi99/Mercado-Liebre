@@ -1,19 +1,19 @@
 import ProductsList from "../../components/web/products/ProductsList";
 import Loader from "../../components/Loader";
-import { useProductsContext } from "../../contexts/ProductsContext";
+import { useProducts } from "../../contexts/ProductsContext";
 
 export default function HomePage() {
-  const { productsLoading, productsError, products } = useProductsContext();
+  const { isLoading, isError, products } = useProducts();
 
   return (
     <div
       id="home"
       className="w-full flex flex-wrap justify-center items-start bg-zinc-200 p-2 gap-2"
     >
-      {productsLoading ? (
+      {isLoading ? (
         <Loader />
-      ) : productsError ? (
-        <p>{productsError}</p>
+      ) : isError ? (
+        <p>{isError}</p>
       ) : (
         <>
           <h2 className="w-full flex text-start font-bold text-2xl">
